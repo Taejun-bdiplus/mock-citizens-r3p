@@ -1,4 +1,4 @@
-.container {
+.sidenav-container {
   display: flex;
   height: 100vh;
 }
@@ -9,7 +9,7 @@
   width: 20%;
 }
 
-.content {
+.sidenav-content {
   flex: 1;
   background-color: #f0f0f0;
 }
