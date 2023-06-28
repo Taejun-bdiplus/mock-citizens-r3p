@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #016450;
+  color: #ffffff;
+  width: 20%;
+}
+
+.content {
+  flex: 1;
+  background-color: #f0f0f0;
+}
+
+.header {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+}

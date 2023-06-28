@@ -1,0 +1,10 @@
+.sidebar {
+    background-color: #016450;
+    width: 20%;
+  }
+
+  .container {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
