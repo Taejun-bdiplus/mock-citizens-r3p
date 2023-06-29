@@ -1,19 +1,25 @@
 <div class="app-sidebar-container">
   <mat-list class="app-sidebar-logo">
-    <mat-list-item>Logo</mat-list-item>
+    <div>
+      <img src="assets/images/logo.png" alt="logo" />
+    </div>
+    <div>
+      <div>Repurchase Risk</div>
+      <div>Resolution</div>
+    </div>
   </mat-list>
 
   <mat-list class="app-sidebar-tabs">
     <mat-list-item>
       <mat-list>
-        <mat-list-item routerLink="/dashboard" routerLinkActive="active">
+        <mat-list-item style="margin-bottom: 1rem;"  routerLink="/dashboard" routerLinkActive="active">
           <mat-icon>dashboard</mat-icon>
           Dashboard
         </mat-list-item>
-        <mat-list-item routerLink="/search" routerLinkActive="active">
+        <mat-list-item style="margin-bottom: 1rem;" routerLink="/search" routerLinkActive="active">
           <mat-icon>search</mat-icon>
           Search</mat-list-item>
-        <mat-list-item routerLink="/analysts" routerLinkActive="active">
+        <mat-list-item style="margin-bottom: 1rem;" routerLink="/analysts" routerLinkActive="active">
           <mat-icon>people</mat-icon>
           Analysts
         </mat-list-item>
