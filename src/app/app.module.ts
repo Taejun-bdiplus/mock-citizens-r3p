@@ -8,6 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchComponent } from './search/search.component';
 import { AnalystsComponent } from './analysts/analysts.component';
 import { ReportsComponent } from './reports/reports.component';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +46,9 @@ import { ReportsComponent } from './reports/reports.component';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatIconModule,
 
   ],
   providers: [],

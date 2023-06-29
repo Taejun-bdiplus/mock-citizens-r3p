@@ -1,10 +1,22 @@
-.sidebar {
-    background-color: #016450;
-    width: 20%;
-  }
+.app-sidebar-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
 
-  .container {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
+.app-sidebar-logo {
+  position: relative; 
+  top: 1rem;
+}
+
+.app-sidebar-tabs {
+  position: relative;
+  width: 100%;
+  top: 7rem;
+}
+
+.app-sidebar-account {
+  position: relative; 
+  bottom: -50rem;
+}
