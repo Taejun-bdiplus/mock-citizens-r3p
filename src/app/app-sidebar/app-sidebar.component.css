@@ -42,9 +42,10 @@
 }
 .app-sidebar-account-image-box {
   width: 20%;
+  text-align: center;
 }
 .app-sidebar-account-image {
-  width: 100%;
+  width: 60%;
 }
 .app-sidebar-account-right {
   width: 80%;
