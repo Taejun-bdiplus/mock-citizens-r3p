@@ -1,1 +1,75 @@
-<p>search works!</p>
+<div class="search">
+<p class="search-title">Search</p>
+<div class="full-width">
+  <div class="search-title-width">
+    <p class="entries-font">Show</p>
+
+<mat-form-field appearance="outline">
+  
+  <input matInput  type="text" class="search-container-field"  placeholder="" value=""  [(ngModel)]="pageSize">
+</mat-form-field>
+
+    <p class="entries-font">Entries</p>
+     <button class="go-button">Go</button>
+     
+         
+  </div>
+  <div class="example-full-width">
+    <!-- <input type="text" placeholder="Search by Name"> -->
+    <label class="search-field-title">Enter Loan #: </label>
+    <input type="text"  class="search-container-field" placeholder="Search by Name" [(ngModel)]="searchTerm" (input)="filterTable()">
+    <button class="header-left-upload">Search</button>
+    <button class="header-right-advanced-search">Advanced Search</button>
+  </div>
+</div>
+<div class="center-container">
+  <table mat-table > 
+      <thead>
+        <tr>
+          <th>Loan Number</th>
+          <th>borrowerName</th>
+          <th>investor</th>
+          <th>Status</th>
+          <th>context</th>
+          <th>disposalDescription</th>
+          <th>recievedDate</th>
+          <th>dueDate</th>
+          <th>auditor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of filteredRows" >
+        
+          <td>{{ row.loanNumber }}</td>
+          <td>{{ row.borrowerName }}</td>
+          <td>{{ row.investor }}</td>
+          <td>{{ row.status }}</td>
+          <td>{{ row.context }}</td>
+          <td>{{ row.disposalDescription }}</td>
+          <td>{{ row.recievedDate }}</td>
+          <td>{{ row.dueDate }}</td>
+          <td>{{ row.auditor }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="scroll-top-btn" (click)="scrollToTop()">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+
+<div>
+ 
+</div>
+
+
+<mat-paginator 
+#paginatorPageSize
+showFirstLastButtons
+[pageSize]="pageSize"
+[pageSizeOptions]="[2,5,10]"
+(page)="pageEvent = $event">
+</mat-paginator>
+
+</div>
