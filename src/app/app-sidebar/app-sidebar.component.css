@@ -32,15 +32,21 @@
   position: relative;
   width: 100%;
   top: 7rem;
-  margin-left: 1rem;
 }
 .dashboard-tab {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1rem;
+  height: 3rem;
+}
+.dashboard-tab:focus {
+  background-color: black;
+  border-radius: 5px;
 }
 .dashboard-tab-icon {
   width: 1.5rem;
+  margin-left: 1rem;
+  height: 50%;
+  align-self: center;
 }
 .dashboard-tab-text {
   align-self: center;
@@ -49,10 +55,17 @@
 .search-tab {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1rem;
+  height: 3rem;
+}
+.search-tab:focus {
+  background-color: black;
+  border-radius: 5px;
 }
 .search-tab-icon {
   width: 1.5rem;
+  margin-left: 1rem;
+  height: 50%;
+  align-self: center;
 }
 .search-tab-text {
   align-self: center;
@@ -61,10 +74,17 @@
 .analysts-tab {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1rem;
+  height: 3rem;
+}
+.analysts-tab:focus {
+  background-color: black;
+  border-radius: 5px;
 }
 .analysts-tab-icon {
   width: 1.5rem;
+  margin-left: 1rem;
+  height: 50%;
+  align-self: center;
 }
 .analysts-tab-text {
   align-self: center;
@@ -73,10 +93,17 @@
 .reports-tab {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1rem;
+  height: 3rem;
+}
+.reports-tab:focus {
+  background-color: black;
+  border-radius: 5px;
 }
 .reports-tab-icon {
   width: 1.5rem;
+  margin-left: 1rem;
+  height: 50%;
+  align-self: center;
 }
 .reports-tab-text {
   align-self: center;
