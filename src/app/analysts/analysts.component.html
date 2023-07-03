@@ -1,1 +1,54 @@
-<p>analysts works!</p>
+
+
+<div class="container">
+
+  <div class="table-container">
+      <div class="table-wrapper">
+      
+          <div class="analysts-heading">
+              <h2>Analysts</h2>
+          </div>
+  
+          <div class="search-container">
+              <!-- <input type="text" placeholder="Search by Name"> -->
+              <input type="text" placeholder="Search by Name" [(ngModel)]="searchTerm" (input)="filterTable()">
+              <button>Search</button>
+          </div>
+  
+          <table>
+              <thead>
+                <tr>
+                  <th>Analyst Name</th>
+                  <th>Role</th>
+                  <th>Loan Assigned</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of filteredRows">
+                  <td>{{ row.column1 }}</td>
+                  <td>{{ row.column2 }}</td>
+                  <td>{{ row.column3 }}</td>
+                  <td>{{ row.column4 }}</td>
+                  <td>
+                      <div class="action-items">
+                          <!-- <span class="action-item">ASSIGN</span> -->
+                          <span>
+                            <button (click)="openAssignDialog()">ASSIGN</button>
+                          </span>
+                          <span class="action-item">ACTIVATE</span>
+                          <span class="action-item">DEACTIVATE</span>
+                        </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+  
+            <button class="scroll-top-btn" (click)="scrollToTop()">
+              <i class="fa fa-arrow-up"></i>
+            </button>
+            
+      </div>
+  </div>
+</div>
