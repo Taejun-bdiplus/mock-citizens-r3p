@@ -30,6 +30,16 @@ display: flex;
   margin-left: 2rem;
   width: 100%;
 }
+.search-container-field-container{
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+  height: 22px;
+  width: 2rem;
+}
+.body{
+  background-color: white;
+}
 .search-field-width {
   margin-top: 1rem;
   width: 30%;
@@ -39,11 +49,11 @@ display: flex;
 }
 .search-title-width {
   margin-top: 1rem;
-  margin-left: 5rem;
-  width: 15%;
+  
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-around;
 }
 .search-title {
   font-weight: 600;
@@ -58,7 +68,7 @@ display: flex;
   font-size: .5rem;
 }
 .table {
-  width: 60%;
+  width: 0%;
 }
 
 .mat-mdc-form-field {
@@ -73,17 +83,21 @@ display: flex;
 }
 
 .search-table-header {
-  background-color: #006450;
+  background-color: #008555;
 }
 .table-container {
 
  margin: 6%;
 }
 .go-button {
- width:50px;
- height:30px;
-  background-color: #006450;
- color:white
+  background-color: #008555;
+    color: white;
+    height: 2rem;
+   padding: .5rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+   
 
 }
 
@@ -118,12 +132,11 @@ display: flex;
   }
   
   .search-container-field {
-    border: 1px solid green; /* Add border to the search input */
+    border: 1px solid black; /* Add border to the search input */
+    background-color: white;
     padding: 5px; /* Add padding to the search input */
-    margin-right: 5px; /* Add some spacing between the search input and button */
-    width: 300px; /* Increase the width of the search input */
-    border: 2px solid green;
-    padding: 10px 20px;
+    
+    width: 30%; /* Increase the width of the search input */
     border-radius: 8px;
   }
   .example-full-width{
@@ -133,39 +146,47 @@ display: flex;
    
   }
   .center-container{
-    width: 60%;
-    margin:1rem;
+    max-width: 939px;
+    justify-content: center;
    
+  }
+  .center-advanced{
+    margin-top: 1rem;
+  ;
+    justify-content: center;
+    
   }
   .full-width{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
    
   }
   .search-container input {
-    border: 1px solid green; /* Add border to the search input */
+    border: 1px solid #008555; /* Add border to the search input */
     padding: 5px; /* Add padding to the search input */
     margin-right: 5px; /* Add some spacing between the search input and button */
     width: 300px; /* Increase the width of the search input */
-    border: 2px solid green;
+    border: 2px solid #008555;
     padding: 10px 20px;
     border-radius: 8px;
   }
   
   .search-container button {
     padding: 10px 20px; /* Add padding to the search button */
-    background-color: green; /* Set the background color of the search button */
+    background-color: #008555; /* Set the background color of the search button */
     color: white; /* Set the text color of the search button */
     border: none; /* Remove the border of the search button */
-    border: 2px solid green;
+    border: 2px solid #008555;
     border-radius: 8px;
     margin-left: 10px;
   }
   .search{
-   display: flex;
+  
    flex-direction: column;
+   width: 100%;
   
   }
   .header-right-advanced-search{
@@ -177,6 +198,14 @@ display: flex;
     border: none;
     border-radius: 4px;
     white-space: nowrap;
+  }
+  .advanced-search-card-header{
+    background-color: #008555;
+    color:white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+    text-align: center;
   }
 .table-container {
     display: flex;
@@ -219,9 +248,36 @@ display: flex;
   th:nth-child(8),
   th:nth-child(9),
   th:nth-child(10){
-    background-color: green; /* Background color for specific column headers */
+    background-color: #008555; /* Background color for specific column headers */
   }
-  
+  .expantionPannel {
+    width:100%;
+  }
+  .advanced-search-open{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-left-color: black;
+    border-right-color: black;
+    border-top-color: white;
+    border-top-color: white;
+    border-width: 1px;
+    border-style: solid;
+  }
+  .advanced-search-open-other{
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-left-color: black;
+    border-right-color: black;
+    border-top-color: white;
+    border-top-color: white;
+    border-width: 1px;
+    border-style: solid;
+  }
   td {
     padding: 10px;
     text-align: left;
@@ -238,7 +294,7 @@ display: flex;
     width: 40px;
     height: 40px;
     padding: 0;
-    background-color: green;
+    background-color: #008555;
     color: rgb(245, 241, 241);
     border: none;
     border-radius: 50%;

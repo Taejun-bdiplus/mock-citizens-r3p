@@ -27,7 +27,7 @@ export class SearchComponent {
   tableData = [
     {
       loanNumber: '1',
-      borrowerName: 'John Doe',
+      borrowerName: 'Paul',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -38,7 +38,7 @@ export class SearchComponent {
     },
     {
       loanNumber: '2',
-      borrowerName: 'John Doe',
+      borrowerName: 'Karen',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -49,7 +49,7 @@ export class SearchComponent {
     },
     {
       loanNumber: '3',
-      borrowerName: 'John Doe',
+      borrowerName: 'Mary',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -60,7 +60,7 @@ export class SearchComponent {
     },
     {
       loanNumber: '4',
-      borrowerName: 'John Doe',
+      borrowerName: 'Taejun',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -71,7 +71,7 @@ export class SearchComponent {
     },
     {
       loanNumber: '5',
-      borrowerName: 'John Doe',
+      borrowerName: 'Mohit',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -82,7 +82,7 @@ export class SearchComponent {
     },
     {
       loanNumber: '6',
-      borrowerName: 'John Doe',
+      borrowerName: 'Doe',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -93,7 +93,7 @@ export class SearchComponent {
     },
     {
       loanNumber: '7',
-      borrowerName: 'John Doe',
+      borrowerName: 'Ron',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -104,7 +104,7 @@ export class SearchComponent {
     },
     {
       loanNumber: '8',
-      borrowerName: 'John Doe',
+      borrowerName: 'Finny',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -126,7 +126,7 @@ export class SearchComponent {
     },
     {
       loanNumber: '10',
-      borrowerName: 'John Doe',
+      borrowerName: 'John ',
       investor: 'FNMA',
       status: 'Pending',
       context: 'MI QA Audit',
@@ -153,7 +153,7 @@ export class SearchComponent {
 
   filteredRows: tableData[] = [];
   searchTerm: string = '';
-
+  advancedSearchTerm: string = '';
   ngOnInit() {
     this.filteredRows = this.tableData;
   }
@@ -167,13 +167,24 @@ export class SearchComponent {
       this.filteredRows = this.tableData;
     }
   }
+  advancedFilterTable() {
+    if (this.advancedSearchTerm.trim() !== '') {
+      this.filteredRows = this.tableData.filter(row =>
+        row.borrowerName.toLowerCase().includes(this.advancedSearchTerm.toLowerCase()
+        )
+      );
+      
+    } else {
+      this.filteredRows = this.tableData;
+    }
+  }
   constructor(private dialog: MatDialog) {}
   @ViewChild('paginator') paginator: any = MatPaginator;
   @ViewChild('paginatorPageSize') paginatorPageSize: any = MatPaginator;
 
   pageSize = 10; 
   pageEvent: any = PageEvent;
-
+  show = true;
 
   pageSizes = [3, 5, 7];
   openAssignDialog() {

@@ -1,13 +1,13 @@
 <div class="search">
 <p class="search-title">Search</p>
+
 <div class="full-width">
   <div class="search-title-width">
     <p class="entries-font">Show</p>
 
-<mat-form-field appearance="outline">
-  
-  <input matInput  type="text" class="search-container-field"  placeholder="" value=""  [(ngModel)]="pageSize">
-</mat-form-field>
+
+  <input matInput  type="text" class="search-container-field-container"  placeholder="" value=""  [(ngModel)]="pageSize">
+
 
     <p class="entries-font">Entries</p>
      <button class="go-button">Go</button>
@@ -17,28 +17,45 @@
   <div class="example-full-width">
     <!-- <input type="text" placeholder="Search by Name"> -->
     <label class="search-field-title">Enter Loan #: </label>
-    <input type="text"  class="search-container-field" placeholder="Search by Name" [(ngModel)]="searchTerm" (input)="filterTable()">
+    <input type="text"  class="search-container-field" placeholder="" [(ngModel)]="searchTerm" (input)="filterTable()">
     <button class="header-left-upload">Search</button>
-    <button class="header-right-advanced-search">Advanced Search</button>
-  </div>
+
+    <button class="header-right-advanced-search" (click)="show = !show">{{show ? 'Advanced Search' : 'Advanced Search'}}</button>
+    
+    <br> </div>
 </div>
+
+
+
 <div class="center-container">
-  <table mat-table > 
+  <div *ngIf="show" >
+    <mat-card class="center-advanced">
+      <mat-card-title class="advanced-search-card-header">Advanced Search</mat-card-title>
+      <mat-card-content class="advanced-search-open-other">
+    <input type="text"  class="search-container-field" placeholder="" [(ngModel)]="advancedSearchTerm" (input)="advancedFilterTable()">
+    <button class="header-left-upload">Search</button>
+    <button class="header-right-advanced-search" [disabled]="show ? true : false" (click)="show = !show">{{show ? 'Clear' : 'Advanced Search'}}</button>
+  </mat-card-content>
+    </mat-card>
+  </div>
+  <div  class="advanced-search-open">
+    <table > 
+    
       <thead>
         <tr>
           <th>Loan Number</th>
-          <th>borrowerName</th>
-          <th>investor</th>
+          <th>Borrower Name</th>
+          <th>Investor</th>
           <th>Status</th>
-          <th>context</th>
-          <th>disposalDescription</th>
-          <th>recievedDate</th>
-          <th>dueDate</th>
-          <th>auditor</th>
+          <th>Context</th>
+          <th>Disposal Description</th>
+          <th>Recieved Date</th>
+          <th>Due Date</th>
+          <th>Auditor</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let row of filteredRows" >
+      <tbody >
+        <tr *ngFor="let row of filteredRows"  class="body">
         
           <td>{{ row.loanNumber }}</td>
           <td>{{ row.borrowerName }}</td>
@@ -51,25 +68,26 @@
           <td>{{ row.auditor }}</td>
           
         </tr>
+        
       </tbody>
+      
     </table>
   </div>
-  <button class="scroll-top-btn" (click)="scrollToTop()">
-    <i class="fa fa-arrow-up"></i>
-  </button>
+   
+<mat-paginator 
+#paginatorPageSize
+[pageSize]="pageSize"
+(page)="pageEvent = $event"
+
+>
+
+</mat-paginator>
+ 
+  </div>
 
 
 <div>
  
 </div>
-
-
-<mat-paginator 
-#paginatorPageSize
-showFirstLastButtons
-[pageSize]="pageSize"
-[pageSizeOptions]="[2,5,10]"
-(page)="pageEvent = $event">
-</mat-paginator>
 
 </div>
