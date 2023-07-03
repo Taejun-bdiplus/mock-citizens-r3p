@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 // Import Material UI modules
 import { MatInputModule } from '@angular/material/input';
@@ -22,6 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchComponent } from './search/search.component';
 import { AnalystsComponent } from './analysts/analysts.component';
 import { ReportsComponent } from './reports/reports.component';
+import { AssignDialogComponent } from './assign-dialog/assign-dialog.component';
 
 
 @NgModule({
@@ -34,11 +38,13 @@ import { ReportsComponent } from './reports/reports.component';
     SearchComponent,
     AnalystsComponent,
     ReportsComponent,
+    AssignDialogComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     
     // Add Material UI modules to the imports array
     MatInputModule,
@@ -49,6 +55,7 @@ import { ReportsComponent } from './reports/reports.component';
     MatGridListModule,
     MatCardModule,
     MatIconModule,
+    MatDialogModule,
 
   ],
   providers: [],
