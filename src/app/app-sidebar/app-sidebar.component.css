@@ -6,8 +6,21 @@
 }
 
 .app-sidebar-top {
-  position: relative; 
-  top: 1rem;
+  height: 15%;
+}
+.app-sidebar-middle {
+  height: 50%;
+  width: 90%;
+  align-self: center;
+}
+.app-sidebar-bottom {
+  height: 30%;
+  width: 90%;
+  align-self: center;
+}
+
+.company-project {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
 }
@@ -29,9 +42,7 @@
 }
 
 .app-sidebar-tabs {
-  position: relative;
   width: 100%;
-  top: 7rem;
 }
 .dashboard-tab {
   display: flex;
@@ -52,6 +63,10 @@
   align-self: center;
   margin-left: 0.9rem;
 }
+
+.app-sidebar-tabs-search-icon {
+  width: 1.5rem;
+}
 .search-tab {
   display: flex;
   flex-direction: row;
@@ -71,6 +86,10 @@
   align-self: center;
   margin-left: 0.9rem;
 }
+
+.app-sidebar-tabs-analysts-icon {
+  width: 1.5rem;
+}
 .analysts-tab {
   display: flex;
   flex-direction: row;
@@ -89,6 +108,10 @@
 .analysts-tab-text {
   align-self: center;
   margin-left: 0.9rem;
+}
+
+.app-sidebar-tabs-reports-icon {
+  width: 1.5rem;
 }
 .reports-tab {
   display: flex;
@@ -113,21 +136,9 @@
 
 
 
-.app-sidebar-tabs-search-icon {
-  width: 1.5rem;
-}
-.app-sidebar-tabs-analysts-icon {
-  width: 1.5rem;
-}
-.app-sidebar-tabs-reports-icon {
-  width: 1.5rem;
-}
-
 
 
 .app-sidebar-account {
-  position: relative; 
-  bottom: -33rem;
   display: flex;
   flex-direction: row;
 }
