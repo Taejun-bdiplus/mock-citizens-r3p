@@ -19,6 +19,23 @@
     max-width: 80%;
     max-height: 80%;
   }
+
+  .dialog-header {
+    background-color: green;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .dialog-header-text {
+    color: white;
+    margin: 0;
+  }
+  
+  .dialog-heading-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
   
   .dialog-content {
     /* Add any custom styles for the dialog content */
@@ -26,5 +43,45 @@
   
   .dialog-close-button {
     margin-top: 20px;
+  }
+
+
+  .dialog-subheading {
+    text-decoration: underline;
+  }
+  
+  .dialog-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .dialog-table th,
+  .dialog-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .dialog-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .dialog-table td:first-child {
+    text-align: center;
+  }
+
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .dialog-cancel-button {
+    margin-right: 10px;
+  }
+  
+  .dialog-assign-button {
+    background-color: green;
+    color: white;
   }
   
