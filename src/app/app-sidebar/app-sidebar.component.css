@@ -51,7 +51,6 @@
   width: 80%;
   display: flex;
   flex-direction: column;
-  padding-top: 0.3rem;
 }
 .app-sidebar-account-right-first-row{
   display: flex;
@@ -59,7 +58,7 @@
 }
 .app-sidebar-account-right-first-row-user{
   margin-right: 0.5rem;
-  align-self: center;
+  align-self: baseline;
 }
 .app-sidebar-account-right-second-row{
   font-size: 0.9rem;
