@@ -32,18 +32,68 @@
   position: relative;
   width: 100%;
   top: 7rem;
+  margin-left: 1rem;
 }
-.app-sidebar-tabs-dashboard-icon {
-  
+.dashboard-tab {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
 }
+.dashboard-tab-icon {
+  width: 1.5rem;
+}
+.dashboard-tab-text {
+  align-self: center;
+  margin-left: 0.9rem;
+}
+.search-tab {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.search-tab-icon {
+  width: 1.5rem;
+}
+.search-tab-text {
+  align-self: center;
+  margin-left: 0.9rem;
+}
+.analysts-tab {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.analysts-tab-icon {
+  width: 1.5rem;
+}
+.analysts-tab-text {
+  align-self: center;
+  margin-left: 0.9rem;
+}
+.reports-tab {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.reports-tab-icon {
+  width: 1.5rem;
+}
+.reports-tab-text {
+  align-self: center;
+  margin-left: 0.9rem;
+}
+
+
+
+
 .app-sidebar-tabs-search-icon {
-  
+  width: 1.5rem;
 }
 .app-sidebar-tabs-analysts-icon {
-  
+  width: 1.5rem;
 }
 .app-sidebar-tabs-reports-icon {
-  
+  width: 1.5rem;
 }
 
 

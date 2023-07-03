@@ -12,21 +12,22 @@
   <mat-list class="app-sidebar-tabs">
     <mat-list-item>
       <mat-list>
-        <mat-list-item style="margin-bottom: 1rem;"  routerLink="/dashboard" routerLinkActive="active">
-          <img class="app-sidebar-tabs-dashboard-icon" src="../assets/images/dashboard.png" />
-          Dashboard
-        </mat-list-item>
-        <mat-list-item style="margin-bottom: 1rem;" routerLink="/search" routerLinkActive="active">
-          <img class="app-sidebar-tabs-search-icon" src="../assets/images/search.png" />
-          Search</mat-list-item>
-        <mat-list-item style="margin-bottom: 1rem;" routerLink="/analysts" routerLinkActive="active">
-          <img class="app-sidebar-tabs-analysts-icon" src="../assets/images/analysts.png" />
-          Analysts
-        </mat-list-item>
-        <mat-list-item routerLink="/reports" routerLinkActive="active">
-          <img class="app-sidebar-tabs-reports-icon" src="../assets/images/reports.png" />
-          Reports
-        </mat-list-item>
+        <div class="dashboard-tab" routerLink="/dashboard" routerLinkActive="active">
+          <img class="dashboard-tab-icon" src="../assets/images/dashboard.png" />
+          <div class="dashboard-tab-text">Dashboard</div>
+        </div>
+        <div class="search-tab" routerLink="/search" routerLinkActive="active">
+          <img class="search-tab-icon" src="../assets/images/search.png" />
+          <div class="search-tab-text">Search</div>
+        </div>
+        <div class="analysts-tab" routerLink="/analysts" routerLinkActive="active">
+          <img class="analysts-tab-icon" src="../assets/images/analysts.png" />
+          <div class="analysts-tab-text">Analysts</div>
+        </div>
+        <div class="reports-tab" routerLink="/reports" routerLinkActive="active">
+          <img class="reports-tab-icon" src="../assets/images/reports.png" />
+          <div class="reports-tab-text">Reports</div>
+        </div>
       </mat-list>
     </mat-list-item>
   </mat-list>
@@ -38,7 +39,7 @@
     <div class="app-sidebar-account-right">
       <div class="app-sidebar-account-right-first-row">
         <div class="app-sidebar-account-right-first-row-user">Hi, User</div>
-        <mat-icon>edit</mat-icon>
+        <img class="app-sidebar-account-right-first-row-user-eidt" src="../assets/images/user_edit.png" />
       </div>
       <div class="app-sidebar-account-right-second-row">
         Analyst
@@ -52,7 +53,7 @@
             Log Out
           </div>
           <div class="app-sidebar-account-right-third-row-logout-icon">
-            <mat-icon>exit_to_app</mat-icon>
+            <img class="app-sidebar-account-log-out" src="../assets/images/log_out.png" />
           </div>
         </div>
       </div>
