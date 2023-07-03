@@ -1,11 +1,11 @@
 <div class="app-sidebar-container">
-  <mat-list class="app-sidebar-logo">
-    <div>
-      <img src="assets/images/logo.png" alt="logo" />
+  <mat-list class="app-sidebar-top">
+    <div class="app-sidebar-logo">
+      <img class="app-sidebar-image" src="../assets/logo.png" />
     </div>
-    <div>
-      <div>Repurchase Risk</div>
-      <div>Resolution</div>
+    <div class="app-sidebar-title">
+      <div class="app-sidebar-title-text1">Repurchase Risk</div>
+      <div class="app-sidebar-title-text2">Resolution</div>
     </div>
   </mat-list>
 
@@ -32,6 +32,31 @@
   </mat-list>
 
   <mat-list class="app-sidebar-account"> 
-    <mat-list-item>ACCOUNT EDIT + SWITCH ROLE + LOG OUT</mat-list-item>
+    <div class="app-sidebar-account-image-box">
+      <img class="app-sidebar-account-image" src="../assets/user_icon.png" />
+    </div>
+    <div class="app-sidebar-account-right">
+      <div class="app-sidebar-account-right-first-row">
+        <div class="app-sidebar-account-right-first-row-user">Hi, User</div>
+        <mat-icon>edit</mat-icon>
+      </div>
+      <div class="app-sidebar-account-right-second-row">
+        Analyst
+      </div>
+      <div class="app-sidebar-account-right-third-row">
+        <div style="font-size: 0.75rem; align-self: center;">
+          Switch Role
+        </div>
+        <div class="app-sidebar-account-right-third-row-logout">
+          <div class="app-sidebar-account-right-third-row-logout-text">
+            Log Out
+          </div>
+          <div class="app-sidebar-account-right-third-row-logout-icon">
+            <mat-icon>exit_to_app</mat-icon>
+          </div>
+        </div>
+      </div>
+      
+    </div>
   </mat-list>
 </div>

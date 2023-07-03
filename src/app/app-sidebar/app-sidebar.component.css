@@ -5,9 +5,26 @@
   height: 100%;
 }
 
-.app-sidebar-logo {
+.app-sidebar-top {
   position: relative; 
   top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.app-sidebar-logo {
+  width: 20%;
+}
+.app-sidebar-image {
+  width: 100%;
+}
+.app-sidebar-title {
+  
+}
+.app-sidebar-title-text1 {
+ font-size: 1.2rem; 
+}
+.app-sidebar-title-text2 {
+ font-size: 1.2rem; 
 }
 
 .app-sidebar-tabs {
@@ -16,7 +33,51 @@
   top: 7rem;
 }
 
+
 .app-sidebar-account {
   position: relative; 
   bottom: -33rem;
+  display: flex;
+  flex-direction: row;
+}
+.app-sidebar-account-image-box {
+  width: 20%;
+}
+.app-sidebar-account-image {
+  width: 100%;
+}
+.app-sidebar-account-right {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.3rem;
+}
+.app-sidebar-account-right-first-row{
+  display: flex;
+  flex-direction: row;
+}
+.app-sidebar-account-right-first-row-user{
+  margin-right: 0.5rem;
+  align-self: center;
+}
+.app-sidebar-account-right-second-row{
+  font-size: 0.9rem;
+}
+.app-sidebar-account-right-third-row{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+.app-sidebar-account-right-third-row-logout{
+  display: flex;
+  flex-direction: row;
+  margin-right: 0.8rem;
+}
+.app-sidebar-account-right-third-row-logout-text {
+  font-size: 0.9rem;
+  align-self: center;
+}
+.app-sidebar-account-right-third-row-logout-icon{
+  margin-left: 0.5rem;
 }
