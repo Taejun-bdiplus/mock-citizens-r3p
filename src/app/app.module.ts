@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-
 // Import Material UI modules
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,11 +24,9 @@ import { SearchComponent } from './search/search.component';
 import { AnalystsComponent } from './analysts/analysts.component';
 import { ReportsComponent } from './reports/reports.component';
 import { AssignDialogComponent } from './assign-dialog/assign-dialog.component';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +37,7 @@ import { MatSortModule } from '@angular/material/sort';
     SearchComponent,
     AnalystsComponent,
     ReportsComponent,
-    AssignDialogComponent,
+    AssignDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -58,10 +55,12 @@ import { MatSortModule } from '@angular/material/sort';
     MatCardModule,
     MatIconModule,
     MatDialogModule,
-
-   MatSortModule
+    MatTableModule,
+   MatSortModule,
+    MatCardModule,
   ],
-  providers: [],
+ 
+  providers: [{ provide: MatPaginatorIntl}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
