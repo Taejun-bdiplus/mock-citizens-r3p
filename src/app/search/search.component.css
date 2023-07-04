@@ -49,11 +49,10 @@ display: flex;
 }
 .search-title-width {
   margin-top: 1rem;
-  
+  gap: .5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
 }
 .search-title {
   font-weight: 600;
@@ -136,23 +135,28 @@ display: flex;
     background-color: white;
     padding: 5px; /* Add padding to the search input */
     
-    width: 30%; /* Increase the width of the search input */
+    width: 20%; /* Increase the width of the search input */
     border-radius: 8px;
   }
   .example-full-width{
-  
+    justify-content: end;
     display: flex;
     flex-direction: row;
    
   }
   .center-container{
-    max-width: 939px;
+    width: 100%;
+  
     justify-content: center;
    
   }
+  .items-per-page{
+  display: flex;
+    justify-content: flex-start;
+    
+  }
   .center-advanced{
-    margin-top: 1rem;
-  ;
+    margin-top: 1rem;;
     justify-content: center;
     
   }
@@ -160,7 +164,7 @@ display: flex;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+   margin-bottom: 1.5rem;
     
    
   }
@@ -183,6 +187,15 @@ display: flex;
     border-radius: 8px;
     margin-left: 10px;
   }
+  .center-div{
+
+  position: relative;
+  width: 100%;
+  margin-left: 20px;
+  /* margin-top: 20px; */
+
+   
+   }
   .search{
   
    flex-direction: column;

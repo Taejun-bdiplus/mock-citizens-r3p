@@ -1,12 +1,13 @@
 
 
-import { Component , HostListener, ViewChild} from '@angular/core';
+import { Component , HostListener, ViewChild, OnInit, AfterViewInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AssignDialogComponent } from '../assign-dialog/assign-dialog.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { PageEvent } from '@angular/material/paginator';
 interface tableData {
+  id: number;
   loanNumber: string;
   borrowerName: string;
   investor: string;
@@ -23,9 +24,10 @@ interface tableData {
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   tableData = [
     {
+     id: 1,
       loanNumber: '1',
       borrowerName: 'Paul',
       investor: 'FNMA',
@@ -37,6 +39,7 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 2,
       loanNumber: '2',
       borrowerName: 'Karen',
       investor: 'FNMA',
@@ -48,6 +51,7 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 3,
       loanNumber: '3',
       borrowerName: 'Mary',
       investor: 'FNMA',
@@ -59,6 +63,7 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 4,
       loanNumber: '4',
       borrowerName: 'Taejun',
       investor: 'FNMA',
@@ -70,6 +75,7 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 5,
       loanNumber: '5',
       borrowerName: 'Mohit',
       investor: 'FNMA',
@@ -81,6 +87,7 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 6,
       loanNumber: '6',
       borrowerName: 'Doe',
       investor: 'FNMA',
@@ -92,6 +99,7 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 7,
       loanNumber: '7',
       borrowerName: 'Ron',
       investor: 'FNMA',
@@ -103,6 +111,7 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 8,
       loanNumber: '8',
       borrowerName: 'Finny',
       investor: 'FNMA',
@@ -114,6 +123,7 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 9,
       loanNumber: '9',
       borrowerName: 'John Doe',
       investor: 'FNMA',
@@ -125,7 +135,44 @@ export class SearchComponent {
       auditor:'Earnest, Jim'
     },
     {
+      id: 10,
       loanNumber: '10',
+      borrowerName: 'John ',
+      investor: 'FNMA',
+      status: 'Pending',
+      context: 'MI QA Audit',
+      recievedDate: '1/1/22',
+      disposalDescription: 'Pending',
+      dueDate:'3/1/22',
+      auditor:'Earnest, Jim'
+    },
+    {
+      id: 11,
+      loanNumber: '11',
+      borrowerName: 'John ',
+      investor: 'FNMA',
+      status: 'Pending',
+      context: 'MI QA Audit',
+      recievedDate: '1/1/22',
+      disposalDescription: 'Pending',
+      dueDate:'3/1/22',
+      auditor:'Earnest, Jim'
+    },
+    {
+      id: 12,
+      loanNumber: '12',
+      borrowerName: 'John ',
+      investor: 'FNMA',
+      status: 'Pending',
+      context: 'MI QA Audit',
+      recievedDate: '1/1/22',
+      disposalDescription: 'Pending',
+      dueDate:'3/1/22',
+      auditor:'Earnest, Jim'
+    },
+    {
+      id: 13,
+      loanNumber: '13',
       borrowerName: 'John ',
       investor: 'FNMA',
       status: 'Pending',
@@ -157,7 +204,11 @@ export class SearchComponent {
   ngOnInit() {
     this.filteredRows = this.tableData;
   }
-
+  handlePageEvent(e: PageEvent) {
+    this.pageEvent = e;
+    this.tableData.length = e.length;
+    this.pageSize = e.pageSize;
+  }
   filterTable() {
     if (this.searchTerm.trim() !== '') {
       this.filteredRows = this.tableData.filter(row =>
@@ -173,7 +224,6 @@ export class SearchComponent {
         row.borrowerName.toLowerCase().includes(this.advancedSearchTerm.toLowerCase()
         )
       );
-      
     } else {
       this.filteredRows = this.tableData;
     }
@@ -196,11 +246,11 @@ export class SearchComponent {
   }
   onTableSizeChange(event: any): void {
     this.pageSize = event.target.value;
-    this.pageSizes = event.target.value;
  //   this.fetchPosts();
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSourceWithPageSize.paginator = this.paginatorPageSize;
+    console.log(this.dataSourceWithPageSize.paginator )
   }
 }

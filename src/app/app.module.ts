@@ -12,8 +12,8 @@ import { MatListModule } from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-
-
+import { MaterialComponentsModule } from './search/test/material-components/material-components.module';
+import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefaultLayoutComponent } from './default-layout/default-layout.component';
@@ -27,6 +27,8 @@ import { AssignDialogComponent } from './assign-dialog/assign-dialog.component';
 import { MatPaginator, MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { SimpleMatTableComponent } from './search/test/simple-mat-table.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,13 +39,15 @@ import { MatSortModule } from '@angular/material/sort';
     SearchComponent,
     AnalystsComponent,
     ReportsComponent,
-    AssignDialogComponent
+    AssignDialogComponent,
+    SimpleMatTableComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    CommonModule,
     MatPaginatorModule,
     // Add Material UI modules to the imports array
     MatInputModule,
@@ -57,10 +61,12 @@ import { MatSortModule } from '@angular/material/sort';
     MatDialogModule,
     MatTableModule,
    MatSortModule,
-    MatCardModule,
+   MatSelectModule
+    
   ],
+  
  
-  providers: [{ provide: MatPaginatorIntl}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
