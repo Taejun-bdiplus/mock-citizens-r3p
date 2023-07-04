@@ -48,11 +48,12 @@
 .table-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    min-height: 100vh;
     margin-left: 100px;
     margin-right: auto;
     max-width: 600px; 
+    white-space: nowrap;
   }
   
   .table-wrapper {
@@ -80,7 +81,7 @@
   th:nth-child(3),
   th:nth-child(4),
   th:nth-child(5) {
-    background-color: green; /* Background color for specific column headers */
+    background-color: #006450; /* Background color for specific column headers */
   }
   
   td {
@@ -99,7 +100,7 @@
     width: 40px;
     height: 40px;
     padding: 0;
-    background-color: green;
+    background-color: #006450;
     color: rgb(245, 241, 241);
     border: none;
     border-radius: 50%;

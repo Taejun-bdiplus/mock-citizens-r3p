@@ -4,8 +4,8 @@
     </div>
     <div class="dialog-content">
       <div class="dialog-heading-row">
-        <h3>Analyst name: John Doe</h3>
-        <h3>Number of loans currently assigned: 0</h3>
+        <h3>Analyst name: <span class="dialog-heading">John Doe</span></h3>
+        <h3>Number of loans currently assigned: <span class="dialog-heading">0</span></h3>
       </div>
       <h4 class="dialog-subheading">Unassigned Loans</h4>
       <table class="dialog-table">
@@ -52,9 +52,9 @@
       </table>
     </div>
     <div class="dialog-buttons">
-        <button class="dialog-cancel-button">Cancel</button>
+        <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
         <button class="dialog-assign-button">Assign</button>
     </div>
-    <button class="dialog-close-button" (click)="closeDialog()">Close</button>
+    <!-- <button class="dialog-close-button" (click)="closeDialog()">Close</button> -->
   </div>
   
