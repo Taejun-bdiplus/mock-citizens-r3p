@@ -1,0 +1,103 @@
+<div class="full-width">
+<div class="search-title-width">
+  <p class="entries-font">Show</p>
+<input matInput  type="text" class="search-container-field-container"  placeholder="" value=""  [(ngModel)]="pageSize">
+  <p class="entries-font">Entries</p>
+   <button class="go-button">Go</button>
+</div>
+<div class="example-full-width">
+  <label class="search-field-title">Enter Loan #: </label>
+  
+    <!-- <input type="text" placeholder="Search by Name"> -->
+    <input matInput (change)="setInputValue($event)" class="search-container-field" >
+    <button class="header-left-upload">Search</button>
+
+    <button class="header-right-advanced-search" (click)="show = !show">{{show ? 'Advanced Search' : 'Advanced Search'}}</button>
+    
+    <br>
+ 
+</div>
+
+</div>
+
+<div class="center-container">
+  <div *ngIf="show" class="center-container">
+    <mat-card class="center-advanced">
+      <mat-card-title class="advanced-search-card-header">Advanced Search</mat-card-title>
+      <mat-card-content class="advanced-search-open-other">
+    <input type="text"  class="search-container-field" placeholder="" [(ngModel)]="advancedSearchTerm" (input)="applyAdvancedFilter(advancedSearchTerm)">
+    <button class="header-left-upload">Search</button>
+    <button class="header-right-advanced-search" [disabled]="show ? true : false" (click)="show = !show">{{show ? 'Clear' : 'Advanced Search'}}</button>
+  </mat-card-content>
+    </mat-card>
+  </div>
+<div class="example-container">
+  <div class="advanced-search-open">
+  <mat-table [dataSource]="dataSource" matSort class="" >
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="loanNumber" >
+      <th *matHeaderCellDef mat-sort-header class="mat-header">Loan Number</th>
+      <mat-cell  *matCellDef="let row" class="column-line"> {{row.loanNumber}} </mat-cell>
+    </ng-container>
+
+   <!-- Name Column -->
+   <ng-container matColumnDef="borrowerName">
+    <th *matHeaderCellDef mat-sort-header class="mat-header">Borrower Name</th>
+    <mat-cell *matCellDef="let row"> {{row.borrowerName}} </mat-cell>
+  </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="investor">
+      <th *matHeaderCellDef mat-sort-header class="mat-header">Investor</th>
+      <mat-cell *matCellDef="let row"> {{row.investor}}</mat-cell>
+    </ng-container>
+
+ 
+    <!-- Color Column -->
+    <ng-container matColumnDef="status">
+      <th *matHeaderCellDef mat-sort-header class="mat-header"> Status</th>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.status}} </mat-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="context">
+      <th *matHeaderCellDef mat-sort-header class="mat-header" >Context</th>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.context}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="disposalDescription" >
+      <th *matHeaderCellDef mat-sort-header class="mat-header"> Disposal Description</th>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.disposalDescription}} </mat-cell>
+    </ng-container>
+   
+    <ng-container matColumnDef="recievedDate">
+      <th *matHeaderCellDef mat-sort-header class="mat-header">Recieved Date</th>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.recievedDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="dueDate">
+      <th *matHeaderCellDef mat-sort-header class="mat-header">Due Date</th>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.dueDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="auditor">
+      <th *matHeaderCellDef mat-sort-header class="mat-header">Auditor</th>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.auditor}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+  </div>
+  <div class="items-per-page">
+  <mat-paginator [pageSize]="pageSize"
+></mat-paginator>
+  </div>
+</div>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
