@@ -13,10 +13,6 @@ import { MatListModule } from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-<<<<<<< HEAD
-// import { MaterialComponentsModule } from './search/test/material-components/material-components.module';
-=======
->>>>>>> d95cba38516ae19d1773b3bb51d9f75b7a82b396
 import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
