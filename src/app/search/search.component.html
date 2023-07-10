@@ -76,14 +76,7 @@
     </table>
   </div>
    <div class="items-per-page">
-<mat-paginator 
-#paginatorPageSize
-[pageSize]="pageSize"
-(page)="pageEvent = $event"
-
->
-
-</mat-paginator>
+    <mat-paginator #paginatorPageSize #paginator [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = $event"></mat-paginator>
 </div>
   </div>
 
