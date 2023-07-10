@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 // Import Material UI modules
+
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -12,7 +13,10 @@ import { MatListModule } from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+<<<<<<< HEAD
 // import { MaterialComponentsModule } from './search/test/material-components/material-components.module';
+=======
+>>>>>>> d95cba38516ae19d1773b3bb51d9f75b7a82b396
 import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,11 +31,12 @@ import { AssignDialogComponent } from './assign-dialog/assign-dialog.component';
 import { MatPaginator, MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-// import { SimpleMatTableComponent } from './search/test/simple-mat-table.component';
 import { CommonModule } from '@angular/common';
+import { TableOverviewExample } from './search/test/table-overview-example/table-overview-example';
 @NgModule({
   declarations: [
     AppComponent,
+    TableOverviewExample,
     DefaultLayoutComponent,
     AppSidebarComponent,
     AppHeaderComponent,
@@ -40,7 +45,7 @@ import { CommonModule } from '@angular/common';
     AnalystsComponent,
     ReportsComponent,
     AssignDialogComponent,
-    // SimpleMatTableComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
+<table-overview-example></table-overview-example>
+
 <div class="center-div">
 <div class="search">
 <p class="search-title">Search</p>
-
 <div class="full-width">
   <div class="search-title-width">
     <p class="entries-font">Show</p>
@@ -40,7 +41,7 @@
     </mat-card>
   </div>
   <div  class="advanced-search-open">
-    <table > 
+    <table  > 
     
       <thead>
         <tr>
@@ -76,7 +77,14 @@
     </table>
   </div>
    <div class="items-per-page">
-    <mat-paginator #paginatorPageSize #paginator [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = $event"></mat-paginator>
+<mat-paginator 
+#paginator
+[pageSize]="pageSize"
+(page)="pageEvent = $event"
+
+>
+
+</mat-paginator>
 </div>
   </div>
 

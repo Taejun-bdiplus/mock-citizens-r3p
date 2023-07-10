@@ -1,3 +1,23 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -82,7 +102,7 @@ display: flex;
 }
 
 .search-table-header {
-  background-color: #008555;
+  background: #008555;
 }
 .table-container {
 
@@ -131,17 +151,25 @@ display: flex;
   }
   
   .search-container-field {
-    border: 1px solid black; /* Add border to the search input */
-    background-color: white;
-    padding: 5px; /* Add padding to the search input */
     
+    background-color: white;
     width: 20%; /* Increase the width of the search input */
     border-radius: 8px;
+    border: 1px solid black;
   }
   .example-full-width{
     justify-content: end;
     display: flex;
     flex-direction: row;
+   
+  }
+  .mat-header{
+    text-align: center;
+    white-space: nowrap;
+    justify-content: center;
+    color: white; /* Column header text color */
+    background-color: #008555; /* Default background color for column headers */
+    border: 1px solid black; /* Border style for column headers */
    
   }
   .center-container{
@@ -156,7 +184,7 @@ display: flex;
     
   }
   .center-advanced{
-    margin-top: 1rem;;
+    margin-top: 1rem;
     justify-content: center;
     
   }
@@ -173,7 +201,6 @@ display: flex;
     padding: 5px; /* Add padding to the search input */
     margin-right: 5px; /* Add some spacing between the search input and button */
     width: 300px; /* Increase the width of the search input */
-    border: 2px solid #008555;
     padding: 10px 20px;
     border-radius: 8px;
   }
@@ -241,13 +268,19 @@ display: flex;
     border-collapse: collapse;
     /* max-width: 150%; */
   }
-  
+  .column-line {
+    padding: 10px;
+    text-align: left;
+   /* Default background color for column headers */
+  /*  border: 1px solid black;  */
+    
+  }
   th {
     padding: 10px;
     text-align: left;
     color: white; /* Column header text color */
     background-color: #f2f2f2; /* Default background color for column headers */
-    border: 2px solid black; /* Border style for column headers */
+    border: 1px solid black; /* Border style for column headers */
     text-align: center;
   }
   
@@ -274,7 +307,7 @@ display: flex;
     border-left-color: black;
     border-right-color: black;
     border-top-color: white;
-    border-top-color: white;
+    border-bottom-color: white;
     border-width: 1px;
     border-style: solid;
   }
@@ -287,7 +320,7 @@ display: flex;
     border-left-color: black;
     border-right-color: black;
     border-top-color: white;
-    border-top-color: white;
+    border-bottom-color: white;
     border-width: 1px;
     border-style: solid;
   }

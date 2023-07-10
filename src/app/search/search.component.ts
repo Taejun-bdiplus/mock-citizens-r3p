@@ -2,6 +2,7 @@
 
 import { Component , HostListener, ViewChild, OnInit, AfterViewInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSort } from '@angular/material/sort';
 import { AssignDialogComponent } from '../assign-dialog/assign-dialog.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -231,7 +232,7 @@ export class SearchComponent implements OnInit {
   constructor(private dialog: MatDialog) {}
   @ViewChild('paginator') paginator: any = MatPaginator;
   @ViewChild('paginatorPageSize') paginatorPageSize: any = MatPaginator;
-
+  @ViewChild('matSort') sort: any = MatSort;
   pageSize = 10; 
   pageEvent: any = PageEvent;
   show = true;
@@ -252,5 +253,7 @@ export class SearchComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSourceWithPageSize.paginator = this.paginatorPageSize;
     console.log(this.dataSourceWithPageSize.paginator )
+
+    this.dataSource.sort = this.sort;
   }
 }
