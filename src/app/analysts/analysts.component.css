@@ -52,7 +52,7 @@
     min-height: 100vh;
     margin-left: 100px;
     margin-right: auto;
-    max-width: 600px; 
+    max-width: 700px; 
     white-space: nowrap;
   }
   
@@ -62,9 +62,17 @@
   }
   
   table {
-    width: 150%; /* Increase the width of the table */
+    width: 100%; /* Increase the width of the table */
     border-collapse: collapse;
+    background-color: white;
     /* max-width: 150%; */
+  }
+  
+  .table-containerr {
+    max-height: 500px; /* Adjust the max-height as per your requirement */
+    overflow-y: auto;
+    width: 120%;
+    border-radius: 8px 8px 0 0;
   }
   
   th {
@@ -113,4 +121,26 @@
     line-height: 40px;
   }
   
+  button {
+    border: none;
+  }
+
+  .gray-row {
+    background-color: gray;
+  }
+
+  .activate{
+    color: black;
+    position: relative;
+    /* padding: 0px; */
+    /* background-color: gray; */
+  }
+
+  .deactivate{
+    color: black;
+    position: relative;
+    position: static;
+    /* padding: 0px; */
+    /* background-color: gray; */
+  }
   

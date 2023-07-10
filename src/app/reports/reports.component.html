@@ -1,1 +1,27 @@
-<p>reports works!</p>
+<link rel="stylesheet" href="reports.component.css">
+<h1>Reports</h1>
+<p>Template</p>
+<div class="template">
+    <div class="template-div">
+
+        <div class="row" *ngFor="let item of items">
+          <span class="text">{{ item }}</span>
+          <button class="button" (click)="handleButtonClick(item)">Open</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="card-container">
+    <div class="card" *ngFor="let card of cards; let i = index">
+        <div class="card-content">
+            <h2 class="card-heading">{{ card.mainHeading }}</h2>
+            <p class="card-text">{{ card.secondHeading }}</p>
+          <div class="linear-scale">
+            <input type="range" min="0" max="15" value="0" class="scale-input" />
+          </div>
+          <button class="card-button">Show more -></button>
+        </div>
+</div>
+  
+  
