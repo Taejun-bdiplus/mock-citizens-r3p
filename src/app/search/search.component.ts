@@ -252,7 +252,6 @@ export class SearchComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSourceWithPageSize.paginator = this.paginatorPageSize;
-    console.log(this.dataSourceWithPageSize.paginator )
 
     this.dataSource.sort = this.sort;
   }
