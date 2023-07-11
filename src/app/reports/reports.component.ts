@@ -12,7 +12,7 @@ export class ReportsComponent {
 
   constructor(private dialog: MatDialog) {}
 
-  items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  items: string[] = ['Ad Hoc Report', 'Canned Report', 'FMLA Report', 'Report', 'Report'];
 
   handleButtonClick(item: string) {
     if (item === this.items[0]) { // Check if it is the first row
@@ -49,6 +49,16 @@ export class ReportsComponent {
     { mainHeading: '10', secondHeading: 'Pending Repurchases' },
     { mainHeading: '0', secondHeading: 'Pending MI QAs' }
   ];
+
+  
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    console.log('button is clicked but it is not going up');
+  }
+  
   
 
 }

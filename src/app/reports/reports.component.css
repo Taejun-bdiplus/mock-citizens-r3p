@@ -2,13 +2,17 @@
     display: block;
     background-color: #ECF2F1;
     margin: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 10px;
   }
+
 
 .template {
     width: 100%;
     background-color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
   }
 
 .template-div {
@@ -22,7 +26,7 @@
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    border-bottom: 1px solid #000000;
+    border-bottom: 2px solid #868383;
     /* border-bottom-width: 0; */
   }
 
@@ -33,6 +37,7 @@
   
   .text {
     align-self: flex-start;
+    font-weight: 500;
   }
   
   .button {
@@ -42,8 +47,8 @@
     border-radius: 5px;
     color: white;
     border: none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
   }
 
 
@@ -62,9 +67,13 @@
   .card {
     width: calc(20% - 10px);
     background-color: #FFFFFF;
-    border: 1px solid #000000;
+    border: 1px solid whitesmoke;
     padding: 10px;
     margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
   }
   
   .card-content {
@@ -73,11 +82,14 @@
 
 
   .card-heading {
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: 500;
   }
   
   .card-text {
     font-size: 16px;
+    font-weight: 400;
+    color: gray;
   }
   
   .linear-scale {
@@ -89,5 +101,35 @@
   }
   
   .card-button {
+    margin-top: 10px;
+    justify-content: end;
+    display: flex;
     align-self: flex-end;
+    cursor: pointer;
   }
+
+  .card-buttonn {
+    color: rgb(7, 74, 7);
+    font-weight: 600;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+  }
+
+
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    background-color: green;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  

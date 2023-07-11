@@ -113,7 +113,7 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    display: flex;
+    /* display: flex; */
   }
   
   .scroll-top-btn i {

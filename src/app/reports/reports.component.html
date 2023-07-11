@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="reports.component.css">
+<!-- <link rel="stylesheet" href="reports.component.css"> -->
 <h1>Reports</h1>
 <p>Template</p>
 <div class="template">
@@ -20,8 +20,18 @@
           <div class="linear-scale">
             <input type="range" min="0" max="15" value="0" class="scale-input" />
           </div>
-          <button class="card-button">Show more -></button>
+          <div class="card-button">
+            <button class="card-buttonn">
+              See more <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
 </div>
+
+
+<button class="scroll-to-top" (click)="scrollToTop()">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
   
   
