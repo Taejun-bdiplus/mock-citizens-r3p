@@ -3,7 +3,7 @@
   <p class="entries-font">Show</p>
 <input matInput  type="text" class="search-container-field-container"  placeholder="" value=""  [(ngModel)]="pageSize">
   <p class="entries-font">Entries</p>
-   <button class="go-button">Go</button>
+   <button class="go-button" >Go</button>
 </div>
 <div class="example-full-width">
   <label class="search-field-title">Enter Loan #: </label>
@@ -25,76 +25,161 @@
     <mat-card class="center-advanced">
       <mat-card-title class="advanced-search-card-header">Advanced Search</mat-card-title>
       <mat-card-content class="advanced-search-open-other">
-    <input type="text"  class="search-container-field" placeholder="" [(ngModel)]="advancedSearchTerm" (input)="applyAdvancedFilter(advancedSearchTerm)">
-    <button class="header-left-upload">Search</button>
-    <button class="header-right-advanced-search" [disabled]="show ? true : false" (click)="show = !show">{{show ? 'Clear' : 'Advanced Search'}}</button>
+        
+       <div class="formFormat">
+        <mat-form-field  appearance="outline">
+          <label  class="label">FAMC Loan #</label>
+    
+        <input class="advanced-search-container-field"  matInput  placeholder="" [(ngModel)]="filterValues.loanNumber"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">CFG Loan #</label>
+    
+          <input  class="advanced-search-container-field"   matInput [(ngModel)]="filterValues.borrowerName"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Servicer Loan #</label>
+    
+          <input class="advanced-search-container-field" matInput [(ngModel)]="filterValues.investor"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Investor Loan #</label>
+    
+          <input  class="advanced-search-container-field" matInput [(ngModel)]="filterValues.status"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Case #</label>
+    
+          <input class="advanced-search-container-field" matInput [(ngModel)]="filterValues.context"  >
+        </mat-form-field>
+        
+       </div>
+       <div class="formFormat">
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Borrower 1st Name</label>
+    
+          <input  class="advanced-search-container-field" matInput  [(ngModel)]="filterValues.disposalDescription"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Borrower Last Name</label>
+    
+          <input  class="advanced-search-container-field" matInput  [(ngModel)]="filterValues.recievedDate"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Borrower Last 4(SSN)</label>
+    
+          <input matInput class="advanced-search-container-field"  [(ngModel)]="filterValues.dueDate"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Hashtag</label>
+    
+          <input matInput  class="advanced-search-container-field"  [(ngModel)]="filterValues.auditor"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">MI Certificate #</label>
+    
+          <input class="advanced-search-container-field"  matInput [(ngModel)]="advancedFilterValues.famcLoanNumber"  >        
+        </mat-form-field>
+       </div>
+     
+       <div class="formFormatSpecial">
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Address</label>
+    
+          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedSearchTerm"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">City</label>
+    
+          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedSearchTerm"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">State</label>
+    
+          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedSearchTerm"  >
+        </mat-form-field>
+        <mat-form-field class="search__form_field" appearance="outline">
+          <label class="label">Zip</label>
+    
+          <input matInput class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedSearchTerm"  >
+        </mat-form-field>
+        <div class="advanced-search-buttons-container">
+          <button class="header-left-upload" (click)="normalSearchOnClick">Search</button>
+          <button class="clearButton" (click)="clearAdvancedSearch()">Clear</button>
+         </div>
+       </div>
+      
+   
   </mat-card-content>
     </mat-card>
   </div>
-<div class="example-container">
+
   <div class="advanced-search-open">
   <mat-table [dataSource]="dataSource" matSort class="" >
 
     <!-- ID Column -->
     <ng-container matColumnDef="loanNumber" >
-      <th *matHeaderCellDef mat-sort-header class="mat-header">Loan Number</th>
-      <mat-cell  *matCellDef="let row" class="column-line"> {{row.loanNumber}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header  >Loan Number</mat-header-cell>
+      <mat-cell  *matCellDef="let row" class="cells"> {{row.loanNumber}} </mat-cell>
     </ng-container>
 
    <!-- Name Column -->
    <ng-container matColumnDef="borrowerName">
-    <th *matHeaderCellDef mat-sort-header class="mat-header">Borrower Name</th>
-    <mat-cell *matCellDef="let row"> {{row.borrowerName}} </mat-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header >Borrower Name</mat-header-cell>
+    <mat-cell *matCellDef="let row" class="cells"> {{row.borrowerName}} </mat-cell>
   </ng-container>
 
     <!-- Progress Column -->
-    <ng-container matColumnDef="investor">
-      <th *matHeaderCellDef mat-sort-header class="mat-header">Investor</th>
-      <mat-cell *matCellDef="let row"> {{row.investor}}</mat-cell>
+    <ng-container matColumnDef="investor" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="header">Investor</mat-header-cell>
+      <mat-cell *matCellDef="let row" class="cells"> {{row.investor}}</mat-cell>
     </ng-container>
 
  
     <!-- Color Column -->
     <ng-container matColumnDef="status">
-      <th *matHeaderCellDef mat-sort-header class="mat-header"> Status</th>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.status}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header > Status</mat-header-cell>
+      <mat-cell *matCellDef="let row" class="cells"> {{row.status}} </mat-cell>
     </ng-container>
 
     <!-- Color Column -->
     <ng-container matColumnDef="context">
-      <th *matHeaderCellDef mat-sort-header class="mat-header" >Context</th>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.context}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header >Context</mat-header-cell>
+      <mat-cell *matCellDef="let row" class="cells"> {{row.context}} </mat-cell>
     </ng-container>
   
     <ng-container matColumnDef="disposalDescription" >
-      <th *matHeaderCellDef mat-sort-header class="mat-header"> Disposal Description</th>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.disposalDescription}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Disposal Description</mat-header-cell>
+      <mat-cell *matCellDef="let row" class="cells"> {{row.disposalDescription}} </mat-cell>
     </ng-container>
    
     <ng-container matColumnDef="recievedDate">
-      <th *matHeaderCellDef mat-sort-header class="mat-header">Recieved Date</th>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.recievedDate}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Recieved Date</mat-header-cell>
+      <mat-cell *matCellDef="let row" class="cells"> {{row.recievedDate}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="dueDate">
-      <th *matHeaderCellDef mat-sort-header class="mat-header">Due Date</th>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.dueDate}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header >Due Date</mat-header-cell>
+      <mat-cell *matCellDef="let row" class="cells"> {{row.dueDate}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="auditor">
-      <th *matHeaderCellDef mat-sort-header class="mat-header">Auditor</th>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.auditor}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header >Auditor</mat-header-cell>
+      <mat-cell *matCellDef="let row" class="cells"> {{row.auditor}} </mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    <mat-header-row class="header" *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" >
     </mat-row>
   </mat-table>
   </div>
   <div class="items-per-page">
-  <mat-paginator [pageSize]="pageSize"
-></mat-paginator>
-  </div>
+  <mat-paginator role="group" [pageSize]="pageSize">
+  
+</mat-paginator>
+
+  <button value="red" onabort="" >red</button>
+ 
 </div>
 
 
