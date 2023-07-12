@@ -27,18 +27,6 @@ export class ReportsComponent {
     }
   }
 
-
-  // cards: string[] = [
-  //   '0',
-  //   '0',
-  //   '20',
-  //   '30',
-  //   '12',
-  //   '28',
-  //   '10',
-  //   '0'
-  // ];
-
   cards: { mainHeading: string, secondHeading: string }[] = [
     { mainHeading: '0', secondHeading: 'Pending MI FERs' },
     { mainHeading: '0', secondHeading: 'Pending MI QAs' },
@@ -58,6 +46,19 @@ export class ReportsComponent {
     });
     console.log('button is clicked but it is not going up');
   }
+
+  showTable: boolean = false;
+
+
+  reportsTableData = [
+    { column1: 'Row 1 - Column 1', column2: 'Row 1 - Column 2', column3: 'Row 1 - Column 3', column4: 'Row 1 - Column 4', column5: 'Row 1 - Column 5' },
+    { column1: 'Row 2 - Column 1', column2: 'Row 2 - Column 2', column3: 'Row 2 - Column 3', column4: 'Row 2 - Column 4', column5: 'Row 2 - Column 5' },
+    { column1: 'Row 3 - Column 1', column2: 'Row 3 - Column 2', column3: 'Row 3 - Column 3', column4: 'Row 3 - Column 4', column5: 'Row 3 - Column 5' },
+    { column1: 'Row 1 - Column 1', column2: 'Row 1 - Column 2', column3: 'Row 1 - Column 3', column4: 'Row 1 - Column 4', column5: 'Row 1 - Column 5' },
+    { column1: 'Row 2 - Column 1', column2: 'Row 2 - Column 2', column3: 'Row 2 - Column 3', column4: 'Row 2 - Column 4', column5: 'Row 2 - Column 5' },
+    { column1: 'Row 3 - Column 1', column2: 'Row 3 - Column 2', column3: 'Row 3 - Column 3', column4: 'Row 3 - Column 4', column5: 'Row 3 - Column 5' },
+    // Add more rows as needed
+  ];
   
   
 
