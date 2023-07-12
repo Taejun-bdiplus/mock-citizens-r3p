@@ -27,6 +27,8 @@ import { AssignDialogComponent } from './assign-dialog/assign-dialog.component';
 import { MatPaginator, MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { CustomPaginator } from './search/CustomPaginator';
 import { CommonModule } from '@angular/common';
 import { TableOverviewExample } from './search/test/table-overview-example/table-overview-example';
 @NgModule({
@@ -50,6 +52,7 @@ import { TableOverviewExample } from './search/test/table-overview-example/table
     FormsModule,
     CommonModule,
     MatPaginatorModule,
+    MatFormFieldModule,
     // Add Material UI modules to the imports array
     MatInputModule,
     MatButtonModule,
@@ -61,13 +64,17 @@ import { TableOverviewExample } from './search/test/table-overview-example/table
     MatIconModule,
     MatDialogModule,
     MatTableModule,
+    
    MatSortModule,
    MatSelectModule
     
   ],
   
  
-  providers: [],
+  providers: [ {
+    provide: MatPaginatorIntl,
+    useClass: CustomPaginator
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

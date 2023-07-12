@@ -10,7 +10,7 @@
 }
 
 .mat-form-field {
-  font-size: 14px;
+  font-size: 1rem;
   width: 100%;
 }
 
@@ -95,9 +95,10 @@ display: flex;
   width: 100%;
 }
 .label {
-  background: white;
   display: flex;
-  
+  margin-top: 20px;
+  font-weight: 700;
+  color:#008555
 }
 
 .search-table-header {
@@ -171,11 +172,16 @@ display: flex;
   .advanced-search-container-field {
     background-color: #D5ECE7;
     width: 245px; /* Increase the width of the search input */
+    border-width: 2px;
     border-radius: 8px;
-    height: 34px;
     margin: 5px;
-    border: 1px solid #008555;
+    color:  #008555;
   }
+  .advanced-search-container-field-border {
+
+    color:  #008555;
+  }
+  
   .example-full-width{
     justify-content: end;
     display: flex;
@@ -259,6 +265,7 @@ display: flex;
     border: none;
     border-radius: 4px;
     white-space: nowrap;
+    margin-bottom: 10px;
   }
   .advanced-search-card-header{
     background-color: #008555;
@@ -351,6 +358,7 @@ display: flex;
     padding-top: 15px;
     flex-direction: row;
     justify-content: center;
+    gap:20px;
     align-items: center;
     background-color: white;
     border-left-color: black;
@@ -421,5 +429,5 @@ display: flex;
   } .formFormatSpecial{
     display:flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-top: 1rem;
   }

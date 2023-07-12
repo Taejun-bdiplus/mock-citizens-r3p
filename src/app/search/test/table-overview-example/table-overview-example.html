@@ -1,9 +1,9 @@
 <div class="full-width">
 <div class="search-title-width">
   <p class="entries-font">Show</p>
-<input matInput  type="text" class="search-container-field-container"  placeholder="" value=""  [(ngModel)]="pageSize">
+<input matInput  type="text" class="search-container-field-container"  placeholder=""  [(ngModel)]="pageSize">
   <p class="entries-font">Entries</p>
-   <button class="go-button" >Go</button>
+   <button class="go-button" [value]="pageSize"  >Go</button>
 </div>
 <div class="example-full-width">
   <label class="search-field-title">Enter Loan #: </label>
@@ -26,87 +26,87 @@
       <mat-card-title class="advanced-search-card-header">Advanced Search</mat-card-title>
       <mat-card-content class="advanced-search-open-other">
         
-       <div class="formFormat">
-        <mat-form-field  appearance="outline">
-          <label  class="label">FAMC Loan #</label>
+       <p class="formFormat">
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">FAMC Loan #</mat-label>
     
-        <input class="advanced-search-container-field"  matInput  placeholder="" [(ngModel)]="filterValues.loanNumber"  >
+        <input class="advanced-search-container-field"  type matInput  placeholder="" [(ngModel)]="filterValues.loanNumber"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">CFG Loan #</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label  class="label">CFG Loan #</mat-label>
     
-          <input  class="advanced-search-container-field"   matInput [(ngModel)]="filterValues.borrowerName"  >
+          <input  class="advanced-search-container-field"   matInput [(ngModel)]="filterValues.investor"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Servicer Loan #</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label class="label">Servicer Loan #</mat-label>
     
-          <input class="advanced-search-container-field" matInput [(ngModel)]="filterValues.investor"  >
+          <input class="advanced-search-container-field" matInput [(ngModel)]="advancedFilterValues.servicerLoanNumber"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Investor Loan #</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label class="label">Investor Loan #</mat-label>
     
-          <input  class="advanced-search-container-field" matInput [(ngModel)]="filterValues.status"  >
+          <input  class="advanced-search-container-field" matInput [(ngModel)]="advancedFilterValues.investorLoanNumber"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Case #</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label class="label">Case #</mat-label>
     
-          <input class="advanced-search-container-field" matInput [(ngModel)]="filterValues.context"  >
+          <input class="advanced-search-container-field" matInput [(ngModel)]="advancedFilterValues.caseNumber"  >
         </mat-form-field>
         
-       </div>
+      </p>
        <div class="formFormat">
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Borrower 1st Name</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label  class="label">Borrower 1st Name</mat-label>
     
-          <input  class="advanced-search-container-field" matInput  [(ngModel)]="filterValues.disposalDescription"  >
+          <input  class="advanced-search-container-field" matInput  [(ngModel)]="advancedFilterValues.borrowerFirstName"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Borrower Last Name</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">Borrower Last Name</mat-label>
     
-          <input  class="advanced-search-container-field" matInput  [(ngModel)]="filterValues.recievedDate"  >
+          <input  class="advanced-search-container-field" matInput  [(ngModel)]="advancedFilterValues.borrowerLastName"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Borrower Last 4(SSN)</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">Borrower Last 4(SSN)</mat-label>
     
-          <input matInput class="advanced-search-container-field"  [(ngModel)]="filterValues.dueDate"  >
+          <input matInput class="advanced-search-container-field"  [(ngModel)]="advancedFilterValues.borrowerLastFourSSN"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Hashtag</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">Hashtag</mat-label>
     
-          <input matInput  class="advanced-search-container-field"  [(ngModel)]="filterValues.auditor"  >
+          <input matInput  class="advanced-search-container-field"  [(ngModel)]="advancedFilterValues.hashtag"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">MI Certificate #</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">MI Certificate #</mat-label>
     
-          <input class="advanced-search-container-field"  matInput [(ngModel)]="advancedFilterValues.famcLoanNumber"  >        
+          <input class="advanced-search-container-field"  matInput [(ngModel)]="advancedFilterValues.miCertificateNumber"  >        
         </mat-form-field>
        </div>
      
        <div class="formFormatSpecial">
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Address</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">Address</mat-label>
     
-          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedSearchTerm"  >
+          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedFilterValues.address"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">City</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">City</mat-label>
     
-          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedSearchTerm"  >
+          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedFilterValues.city"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">State</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">State</mat-label>
     
-          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedSearchTerm"  >
+          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedFilterValues.state"  >
         </mat-form-field>
-        <mat-form-field class="search__form_field" appearance="outline">
-          <label class="label">Zip</label>
+        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
+          <mat-label   class="label">Zip</mat-label>
     
-          <input matInput class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedSearchTerm"  >
+          <input matInput class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedFilterValues.zip"  >
         </mat-form-field>
-        <div class="advanced-search-buttons-container">
-          <button class="header-left-upload" (click)="normalSearchOnClick">Search</button>
+        <p class="advanced-search-buttons-container">
+          <button class="header-left-upload" (click)="applyFilter" >Search</button>
           <button class="clearButton" (click)="clearAdvancedSearch()">Clear</button>
-         </div>
+        </p>
        </div>
       
    
@@ -174,11 +174,13 @@
   </mat-table>
   </div>
   <div class="items-per-page">
+    
   <mat-paginator role="group" [pageSize]="pageSize">
   
 </mat-paginator>
-
-  <button value="red" onabort="" >red</button>
+<div>
+  {{pageIndex + 1}}
+</div>
  
 </div>
 

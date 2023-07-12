@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 
 @Injectable()
-export class MatPaginatorIntlCro extends MatPaginatorIntl {
+export class CustomPaginator extends MatPaginatorIntl {
  public override itemsPerPageLabel : string = '';
  public override nextPageLabel  : string    = 'Slijedeća stranica';
  public override  previousPageLabel  : string = 'Prethodna stranica';
