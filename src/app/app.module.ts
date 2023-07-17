@@ -32,8 +32,8 @@ import { CustomPaginator } from './pages/main-body/search/CustomPaginator';
 import { CommonModule } from '@angular/common';
 import { TableOverviewExample } from './pages/main-body/search/test/table-overview-example/table-overview-example';
 import { MatMenuModule } from '@angular/material/menu';
-import { ReminderComponent } from './reminder/reminder.component';
-import { NotificationComponent } from './notification/notification.component';
+import { ReminderComponent } from './pages/app-header/reminder/reminder.component';
+import { NotificationComponent } from './pages/app-header/notification/notification.component';
 
 @NgModule({
   declarations: [
