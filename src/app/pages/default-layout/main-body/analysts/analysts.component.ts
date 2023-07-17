@@ -17,7 +17,7 @@
 
 import { Component , HostListener} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AssignDialogComponent } from '../../../dialogs/assign-dialog/assign-dialog.component';
+import { AssignDialogComponent } from '../../../../dialogs/assign-dialog/assign-dialog.component';
 
 interface tableData {
   column1: string;

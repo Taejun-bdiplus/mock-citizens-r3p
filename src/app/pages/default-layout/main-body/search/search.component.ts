@@ -3,7 +3,7 @@
 import { Component , HostListener, ViewChild, OnInit, AfterViewInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
-import { AssignDialogComponent } from '../../../dialogs/assign-dialog/assign-dialog.component';
+import { AssignDialogComponent } from '../../../../dialogs/assign-dialog/assign-dialog.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { PageEvent } from '@angular/material/paginator';
