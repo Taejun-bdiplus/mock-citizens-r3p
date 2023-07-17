@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DefaultLayoutComponent } from './default-layout/default-layout.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SearchComponent } from './search/search.component';
-import { AnalystsComponent } from './analysts/analysts.component';
-import { ReportsComponent } from './reports/reports.component';
+import { DefaultLayoutComponent } from './pages/default-layout/default-layout.component';
+import { DashboardComponent } from './pages/main-body/dashboard/dashboard.component';
+import { SearchComponent } from './pages/main-body/search/search.component';
+import { AnalystsComponent } from './pages/main-body/analysts/analysts.component';
+import { ReportsComponent } from './pages/main-body/reports/reports.component';
 
 const routes: Routes = [
   {

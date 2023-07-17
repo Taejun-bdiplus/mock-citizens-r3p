@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AssignDialogComponent } from '../assign-dialog/assign-dialog.component'; // Replace with your actual dialog component
+import { AssignDialogComponent } from '../../../dialogs/assign-dialog/assign-dialog.component'; // Replace with your actual dialog component
 
 
 @Component({
