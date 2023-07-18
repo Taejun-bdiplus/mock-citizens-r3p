@@ -34,6 +34,7 @@ import { TableOverviewExample } from './pages/default-layout/main-body/search/te
 import { MatMenuModule } from '@angular/material/menu';
 import { ReminderComponent } from './pages/default-layout/app-header/reminder/reminder.component';
 import { NotificationComponent } from './pages/default-layout/app-header/notification/notification.component';
+import { LoanDetailComponent } from './pages/default-layout/main-body/loan-detail/loan-detail.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { NotificationComponent } from './pages/default-layout/app-header/notific
     AnalystsComponent,
     ReportsComponent,
     AssignDialogComponent,
+    LoanDetailComponent,
     
   ],
   imports: [
@@ -57,7 +59,7 @@ import { NotificationComponent } from './pages/default-layout/app-header/notific
     CommonModule,
     ReminderComponent,
     NotificationComponent,
-    
+
     // Add Material UI modules to the imports array
     MatInputModule,
     MatButtonModule,
