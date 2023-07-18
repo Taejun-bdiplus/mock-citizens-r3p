@@ -1,1 +1,56 @@
-<img class="header-right-notification" src="../assets/images/notification_bell.png" />
+<button mat-button [matMenuTriggerFor]="menu">
+    <img class="notification-icon" src="../assets/images/notification_bell.png" />
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item class="first">
+    <div class="first-row">
+        <div class="first-row-left">
+            <div class="first-row-left-title">
+                - Assigned <strong>Loan#</strong>
+            </div>
+            <div class="first-row-left-loan">1234567890</div>
+        </div>
+        <div class="first-row-right">
+            <div class="first-row-right-text">See More</div>
+            <div style="display: flex; align-items: center;">
+                <mat-icon class="first-row-right-icon">arrow_forward</mat-icon>
+            </div>
+        </div>
+    </div>
+  </button>
+  
+  <button mat-menu-item>
+    <div class="second-row">
+        <div class="second-row-left">
+            <div class="second-row-left-title">
+                - Jane Doe updated your note
+            </div>
+        </div>
+        <div class="second-row-right">
+            <div class="second-row-right-text">See More</div>
+            <div style="display: flex; align-items: center;">
+                <mat-icon class="second-row-right-icon">arrow_forward</mat-icon>
+            </div>
+        </div>
+    </div>
+  </button>
+
+  <button mat-menu-item class="third">
+    <div class="third-row">
+        <div class="third-row-left">
+            <div class="third-row-left-title">
+                - Assigned <strong>Loan#</strong>
+            </div>
+            <div class="third-row-left-loan">1234567890</div>
+        </div>
+        <div class="third-row-right">
+            <div class="third-row-right-text">See More</div>
+            <div style="display: flex; align-items: center;">
+                <mat-icon class="third-row-right-icon">arrow_forward</mat-icon>
+            </div>
+        </div>
+    </div>
+  </button>
+
+
+</mat-menu>

@@ -39,3 +39,11 @@
   height: 70%;
   margin-bottom: 4px;
 }
+
+.app-reminder {
+  align-self: center;
+}
+.app-notification {
+  align-self: center;
+  margin-bottom: 0.3125rem;
+}
