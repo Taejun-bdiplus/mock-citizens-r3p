@@ -30,15 +30,6 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
-.header-right-reminder {
-  align-self: center;
-  height: 70%;
-}
-.header-right-notification {
-  align-self: center;
-  height: 70%;
-  margin-bottom: 4px;
-}
 
 .app-reminder {
   align-self: center;

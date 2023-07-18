@@ -47,7 +47,7 @@ import { NotificationComponent } from './pages/default-layout/app-header/notific
     AnalystsComponent,
     ReportsComponent,
     AssignDialogComponent,
-    NotificationComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -55,8 +55,9 @@ import { NotificationComponent } from './pages/default-layout/app-header/notific
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    
     ReminderComponent,
+    NotificationComponent,
+    
     // Add Material UI modules to the imports array
     MatInputModule,
     MatButtonModule,
