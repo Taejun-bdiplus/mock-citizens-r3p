@@ -1,5 +1,10 @@
 <button mat-button [matMenuTriggerFor]="menu">
-    <img class="reminder-icon" src="../assets/images/reminder.png" />
+    <div *ngIf="hasReminder" (click)="imageClicked()">
+        <img class="reminder-icon" src="../assets/images/reminder_red_dot.png" />
+    </div>
+    <div *ngIf="!hasReminder">
+        <img class="reminder-icon" src="../assets/images/reminder.png" />
+    </div>
 </button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item class="first">
