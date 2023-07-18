@@ -5,6 +5,7 @@ import { DashboardComponent } from './pages/default-layout/main-body/dashboard/d
 import { SearchComponent } from './pages/default-layout/main-body/search/search.component';
 import { AnalystsComponent } from './pages/default-layout/main-body/analysts/analysts.component';
 import { ReportsComponent } from './pages/default-layout/main-body/reports/reports.component';
+import { LoanDetailComponent } from './pages/default-layout/main-body/loan-detail/loan-detail.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'search', component: SearchComponent },
       { path: 'analysts', component: AnalystsComponent },
-      { path: 'reports', component: ReportsComponent }
+      { path: 'reports', component: ReportsComponent },
+      { path: 'loanDetail', component: LoanDetailComponent }
     ]
   }
 ];
