@@ -38,7 +38,8 @@ import { LoanDetailComponent } from './pages/main-layout/main-body/loan-detail/l
 
 
 //Providers 
-import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator"
+import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator";
+import { AddManuallyDialogComponent } from './add-manually-dialog/add-manually-dialog.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/t
     SearchComponent,
     AssignDialogComponent,
     TableOverviewExample,
-    LoanDetailComponent
+    LoanDetailComponent,
+    AddManuallyDialogComponent
   ],
   imports: [
     BrowserModule,
