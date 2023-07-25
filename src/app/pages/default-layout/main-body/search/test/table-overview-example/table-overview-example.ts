@@ -1,10 +1,18 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
+import { Component, ViewChild, inject } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatTable } from '@angular/material/table';
+import { MatChipInputEvent, MatChipEditedEvent, MatChipsModule } from '@angular/material/chips';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-
 import { MatTableDataSourcePageEvent } from '@angular/material/table';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+
+import { NgFor } from '@angular/common';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+export interface SearchTerms {
+  name: string;
+}
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
@@ -16,8 +24,14 @@ import { MatTableDataSourcePageEvent } from '@angular/material/table';
 export class TableOverviewExample {
   displayedColumns = ['loanNumber', 'borrowerName', 'investor', 'status', 'context', 'disposalDescription', 'recievedDate', 'dueDate', 'auditor'];
   dataSource: MatTableDataSource<UserData>;
+
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   loanFilter: string = ''
-  filterValues = {
+  filterValues = <UserData>{
     loanNumber: '',
     borrowerName: '',
     investor: '',
@@ -35,7 +49,6 @@ export class TableOverviewExample {
     investorLoanNumber: '',
     caseNumber: '',
     borrowerFirstName: '',
-    borrowerLastName: '',
     borrowerLastFourSSN: '',
     hashtag: '',
     miCertificateNumber: '',
@@ -45,45 +58,27 @@ export class TableOverviewExample {
     zip: '',
   };
   show = true;
-    pageIndex: number = 0;
+
+  announcer = inject(LiveAnnouncer);
+
   @ViewChild(MatPaginator) paginator: any = MatPaginator;
   @ViewChild(MatSort) sort: any = MatSort;
-  pageSize = 50;
+  pageSize = 10;
+  searchTermStringArr: string[] = [];
   currentTerm: string = '';
-  normalOrAdvanced: string = 'advanced';
+  normalOrAdvanced: string = 'normal';
+  buttons: Array<number> = [1,];
+  searchTerms: SearchTerms[] = [
 
-  searchTerms: string[] = [];
+  ];
+  numOfElements: number = 0;
+  display: boolean = true;
   showSearchTerms: boolean = false;
   advancedSearchTerm: string = '';
-  loans: UserData[] = [
-    {
+  numOfPages: any = 0;
+  pageIndex = 0;
+  userReset: UserData[] = [];
 
-      loanNumber: '2133422342',
-      borrowerName: 'name',
-      investor: "FNMA",
-      status: "pending",
-      context: "hi",
-      disposalDescription: 'pending',
-      recievedDate: '1/1/22',
-      dueDate: '3/1/22',
-      auditor: 'Earnst, Jim',
-      famcLoanNumber: '',
-      cfgLoanNumber: '',
-      servicerLoanNumber: '',
-      investorLoanNumber: '',
-      caseNumber: '',
-      borrowerFirstName: '',
-      borrowerLastName: '',
-      borrowerLastFourSSN: '',
-      hashtag: '',
-      miCertificateNumber: '',
-      address: '',
-      city: '',
-      state: '',
-      zip: '',
-    }
-
-  ]
   constructor() {
     // Create 100 users
     const users: UserData[] = [];
@@ -91,7 +86,6 @@ export class TableOverviewExample {
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
-    
   }
 
   /**
@@ -100,153 +94,173 @@ export class TableOverviewExample {
    */
 
   ngOnInit() {
-    console.log(this.paginator._inil.P);
 
-    if (this.show == false) {
-      this.dataSource.filterPredicate = function (data, filter: string): boolean {
-        return data.loanNumber.toLowerCase().includes(filter)
-      };
-    }
-    else if (this.show == true) {
-      this.applyFilter
-    }
-console.log(this.dataSource);
+    this.dataSource.data.map((x) => {
+      this.userReset.push(x);
+    });
+    console.log(this.dataSource)
+
   }
   ngAfterContentChecked() {
-    this.pageIndex = this.dataSource.paginator?.pageIndex as number;
-    
     var pages = this.dataSource.filteredData.length / this.pageSize;
-   //  console.log(this.advancedFilterValues)
+
+    console.log(this.dataSource.paginator?.pageIndex)
+
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    //  console.log(this.dataSource._filterData);
+    var pages = this.dataSource.filteredData.length / this.pageSize;
+
+    //   console.log(this.numOfPages)
+    this.numOfPages = this.paginator.pages
+
+    for (let i = 1; i < pages; i++) {
+      this.buttons.push(i);
+    }
+    console.log(this.dataSource);
+
   }
   clearAdvancedSearch() {
-    this.advancedFilterValues = {
-      famcLoanNumber: '',
-      cfgLoanNumber: '',
-      servicerLoanNumber: '',
-      investorLoanNumber: '',
-      caseNumber: '',
-      borrowerFirstName: '',
-      borrowerLastName: '',
-      borrowerLastFourSSN: '',
-      hashtag: '',
-      miCertificateNumber: '',
-      address: '',
-      city: '',
-      state: '',
-      zip: '',
-    };
+    this.searchTerms = []
+    this.resetTable();
 
   }
-  getFilterPredicate() {
-    return (row: UserData, filters: string) => {
-      // split string per '$' to array
-      const filterArray = filters.split('$');
-      const departureDate = filterArray[0];
-      const departureStation = filterArray[1];
-      const arrivalStation = filterArray[2];
+  indexOnPage(pageNumber: number) {
 
-      const matchFilter = [];
-
-      // Fetch data from row
-      const columnFamcLoanNumber = row.famcLoanNumber;
-      const columnCfgLoanNumber = row.cfgLoanNumber;
-      const columnServicerLoanNumber = row.servicerLoanNumber;
-      const columnInvestorLoanNumber = row.investorLoanNumber;
-      const columnCaseNumber = row.caseNumber;
-      const columnBorrowerFirstName = row.borrowerFirstName;
-      const columnBorrowerLastName = row.borrowerLastName;
-      const columnborrowerLastFourSSN = row.borrowerLastFourSSN;
-      const columnHashtag = row.hashtag;
-      const columnMiCertificateNumber = row.miCertificateNumber;
-      const columnAddress = row.address;
-      const columnCity = row.city;
-      const columnState = row.state
-      const columnZip = row.zip;
-
-      // verify fetching data by our searching values
-      const famcLoanNumberFilter = columnFamcLoanNumber.toLowerCase().includes(departureDate);
-      const cfgLoanNumberFilter = columnCfgLoanNumber.toLowerCase().includes(departureStation);
-      const servicerLoanNumberFilter = columnServicerLoanNumber.toLowerCase().includes(arrivalStation);
-      const investorLoanNumberFilter = columnInvestorLoanNumber.toLowerCase().includes(departureDate);
-      const caseNumberFilter = columnCaseNumber.toLowerCase().includes(departureDate);
-
-      const borrowerFirstNameFilter = columnBorrowerFirstName.toLowerCase().includes(departureDate);
-
-      const borrowerLastNameFilter = columnBorrowerLastName.toLowerCase().includes(departureStation);
-      const borrowerLastFourSSNFilter = columnborrowerLastFourSSN.toLowerCase().includes(arrivalStation);
-      const hashtagFilter = columnHashtag.toLowerCase().includes(departureDate);
-      const miCertificateNumberFilter = columnMiCertificateNumber.toLowerCase().includes(departureStation);
-      const addressFilter = columnAddress.toLowerCase().includes(arrivalStation);
-      const cityFilter = columnCity.toLowerCase().includes(departureDate);
-      const stateFilter = columnState.toLowerCase().includes(departureStation);
-      const zipFilter = columnZip.toLowerCase().includes(arrivalStation);
-
-      // push boolean values into array
-      matchFilter.push(famcLoanNumberFilter);
-      matchFilter.push(cfgLoanNumberFilter);
-      matchFilter.push(servicerLoanNumberFilter);
-
-      // return true if all values in array is true
-      // else return false
-      return matchFilter.every(Boolean);
-    };
+    const currentPage = pageNumber;
+    console.log(currentPage)
+    this.pageIndex = currentPage;
+    this.paginator.pageIndex = pageNumber;
+    this.paginator._updatePaginator = this.pageSize * this.pageIndex;
+    this.dataSource.paginator = this.paginator;
   }
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+    console.log(this.searchTerms)
+    console.log(value);
+    // Add our fruit
+    if ((value || '').trim()) {
+      this.searchTerms.push({ name: value.trim() });
+
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  remove(searchTerm: SearchTerms): void {
+    const index = this.searchTerms.indexOf(searchTerm);
+    console.log(this.searchTerms)
+    if (index >= 0) {
+      this.searchTerms.splice(index, 1);
+      this.resetTable();
+      this.specialFilter();
+
+    }
+    this.specialFilter();
+  }
+
+  setPageValue(event: Event): void { }
   setInputValue(event: Event): void {
     console.log('setInputValue', (event.target as HTMLTextAreaElement).value);
     this.normalSearchOnClick((event.target as HTMLTextAreaElement).value)
   }
-  clickGo(event: Event): void {
-    this.normalSearchOnClick((event.target as HTMLTextAreaElement).value)
+  specialFilter() {
+    var tempDataSource = this.dataSource;
+    this.searchTerms.map((item) => {
+      var localFilterValue = item.name.trim(); // Remove whitespace
+      localFilterValue = localFilterValue.toLowerCase(); // Datasource defaults to lowercase matches
+      this.dataSource.filter = localFilterValue;
+    })
+    this.paginator.pageSize = this.pageSize;
+    this.dataSource.paginator = this.paginator;
+    this.dataSource._pageData;
+    var pages = this.dataSource.filteredData.length / this.pageSize;
+    this.numOfElements = this.dataSource.filteredData.length;
+    if (this.numOfElements < this.pageSize) {
+      this.display = false;
+    }
+    else if (this.numOfElements >= this.pageSize) {
+      this.display = true;
+      console.log(this.numOfElements)
+      this.buttons = []
+      for (let i = 0; i < pages; i++) {
+        this.buttons.push(i);
+      }
+    }
   }
-  advancedClickGo() {
-    this.applyFilter;
-  }
-  changeIndex(event: Event): void {
 
-  }
   normalSearchOnClick(str: string) {
     console.log("clicked")
-    this.applyAdvancedFilter(str)
+    this.applyFilter(str)
 
   }
-  applyFilter() {
-    this.dataSource.filterPredicate = function (data, filter: string): boolean {
-      return data.loanNumber.toLowerCase().includes(filter)
-    };
-   
-  
-    this.dataSource.filterPredicate = function (data, filter: string): boolean {
-      return data.loanNumber.toLowerCase().includes(filter)
-    };
+
+  adjustPageSize(event: Event) {
+    console.log((event.target as HTMLTextAreaElement).value)
+    console.log(this.pageSize)
+    this.paginator.pageSize = this.pageSize;
+    this.dataSource.paginator = this.paginator;
+    var pages = this.dataSource.filteredData.length / this.pageSize;
+    this.buttons = []
+    for (let i = 0; i < pages; i++) {
+      this.buttons.push(i);
+    }
+    console.log(this.numOfElements);
+    this.indexOnPage
+  }
+  nextButtonClick() {
+    if(this.pageIndex === this.buttons.length - 1){
+      this.indexOnPage(this.pageIndex)
+    }
+    else{
+
+
+    this.indexOnPage(this.pageIndex + 1)
+
+  }}
+
+  backButtonClick() {
+    if(this.pageIndex === 0){
+      this.indexOnPage(this.pageIndex)
+    }
+    else{
+
+
     
+    this.indexOnPage(this.pageIndex - 1)
+    }
+  }
 
-  
+  applyFilter(filterValue: string) {
+    this.dataSource.filterPredicate = function (data, filter: string): boolean {
+      return data.loanNumber.toLowerCase().includes(filter)
+    };
 
-
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
     console.log(this.dataSource.filter);
-
-
-
-
+  }
+  resetTable() {
+    this.dataSource.filter = "";
   }
   applyAdvancedFilter(advancedSearchTerm: string) {
 
-    this.dataSource.filterPredicate = function (data, filter: string): boolean {
-      return data.loanNumber.toLowerCase().includes(filter)
-    };
+
     advancedSearchTerm = advancedSearchTerm.trim(); // Remove whitespace
     advancedSearchTerm = advancedSearchTerm.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = advancedSearchTerm;
     console.log(this.dataSource.filter);
   }
-}
 
+
+}
 
 /** Builds and returns a new User. */
 function createNewUser(loanNumber: number): UserData {
@@ -260,25 +274,11 @@ function createNewUser(loanNumber: number): UserData {
     borrowerName: name,
     investor: "FNMA",
     status: "pending",
-    context: "hi",
+    context: "MI QA Audit",
     disposalDescription: 'pending',
     recievedDate: '1/1/22',
     dueDate: '3/1/22',
-    auditor: 'Earnst, Jim',
-    famcLoanNumber: '',
-    cfgLoanNumber: '',
-    servicerLoanNumber: '',
-    investorLoanNumber: '',
-    caseNumber: '',
-    borrowerFirstName: '',
-    borrowerLastName: '',
-    borrowerLastFourSSN: '',
-    hashtag: '',
-    miCertificateNumber: '',
-    address: '',
-    city: '',
-    state: '',
-    zip: '',
+    auditor: 'Earnst, Jim'
   };
 }
 
@@ -299,20 +299,7 @@ export interface UserData {
   recievedDate: string;
   dueDate: string;
   auditor: string;
-  famcLoanNumber: '',
-  cfgLoanNumber: '',
-  servicerLoanNumber: '',
-  investorLoanNumber: '',
-  caseNumber: '',
-  borrowerFirstName: '',
-  borrowerLastName: '',
-  borrowerLastFourSSN: '',
-  hashtag: '',
-  miCertificateNumber: '',
-  address: '',
-  city: '',
-  state: '',
-  zip: '',
+
 }
 
 
