@@ -10,7 +10,7 @@
 }
 
 .mat-form-field {
-  font-size: 1rem;
+  font-size: 14px;
   width: 100%;
 }
 
@@ -95,10 +95,9 @@ display: flex;
   width: 100%;
 }
 .label {
+  background: white;
   display: flex;
-  margin-top: 20px;
-  font-weight: 700;
-  color:#008555
+  
 }
 
 .search-table-header {
@@ -165,25 +164,21 @@ display: flex;
   
   .search-container-field {
     background-color: white;
-    width: 20%; /* Increase the width of the search input */
-    border-radius: 8px;
+    width: 10%; /* Increase the width of the search input */
+    border-radius: 2px;
     border: 1px solid black;
+    text-align: center;
   }
   .advanced-search-container-field {
     background-color: #D5ECE7;
     width: 245px; /* Increase the width of the search input */
-    border-width: 2px;
     border-radius: 8px;
+    height: 34px;
     margin: 5px;
-    color:  #008555;
+    border: 1px solid #008555;
   }
-  .advanced-search-container-field-border {
-
-    color:  #008555;
-  }
-  
   .example-full-width{
-    justify-content: end;
+    justify-content: flex-end;
     display: flex;
     flex-direction: row;
    
@@ -192,12 +187,15 @@ display: flex;
   .center-container{
     width: 100%;
     justify-content: center;
+    padding-bottom: 30px;
+    align-items: center;
    
   }
   .items-per-page{
   display: flex;
-    justify-content: flex-start;
-    
+    justify-content: space-around;
+    gap: 3px;
+    width: 30%;
   }
   .center-advanced{
     margin-top: 1rem;
@@ -248,13 +246,14 @@ display: flex;
   }
   .header-right-advanced-search{
     background-color: #898A8E;
+
     color: white;
-    height: 2rem;
-    width: 8rem;
+    height: 34px;
+    width: 6rem;
     font-size: 0.9rem;
     border: none;
     border-radius: 4px;
-    white-space: nowrap;
+
   }
   .clearButton{
     background-color: #898A8E;
@@ -265,7 +264,6 @@ display: flex;
     border: none;
     border-radius: 4px;
     white-space: nowrap;
-    margin-bottom: 10px;
   }
   .advanced-search-card-header{
     background-color: #008555;
@@ -299,25 +297,35 @@ display: flex;
   .column-line {
     padding: 10px;
     text-align: left;
+    
    /* Default background color for column headers */
   /*  border: 1px solid black;  */
     
   }
+  .header-text:{
+    color: white;
+    background-color: white;
+    font-weight: 700;
+    text-align: center;
+    justify-content: center;
+  }
   th {
-
+align-items: center;
+justify-content: center;
     text-align: center;
     color: white; /* Column header text color */
     background-color: #008555; /* Default background color for column headers */
-    height: 29px;
     white-space: nowrap;
   }
   .cells {
     background-color:  white; /* Background color for specific column headers */
     text-align: center;
     justify-content: center;
+    padding: 0px;
     color: black;
     border: .5px solid rgba(0, 0, 0, 0.4);
     white-space: nowrap;
+
    
 
   }
@@ -325,10 +333,14 @@ display: flex;
     background-color: #008555; /* Background color for specific column headers */
     color: white;
     text-align: center;
+    font-weight: 500;
+width:100%;
     white-space: nowrap;
     display:flex;
+    flex-direction: row;
+    font-size: 14px;
    
-   
+   justify-content: center;
   }
   .header-cell{
    display: flex;
@@ -344,8 +356,10 @@ display: flex;
   .advanced-search-open{
     display: flex;
     justify-content: center;
+    margin-top: 30px;
     align-items: center;
     background-color: white;
+    color: white;
     border-left-color: black;
     border-right-color: black;
     border-top-color: black;
@@ -356,9 +370,9 @@ display: flex;
   .advanced-search-open-other{
     display: flex;
     padding-top: 15px;
+
     flex-direction: row;
     justify-content: center;
-    gap:20px;
     align-items: center;
     background-color: white;
     border-left-color: black;
@@ -373,20 +387,20 @@ display: flex;
     width: 245px;
     height:30px;
     gap:1rem;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-start;
     
    
   }
   .button-container{
- 
-    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
   
- 
   }
   td {
     padding: 10px;
-    text-align: left;
     border: 2px solid gray; /* Border style for rows */
     text-align: center;
   }
@@ -408,6 +422,9 @@ display: flex;
     display: flex;
   }
   
+  .table-container{
+    margin-top: 1rem;
+  }
   .scroll-top-btn i {
     font-size: 20px;
     line-height: 40px;
@@ -421,13 +438,99 @@ display: flex;
     font-size: 0.9rem;
     border: none;
     border-radius: 4px;
-    margin-left: 1rem;
+
   }
   .formFormat{
     display:flex;
     flex-direction: column;
-  } .formFormatSpecial{
+  }
+   .formFormatSpecial{
     display:flex;
     flex-direction: column;
-    margin-top: 1rem;
+    margin-bottom: 10px;
   }
+  .chip-field{
+    border-radius: 4px;   
+    height: 41px;
+
+    align-self: flex-start;
+  }
+  .input-field{
+    align-self: center;
+    background-color: white;
+   
+
+  }
+  .input-field-search-icon{
+    color:rgba(0, 100, 80, 0.2);
+    width:1.25rem;
+    width:1.25rem;
+  }
+
+  .align-field-button-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-bottom: 30px;
+  }
+.chips {
+  color:rgba(0, 100, 80, 0.9);
+}
+.input-filed-spacer{
+ 
+}
+.assigned-chip{
+  background-color: #0c8f8f;
+  color: white;
+}
+
+.mat-form-field{
+  border: 1px solid green;
+}
+.selected-button{
+  text-decoration: solid;
+}
+.nextButton{
+  font-size: 11px;
+  color: #898A8E;
+  font-weight: 600;
+  width: min-content;
+  text-decoration: solid;
+  white-space: nowrap;
+  text-align: center;
+  margin-left: 3rem;
+
+}
+.previousButton{
+  font-size: 11px;
+  color: #898A8E;
+  font-weight: 600;
+  width: min-content;
+  text-decoration: solid;
+  white-space: nowrap;
+  margin-right: 0rem;
+  text-align: center;
+  justify-content: center;
+}
+.hidePager
+{
+  display: none;
+}
+.button-width
+{
+  width: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.small-text-button{
+width:8px;
+}
+mat-form-field {
+  padding: 0;
+  border-color: white;
+}
