@@ -11,6 +11,22 @@
     margin-top: 1rem;
 }
 
+.dashabord-first-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    height: 17rem;
+}
+.dashabord-first-row-left {
+  height: 100%;
+  width: 45%;
+}
+.dashabord-first-row-right {
+  height: 100%;
+  width: 45%;
+}
+
 
 
 .filter-button {
