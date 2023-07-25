@@ -39,8 +39,9 @@ import { LoanDetailComponent } from './pages/main-layout/main-body/loan-detail/l
 
 //Providers 
 import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator";
-import { AddManuallyDialogComponent } from './add-manually-dialog/add-manually-dialog.component';
-import { UploadDialogComponent } from './upload-dialog/upload-dialog.component'
+import { AddManuallyDialogComponent } from './dialogs/add-manually-dialog/add-manually-dialog.component';
+import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
