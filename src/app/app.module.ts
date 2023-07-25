@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { NgChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { LoanDetailComponent } from './pages/main-layout/main-body/loan-detail/l
 import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator";
 import { AddManuallyDialogComponent } from './dialogs/add-manually-dialog/add-manually-dialog.component';
 import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.component';
+import { OverallOutstandingPipelineComponent } from './pages/main-layout/main-body/dashboard/overall-outstanding-pipeline/overall-outstanding-pipeline.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.com
     TableOverviewExample,
     LoanDetailComponent,
     AddManuallyDialogComponent,
-    UploadDialogComponent
+    UploadDialogComponent,
+    OverallOutstandingPipelineComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.com
     FormsModule,
     ReminderComponent,
     NotificationComponent,
+    NgChartsModule,
 
     // Add Material UI modules to the imports array
     MatInputModule,
