@@ -1,190 +1,150 @@
 <div class="full-width">
-<div class="search-title-width">
-  <p class="entries-font">Show</p>
-<input matInput  type="text" class="search-container-field-container"  placeholder=""  [(ngModel)]="pageSize">
-  <p class="entries-font">Entries</p>
-   <button class="go-button" [value]="pageSize"  >Go</button>
+    <div class="search-title-width">
+        <p class="entries-font">Show</p>
+        <input matInput type="text" class="search-container-field" placeholder="" [(ngModel)]="pageSize">
+        <p class="entries-font">Entries</p>
+        <button class="go-button" [value]="pageSize" (click)="adjustPageSize($event)">Go</button>
+    </div>
+
 </div>
-<div class="example-full-width">
-  <label class="search-field-title">Enter Loan #: </label>
-  
-    <!-- <input type="text" placeholder="Search by Name"> -->
-    <input matInput (change)="setInputValue($event)" class="search-container-field" >
+
+
+
+<div >
+         <div class="align-field-button-container">
+            <mat-form-field style="background-color: white; height: 55px;">
+                <mat-icon matPrefix class="input-field-search-icon">search</mat-icon>
+                <mat-chip-grid  #chipGrid>
+                    <mat-chip-row style="background-color:#0C8F8F;" color="primary" *ngFor="let searchTerm of searchTerms" (removed)="remove(searchTerm)"
+                        [aria-description]="'press enter to edit ' + searchTerm.name" >
+                                                      <div  style="color: white;">
+                                                        {{searchTerm.name}}
+                                                      </div>
+                      
+                        <button matChipRemove [attr.aria-label]="'remove ' + searchTerm.name">
+                            <mat-icon style="color:white">cancel</mat-icon>
+                        </button>
+                    </mat-chip-row>
+                    <input matInput type="text" class="app-employee" style="background-color: white;"  [matChipInputFor]="chipGrid"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                        (matChipInputTokenEnd)="add($event)" />
+                </mat-chip-grid>
+            </mat-form-field>
+            <ng-container class="button-container">
+            <button class="header-left-upload" (click)="specialFilter()">Search</button>
+            <button class="header-right-advanced-search" (click)="clearAdvancedSearch()">{{show ? 'Clear' : 'Advanced Search'}}</button>
+            </ng-container>
+
+    </div>
+    <div class="advanced-search-open">
+        <mat-table [dataSource]="dataSource" matSort class="">
+            <ng-container matColumnDef="loanNumber">
+                <mat-header-cell  mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                        Loan Number
+
+                    </div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="cells">{{row.loanNumber}}</mat-cell>
+            </ng-container>
+            <container matColumnDef="borrowerName">
+                <mat-header-cell mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                    Borrower Name
+                    </div>
+                </mat-header-cell>
+            
+                <mat-cell *matCellDef="let row" class="cells">{{row.borrowerName}}</mat-cell>
+            </container>
+            <ng-container matColumnDef="investor">
+                <mat-header-cell mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                    Investor
+                    </div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="cells">{{row.investor}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <mat-header-cell mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                    Status
+                    </div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="cells">{{row.status}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="context">
+                <mat-header-cell class="center-div" mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                    Context
+                    </div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="cells" >{{row.context}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="disposalDescription">
+                <mat-header-cell  mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                    Disposal Description
+                    </div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="cells">{{row.disposalDescription}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="recievedDate">
+                <mat-header-cell mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                    Recieved Date
+                    </div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="cells">{{row.recievedDate}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="dueDate">
+                <mat-header-cell mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                    Due Date
+                    </div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="cells">{{row.dueDate}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="auditor">
+                <mat-header-cell mat-sort-header *matHeaderCellDef>
+                    <div class="header">
+                    Auditor
+                    </div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="cells">{{row.auditor}}</mat-cell>
+            </ng-container>
+            <mat-header-row class="header" *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+    <div class="items-per-page"  [style.display]="display ? 'flex' : 'none'">
+        <div>
+            <mat-paginator  role="group" [pageSize]="pageSize" nextPageLabel="" class="hidePager" ></mat-paginator>
+
+        </div>
+        <button mat-button   type="text" style="font-size: 11px; color: #898A8E;" class="previousButton" (click)="backButtonClick()">< Previous</button>
+
+        <div *ngFor="let item of buttons; let i = index" class="button-width">
+            
+            <button mat-button class="small-text-button" [style.color]="i  === pageIndex  ?   'black' : '#898A8E' " [style.text-decoration-line]="i  === pageIndex  ? 'underline': 'none' " style="font-size: 11px; font-weight: 600; text-decoration-line: underline;" type="text" (click)="indexOnPage(i)" >{{i+1}}</button>
+        </div>
+
+        <button mat-button  style="font-size: 11px; color: #898A8E;" class="nextButton" type="text" (click)="nextButtonClick()"  class="nextButton">Next ></button>
+
+    </div>
+
+</div>
+<!-- 
+    <bootstrap-table></bootstrap-table>
+
+<p>
+    <input type="text" class="search-container-field" placeholder="" [(ngModel)]="advancedSearchTerm" (change)="applyAdvancedFilter(advancedSearchTerm)">
     <button class="header-left-upload">Search</button>
-
-    <button class="header-right-advanced-search" (click)="show = !show">{{show ? 'Advanced Search' : 'Advanced Search'}}</button>
-    
-    <br>
- 
+    <button class="header-right-advanced-search" [disabled]="show? true : false" (click)="show != show">{{show ? 'Clear' : 'Advanced Search'}}</button>
+</p>
+<div class="example-full-width">
+    <label class="search-field-title">Enter Loan #</label>
+    <input matInput (change)="setInputValue($event)" class="search-container-field">
+    <button class="header-left-upload">Search</button>
+    <button class="header-right-advanced-search" (click)="show = !show" >Advanced Search</button>
 </div>
-
-</div>
-
-<div class="center-container">
-  <div *ngIf="show" class="center-container">
-    <mat-card class="center-advanced">
-      <mat-card-title class="advanced-search-card-header">Advanced Search</mat-card-title>
-      <mat-card-content class="advanced-search-open-other">
-        
-       <p class="formFormat">
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">FAMC Loan #</mat-label>
-    
-        <input class="advanced-search-container-field"  type matInput  placeholder="" [(ngModel)]="filterValues.loanNumber"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label  class="label">CFG Loan #</mat-label>
-    
-          <input  class="advanced-search-container-field"   matInput [(ngModel)]="filterValues.investor"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label class="label">Servicer Loan #</mat-label>
-    
-          <input class="advanced-search-container-field" matInput [(ngModel)]="advancedFilterValues.servicerLoanNumber"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label class="label">Investor Loan #</mat-label>
-    
-          <input  class="advanced-search-container-field" matInput [(ngModel)]="advancedFilterValues.investorLoanNumber"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label class="label">Case #</mat-label>
-    
-          <input class="advanced-search-container-field" matInput [(ngModel)]="advancedFilterValues.caseNumber"  >
-        </mat-form-field>
-        
-      </p>
-       <div class="formFormat">
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label  class="label">Borrower 1st Name</mat-label>
-    
-          <input  class="advanced-search-container-field" matInput  [(ngModel)]="advancedFilterValues.borrowerFirstName"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">Borrower Last Name</mat-label>
-    
-          <input  class="advanced-search-container-field" matInput  [(ngModel)]="advancedFilterValues.borrowerLastName"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">Borrower Last 4(SSN)</mat-label>
-    
-          <input matInput class="advanced-search-container-field"  [(ngModel)]="advancedFilterValues.borrowerLastFourSSN"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">Hashtag</mat-label>
-    
-          <input matInput  class="advanced-search-container-field"  [(ngModel)]="advancedFilterValues.hashtag"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">MI Certificate #</mat-label>
-    
-          <input class="advanced-search-container-field"  matInput [(ngModel)]="advancedFilterValues.miCertificateNumber"  >        
-        </mat-form-field>
-       </div>
-     
-       <div class="formFormatSpecial">
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">Address</mat-label>
-    
-          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedFilterValues.address"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">City</mat-label>
-    
-          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedFilterValues.city"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">State</mat-label>
-    
-          <input matInput  class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedFilterValues.state"  >
-        </mat-form-field>
-        <mat-form-field class="advanced-search-container-field-border" floatLabel="always" appearance="outline">
-          <mat-label   class="label">Zip</mat-label>
-    
-          <input matInput class="advanced-search-container-field"  placeholder="" [(ngModel)]="advancedFilterValues.zip"  >
-        </mat-form-field>
-        <p class="advanced-search-buttons-container">
-          <button class="header-left-upload" (click)="applyFilter" >Search</button>
-          <button class="clearButton" (click)="clearAdvancedSearch()">Clear</button>
-        </p>
-       </div>
-      
-   
-  </mat-card-content>
-    </mat-card>
-  </div>
-
-  <div class="advanced-search-open">
-  <mat-table [dataSource]="dataSource" matSort class="" >
-
-    <!-- ID Column -->
-    <ng-container matColumnDef="loanNumber" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header  >Loan Number</mat-header-cell>
-      <mat-cell  *matCellDef="let row" class="cells"> {{row.loanNumber}} </mat-cell>
-    </ng-container>
-
-   <!-- Name Column -->
-   <ng-container matColumnDef="borrowerName">
-    <mat-header-cell *matHeaderCellDef mat-sort-header >Borrower Name</mat-header-cell>
-    <mat-cell *matCellDef="let row" class="cells"> {{row.borrowerName}} </mat-cell>
-  </ng-container>
-
-    <!-- Progress Column -->
-    <ng-container matColumnDef="investor" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header class="header">Investor</mat-header-cell>
-      <mat-cell *matCellDef="let row" class="cells"> {{row.investor}}</mat-cell>
-    </ng-container>
-
- 
-    <!-- Color Column -->
-    <ng-container matColumnDef="status">
-      <mat-header-cell *matHeaderCellDef mat-sort-header > Status</mat-header-cell>
-      <mat-cell *matCellDef="let row" class="cells"> {{row.status}} </mat-cell>
-    </ng-container>
-
-    <!-- Color Column -->
-    <ng-container matColumnDef="context">
-      <mat-header-cell *matHeaderCellDef mat-sort-header >Context</mat-header-cell>
-      <mat-cell *matCellDef="let row" class="cells"> {{row.context}} </mat-cell>
-    </ng-container>
-  
-    <ng-container matColumnDef="disposalDescription" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Disposal Description</mat-header-cell>
-      <mat-cell *matCellDef="let row" class="cells"> {{row.disposalDescription}} </mat-cell>
-    </ng-container>
-   
-    <ng-container matColumnDef="recievedDate">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Recieved Date</mat-header-cell>
-      <mat-cell *matCellDef="let row" class="cells"> {{row.recievedDate}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="dueDate">
-      <mat-header-cell *matHeaderCellDef mat-sort-header >Due Date</mat-header-cell>
-      <mat-cell *matCellDef="let row" class="cells"> {{row.dueDate}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="auditor">
-      <mat-header-cell *matHeaderCellDef mat-sort-header >Auditor</mat-header-cell>
-      <mat-cell *matCellDef="let row" class="cells"> {{row.auditor}} </mat-cell>
-    </ng-container>
-
-    <mat-header-row class="header" *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" >
-    </mat-row>
-  </mat-table>
-  </div>
-  <div class="items-per-page">
-    
-  <mat-paginator role="group" [pageSize]="pageSize">
-  
-</mat-paginator>
-<div>
-  {{pageIndex + 1}}
-</div>
- 
-</div>
-
-
-<!-- Copyright 2018 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
+-->
