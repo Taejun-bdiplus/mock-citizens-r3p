@@ -1,0 +1,12 @@
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+.dashboard-main-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
