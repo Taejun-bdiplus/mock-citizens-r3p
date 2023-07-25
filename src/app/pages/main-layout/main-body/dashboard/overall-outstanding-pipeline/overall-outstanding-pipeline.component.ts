@@ -15,26 +15,26 @@ export class OverallOutstandingPipelineComponent {
       type: 'pie', //this denotes tha type of chart
 
       data: {// values on X-Axis
-        labels: ['Red', 'Pink','Green','Yellow','Orange','Blue', ],
-	       datasets: [{
-    label: 'My First Dataset',
-    data: [300, 240, 100, 432, 253, 34],
-    backgroundColor: [
-      'red',
-      'pink',
-      'green',
-			'yellow',
-      'orange',
-      'blue',			
-    ],
-    hoverOffset: 4
-  }],
+        labels: ['Due > 7 Days', 'Due Within 7 Days', 'Past Due', ],
+        datasets: [{
+        label: 'My First Dataset',
+        data: [80, 20, 100],
+        backgroundColor: [
+          'red',
+          'green',
+          'blue',			
+        ],
+        hoverOffset: 4
+      }],
       },
       options: {
-        aspectRatio:2.5
-      }
+        aspectRatio:4,
+        plugins: {
+          legend: {
+            position: 'right',
+      }},
 
-    });
+    }});
   }
 
   ngOnInit(): void {
