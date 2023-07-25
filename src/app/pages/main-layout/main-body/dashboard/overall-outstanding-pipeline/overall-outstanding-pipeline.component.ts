@@ -20,15 +20,15 @@ export class OverallOutstandingPipelineComponent {
         label: 'My First Dataset',
         data: [80, 20, 100],
         backgroundColor: [
-          'red',
           'green',
+          'purple',
           'blue',			
         ],
         hoverOffset: 4
       }],
       },
       options: {
-        aspectRatio:4,
+        aspectRatio:2.5,
         plugins: {
           legend: {
             position: 'right',
