@@ -8,6 +8,28 @@
 
     <!-- Filter & Reports -->
     <div class="dashabord-second-row">
+        <!-- Filter -->
+        <div>
+
+        </div>
+
+        <!-- Report Cards -->
+        <div class="card-container">
+            <div class="card" *ngFor="let card of cards; let i = index">
+                <div class="card-content">
+                    <h2 class="card-heading">{{ card.mainHeading }}</h2>
+                    <p class="card-text">{{ card.secondHeading }}</p>
+                  <div class="linear-scale">
+                    <input type="range" min="0" max="15" value="0" class="scale-input" />
+                  </div>
+                  <div class="card-button" (click)="showTable = true">
+                    <button class="card-buttonn">
+                      See more <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+        
+              </div>
+        </div>
     </div>
 
     <!-- Assigned Loans & Recent Activity -->
