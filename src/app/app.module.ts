@@ -15,26 +15,28 @@ import { SearchComponent } from './pages/default-layout/main-body/search/search.
 import { AnalystsComponent } from './pages/default-layout/main-body/analysts/analysts.component';
 import { ReportsComponent } from './pages/default-layout/main-body/reports/reports.component';
 import { AssignDialogComponent } from './dialogs/assign-dialog/assign-dialog.component';
+import { TableOverviewExample } from './pages/default-layout/main-body/search/test/table-overview-example/table-overview-example';
 
-// Import Material UI modules
+// Import Material UI Modules
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatPaginator, MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { CustomPaginator } from './pages/default-layout/main-body/search/CustomPaginator';
-import { CommonModule } from '@angular/common';
-import { TableOverviewExample } from './pages/default-layout/main-body/search/test/table-overview-example/table-overview-example';
-import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
+import { MatChipsModule } from "@angular/material/chips";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReminderComponent } from './pages/main-layout/main-header/reminder/reminder.component';
+import { NotificationComponent } from './pages/main-layout/main-header/notification/notification.component';
+import { LoanDetailComponent } from './pages/main-layout/main-body/loan-detail/loan-detail.component';
 
 //Providers 
 import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator";
