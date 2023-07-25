@@ -1,0 +1,158 @@
+
+/* ################################################################# */
+
+
+:host {
+  display: block;
+  background-color: #ECF2F1;
+  margin: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 10px;
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  margin-left: 40px;
+  /* margin-top: 20px; */
+}
+
+.analysts-heading {
+    margin-left: -80px;
+    margin-bottom: 40px;
+  }
+
+.action-item {
+    margin-left: 6px;
+    font-size: 10px;
+}
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* Add margin at the bottom of the search container */
+  }
+  
+  .search-container input {
+    border: 1px solid green; /* Add border to the search input */
+    padding: 5px; /* Add padding to the search input */
+    margin-right: 5px; /* Add some spacing between the search input and button */
+    width: 300px; /* Increase the width of the search input */
+    border: 2px solid green;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .search-container button {
+    padding: 10px 20px; /* Add padding to the search button */
+    background-color: green; /* Set the background color of the search button */
+    color: white; /* Set the text color of the search button */
+    border: none; /* Remove the border of the search button */
+    border: 2px solid green;
+    border-radius: 8px;
+    margin-left: 10px;
+  }
+  
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin-left: 100px;
+    margin-right: auto;
+    max-width: 700px; 
+    white-space: nowrap;
+  }
+  
+  .table-wrapper {
+    border-radius: 8px 8px 0 0;
+    /* overflow: hidden; */
+  }
+  
+  table {
+    width: 100%; /* Increase the width of the table */
+    border-collapse: collapse;
+    background-color: white;
+    /* max-width: 150%; */
+  }
+  
+  .table-containerr {
+    max-height: 500px; /* Adjust the max-height as per your requirement */
+    overflow-y: auto;
+    width: 120%;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  th {
+    padding: 10px;
+    text-align: left;
+    color: white; /* Column header text color */
+    background-color: #f2f2f2; /* Default background color for column headers */
+    border: 2px solid black; /* Border style for column headers */
+    text-align: center;
+    width: 120px;
+  }
+  
+  th:nth-child(1),
+  th:nth-child(2),
+  th:nth-child(3),
+  th:nth-child(4),
+  th:nth-child(5) {
+    background-color: #006450; /* Background color for specific column headers */
+  }
+  
+  td {
+    padding: 10px;
+    text-align: left;
+    border: 2px solid gray; /* Border style for rows */
+    text-align: center;
+  }
+
+
+
+  .scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-color: #006450;
+    color: rgb(245, 241, 241);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    /* display: flex; */
+  }
+  
+  .scroll-top-btn i {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  
+  button {
+    border: none;
+  }
+
+  .gray-row {
+    background-color: gray;
+  }
+
+  .activate{
+    color: black;
+    position: relative;
+    /* padding: 0px; */
+    /* background-color: gray; */
+  }
+
+  .deactivate{
+    color: black;
+    position: relative;
+    position: static;
+    /* padding: 0px; */
+    /* background-color: gray; */
+  }
+  

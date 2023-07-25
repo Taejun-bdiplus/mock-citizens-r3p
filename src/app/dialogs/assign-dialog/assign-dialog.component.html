@@ -1,0 +1,60 @@
+<div class="dialog-container">
+    <div class="dialog-header">
+      <h2 class="dialog-header-text">Assign Loan</h2>
+    </div>
+    <div class="dialog-content">
+      <div class="dialog-heading-row">
+        <h3>Analyst name: <span class="dialog-heading">John Doe</span></h3>
+        <h3>Number of loans currently assigned: <span class="dialog-heading">0</span></h3>
+      </div>
+      <h4 class="dialog-subheading">Unassigned Loans</h4>
+      <table class="dialog-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Loan Number</th>
+            <th>Borrower</th>
+            <th>Due Date</th>
+            <th>Context</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>6756675759</td>
+            <td>John Doe</td>
+            <td>1/11/22</td>
+            <td>MI QA AUDIT</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>6767786787</td>
+            <td>John Doe</td>
+            <td>2/3/22</td>
+            <td>MI QA AUDIT</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>6767786787</td>
+            <td>John Doe</td>
+            <td>2/3/22</td>
+            <td>MI QA AUDIT</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>6760501287</td>
+            <td>John Doe</td>
+            <td>12/11/22</td>
+            <td>MI QA AUDIT</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+    <div class="dialog-buttons">
+        <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
+        <button class="dialog-assign-button">Assign</button>
+    </div>
+    <!-- <button class="dialog-close-button" (click)="closeDialog()">Close</button> -->
+  </div>
+  

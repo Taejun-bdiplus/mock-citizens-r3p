@@ -1,0 +1,66 @@
+
+
+<div class="container">
+
+    <div class="table-container">
+        <div class="table-wrapper">
+        
+            <div class="analysts-heading">
+                <h2>Analysts</h2>
+            </div>
+    
+            <div class="search-container">
+                <!-- <input type="text" placeholder="Search by Name"> -->
+                <input type="text" placeholder="Search by Name" [(ngModel)]="searchTerm" (input)="filterTable()">
+                <button>Search</button>
+            </div>
+            
+            <div class="table-containerr">
+  
+              <table>
+                  <thead>
+                    <tr>
+                      <th>Analyst Name</th>
+                      <th>Role</th>
+                      <th>Loan Assigned</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let row of filteredRows let rowIndex = index" [ngClass]="{ 'gray-row': row.isDeactivated }">
+                      <td>{{ row.column1 }}</td>
+                      <td>{{ row.column2 }}</td>
+                      <td>{{ row.column3 }}</td>
+                      <td>{{ row.column4 }}</td>
+                      <td class="action-items" [style.text-align]="!row.isDeactivated ? 'center' : 'flex-end'">
+                          <!-- <div class="action-items"> -->
+                              <!-- <span class="action-item">ASSIGN</span> -->
+                              <!-- <span>
+                                <button (click)="openAssignDialog()">ASSIGN</button>
+                              </span>
+                              <span class="action-item">ACTIVATE</span>
+                              <span class="action-item">DEACTIVATE</span> -->
+                              
+          
+                              
+                              <button *ngIf="!row.isDeactivated" (click)="openAssignDialog(row)" [style.cursor]="'pointer'"  [style.background-color]="!row.isDeactivated ? 'white' : 'gray'">ASSIGN</button>
+                              <button (click)="activateRow(rowIndex)" [disabled]="!row.isDeactivated" [ngClass]="{ 'gray-button': row.isDeactivated }" [style.cursor]="!row.isDeactivated ? 'not-allowed' : 'pointer'" class="activate" [style.background-color]="!row.isDeactivated ? 'white' : 'gray'">ACTIVATE</button>
+                              <button (click)="deactivateRow(rowIndex)" [disabled]="row.isDeactivated" [style.cursor]="row.isDeactivated ? 'not-allowed' : 'pointer'" [ngClass]="{ 'gray-button': row.isDeactivated }" class="deactivate"  [style.background-color]="!row.isDeactivated ? 'white' : 'gray'">
+                                {{ row.isDeactivated ? 'DEACTIVATE' : 'DEACTIVATE' }}
+                              </button>
+                              
+                            <!-- </div> -->
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+    
+              <button class="scroll-top-btn" (click)="scrollToTop()">
+                <i class="fa fa-arrow-up"></i>
+              </button>
+              
+        </div>
+    </div>
+  </div>

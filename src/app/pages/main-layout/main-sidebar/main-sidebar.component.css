@@ -1,0 +1,198 @@
+.main-sidebar-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-sidebar-top {
+    height: 15%;
+  }
+  .main-sidebar-middle {
+    height: 50%;
+    width: 85%;
+    align-self: center;
+  }
+  .main-sidebar-bottom {
+    height: 30%;
+    width: 90%;
+    align-self: center;
+  }
+  
+  .company-project {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .main-sidebar-logo {
+    width: 25%;
+  }
+  .main-sidebar-image {
+    width: 100%;
+    height: 100%;
+  }
+  .main-sidebar-title {
+    align-self: center;
+  }
+  .main-sidebar-title-text1 {
+   font-size: 1.2rem;
+   font-weight: 500;
+  }
+  .main-sidebar-title-text2 {
+   font-size: 1.2rem;
+   font-weight: 500; 
+   margin-top: -0.2rem;
+  }
+  
+  .main-sidebar-tabs {
+    width: 100%;
+  }
+  .dashboard-tab {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+  }
+  .dashboard-tab:focus {
+    background-color: black;
+    border-radius: 10px;
+  }
+  .dashboard-tab-focused {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    background-color: black;
+    border-radius: 10px;
+  }
+  .dashboard-tab-icon {
+    width: 1.5rem;
+    margin-left: 1rem;
+    align-self: center;
+  }
+  .dashboard-tab-text {
+    align-self: center;
+    margin-left: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .main-sidebar-tabs-search-icon {
+    width: 1.5rem;
+  }
+  .search-tab {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+  }
+  .search-tab:focus {
+    background-color: black;
+    border-radius: 10px;
+  }
+  .search-tab-icon {
+    width: 1.5rem;
+    margin-left: 1rem;
+    align-self: center;
+  }
+  .search-tab-text {
+    align-self: center;
+    margin-left: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .main-sidebar-tabs-analysts-icon {
+    width: 1.5rem;
+  }
+  .analysts-tab {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+  }
+  .analysts-tab:focus {
+    background-color: black;
+    border-radius: 10px;
+  }
+  .analysts-tab-icon {
+    width: 1.5rem;
+    margin-left: 1rem;
+    align-self: center;
+  }
+  .analysts-tab-text {
+    align-self: center;
+    margin-left: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .main-sidebar-tabs-reports-icon {
+    width: 1.5rem;
+  }
+  .reports-tab {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+  }
+  .reports-tab:focus {
+    background-color: black;
+    border-radius: 10px;
+  }
+  .reports-tab-icon {
+    width: 1.5rem;
+    margin-left: 1rem;
+    align-self: center;
+  }
+  .reports-tab-text {
+    align-self: center;
+    margin-left: 0.9rem;
+    font-weight: 500;
+  }
+  
+  
+  
+  
+  
+  
+  .main-sidebar-account {
+    display: flex;
+    flex-direction: row;
+  }
+  .main-sidebar-account-image-box {
+    width: 20%;
+    text-align: center;
+  }
+  .main-sidebar-account-image {
+    width: 60%;
+  }
+  .main-sidebar-account-right {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-sidebar-account-right-first-row{
+    display: flex;
+    flex-direction: row;
+  }
+  .main-sidebar-account-right-first-row-user{
+    margin-right: 0.5rem;
+    align-self: baseline;
+    font-weight: 500;
+  }
+  .main-sidebar-account-right-second-row{
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .main-sidebar-account-right-third-row{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    justify-content: space-between;
+  }
+  .main-sidebar-account-right-third-row-logout{
+    display: flex;
+    flex-direction: row;
+    margin-right: 0.8rem;
+    font-weight: 500;
+  }
+  .main-sidebar-account-right-third-row-logout-text {
+    font-size: 0.9rem;
+    align-self: center;
+  }
+  .main-sidebar-account-right-third-row-logout-icon{
+    margin-left: 0.5rem;
+  }
