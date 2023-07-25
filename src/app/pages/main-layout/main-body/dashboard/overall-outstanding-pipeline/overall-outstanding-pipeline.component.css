@@ -1,6 +1,7 @@
 .chart {
     background-color: white;
     height: 100%;
+    border-radius: 1rem;
 }
 .chart-header {
     display: flex;
@@ -10,20 +11,35 @@
 .chart-header-left {
     display: flex;
     flex-direction: row;
+    padding: 1rem;
 }
 .chart-header-icon {
-
+    
+}
+.overall-pipeline {
+    vertical-align: middle;
+    height: 2rem;
 }
 .chart-header-title {
-
+    align-self: center;
+    margin-left: 1rem;
+    text-decoration: underline;
+}
+.chart-header-right {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
 }
 .chart-header-percentage {
     background-color: #000000;
     color: white;
-    height: 1.5rem;
-    width: 3rem;
+    height: 2rem;
+    width: 4rem;
     font-size: 1rem;
     border: none;
     border-radius: 6px;
-    margin-right: 1rem;
+    text-align: center;
+}
+.chart-header-percentage-number {
+    padding-top: 0.3rem;
 }
