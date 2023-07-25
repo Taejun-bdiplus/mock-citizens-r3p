@@ -1,1 +1,126 @@
-<p>add-manually-dialog works!</p>
+<div class="dialog-container">
+  <div class="dialog-header">
+    <h2 class="dialog-header-text">Manual Upload</h2>
+  </div>
+  <div class="dialog-content">
+
+      <div class="row">
+          <div class="element">
+            <label for="agency">Agency</label>
+          </div>
+          <div class="element">
+              <div class="custom-select">
+                <select id="agency" (change)="onAgencySelected($event)">
+                  <option value="">Select</option>
+                  <option value="agency1">GSE - FHLMC</option>
+                  <option value="agency2">GSE - FNMA</option>
+                  <option value="agency3">GA - FHA/HUD</option>
+                  <option value="agency3">MI - Arch</option>
+                  <option value="agency3">MI - Enact</option>
+                </select>
+                <span class="arrow"></span>
+              </div>
+            </div>
+      </div>
+
+      <div class="row">
+          <div class="element">
+            <label for="agency">Context</label>
+          </div>
+          <div class="element">
+              <div class="custom-select">
+                <!-- <select id="agency" [(ngModel)]="selectedAgency" (change)="onAgencySelected($event)">
+                  <option value="">Select</option>
+                  <option value="agency1">Self Reporting</option>
+                  <option value="agency2">Repurchase</option>
+                  <option value="agency3">FER</option>
+                  <option value="agency3">QA Audit</option>
+                  <option value="agency3">MI FER</option>
+                  <option value="agency3">MI QA Audit</option>
+                  <option value="agency3">GOV Audit</option>
+                </select> -->
+                <select id="firstDropdown" (change)="onFirstOptionSelected($event)">
+                  <option *ngFor="let option of firstOptions" [value]="option">{{ option }}</option>
+                </select>
+                <span class="arrow"></span>
+              </div>
+            </div>
+      </div>
+
+      <div class="row">
+          <div class="element">
+              <label>Review Type</label>
+          </div>
+          <div class="element">
+              <div class="custom-select">
+                  <select id="secondDropdown">
+                      <option *ngFor="let option of secondOptions" [value]="option">{{ option }}</option>
+                  </select>
+                  <span class="arrow"></span>
+                </div>
+          </div>
+      </div>
+
+      <!-- ////////////////////////////////////////////////// -->
+
+      
+
+      <div class="notice-received">
+        <div class="row">
+          <div class="element">
+            <label for="Assigned">Assigned</label>
+          </div>
+          <div class="element">
+            <button class="dialog-upload-button">Select Analyst</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="notice-received">
+        <div class="row">
+          <div class="element">
+            <label for="loan">Loan #</label>
+          </div>
+          <div class="element">
+            <input type="text" id="loan" [(ngModel)]="loan" />
+          </div>
+        </div>
+      </div>
+
+      <div class="notice-received">
+        <div class="row">
+          <div class="element">
+            <label for="notice-received">Notice Received</label>
+          </div>
+          <div class="element">
+            <input type="text" id="notice-received" [(ngModel)]="noticeReceived" />
+          </div>
+        </div>
+      </div>
+
+      <div class="notice-received">
+        <div class="row">
+          <div class="element">
+            <label for="responsedue">Response Due</label>
+          </div>
+          <div class="element">
+            <input type="text" id="notice-received" [(ngModel)]="responsedue" />
+          </div>
+        </div>
+      </div>
+
+
+      
+
+      
+
+      <div class="dialog-buttons">
+        <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
+        <button class="dialog-upload-button">Submit</button>
+    </div>
+      
+  </div>
+
+
+</div>
+
