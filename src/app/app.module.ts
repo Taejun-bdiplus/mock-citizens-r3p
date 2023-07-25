@@ -43,7 +43,7 @@ import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/t
 import { AddManuallyDialogComponent } from './dialogs/add-manually-dialog/add-manually-dialog.component';
 import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.component';
 import { OverallOutstandingPipelineComponent } from './pages/main-layout/main-body/dashboard/overall-outstanding-pipeline/overall-outstanding-pipeline.component';
-import { RecentViewTableComponent } from './recent-view-table/recent-view-table.component';
+import { RecentViewTableComponent } from './pages/main-layout/main-body/dashboard/recent-view-table/recent-view-table.component';
 
 @NgModule({
   declarations: [
