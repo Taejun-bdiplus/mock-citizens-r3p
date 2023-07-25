@@ -36,6 +36,8 @@ import { CommonModule } from '@angular/common';
 import { TableOverviewExample } from './pages/default-layout/main-body/search/test/table-overview-example/table-overview-example';
 import { MatMenuModule } from '@angular/material/menu';
 
+//Providers 
+import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator";
 
 @NgModule({
   declarations: [
@@ -83,7 +85,7 @@ import { MatMenuModule } from '@angular/material/menu';
  
   providers: [ {
     provide: MatPaginatorIntl,
-    useClass: CustomPaginator
+    useClass: MatPaginatorIntlCro
   }],
   bootstrap: [AppComponent]
 })
