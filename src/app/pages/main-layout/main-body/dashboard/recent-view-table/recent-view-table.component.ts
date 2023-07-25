@@ -25,6 +25,70 @@ export class RecentViewTableComponent {
       dueDate: new Date('2023-08-15'),
       auditor: 'Bob'
     },
+    {
+      loanNumber: '67890',
+      borrowerName: 'Jane Smith',
+      status: 'Pending',
+      context: 'Car Loan',
+      dueDate: new Date('2023-08-15'),
+      auditor: 'Bob'
+    },
+    {
+      loanNumber: '67890',
+      borrowerName: 'Jane Smith',
+      status: 'Pending',
+      context: 'Car Loan',
+      dueDate: new Date('2023-08-15'),
+      auditor: 'Bob'
+    },
+    {
+      loanNumber: '67890',
+      borrowerName: 'Jane Smith',
+      status: 'Pending',
+      context: 'Car Loan',
+      dueDate: new Date('2023-08-15'),
+      auditor: 'Bob'
+    },
+    {
+      loanNumber: '67890',
+      borrowerName: 'Jane Smith',
+      status: 'Pending',
+      context: 'Car Loan',
+      dueDate: new Date('2023-08-15'),
+      auditor: 'Bob'
+    },
+    {
+      loanNumber: '67890',
+      borrowerName: 'Jane Smith',
+      status: 'Pending',
+      context: 'Car Loan',
+      dueDate: new Date('2023-08-15'),
+      auditor: 'Bob'
+    },
+    {
+      loanNumber: '67890',
+      borrowerName: 'Jane Smith',
+      status: 'Pending',
+      context: 'Car Loan',
+      dueDate: new Date('2023-08-15'),
+      auditor: 'Bob'
+    },
+    {
+      loanNumber: '67890',
+      borrowerName: 'Jane Smith',
+      status: 'Pending',
+      context: 'Car Loan',
+      dueDate: new Date('2023-08-15'),
+      auditor: 'Bob'
+    },
+    {
+      loanNumber: '67890',
+      borrowerName: 'Jane Smith',
+      status: 'Pending',
+      context: 'Car Loan',
+      dueDate: new Date('2023-08-15'),
+      auditor: 'Bob'
+    },
     // Add more dummy data here (total 10 rows)
   ];
 }

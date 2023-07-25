@@ -1,0 +1,10 @@
+th[mat-header-cell] {
+    font-size: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+}
+
+td[mat-cell] {
+    font-size: 0.5rem;
+}
