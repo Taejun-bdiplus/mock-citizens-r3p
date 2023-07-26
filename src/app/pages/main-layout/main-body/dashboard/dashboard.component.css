@@ -121,17 +121,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 17rem;
+  height: 25rem;
 }
 
 .dashabord-third-row-left {
   height: 100%;
-  width: 45%;
+  width: 43%;
 }
 
 .dashabord-third-row-right {
   height: 100%;
-  width: 45%;
+  width: 43%;
 }
 
 

@@ -1,0 +1,30 @@
+table[mat-table] {
+    overflow: hidden !important;
+    box-shadow: 0 0 0 0;
+}
+
+th[mat-header-cell] {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    color: black;
+    border-left: 1px solid black;
+    border-bottom-style: none;
+}
+
+td[mat-cell] {
+    font-size: 0.8rem;
+    text-align: center;
+    border-left: 1px solid black;
+    border-bottom-style: none;
+}
+
+tr[mat-header-row] {
+    height: 2.2rem;
+    background-color: white;
+}
+
+tr[mat-row] {
+    height: 1.85rem;
+}

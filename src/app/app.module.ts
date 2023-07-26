@@ -48,7 +48,7 @@ import { LoanDetailComponent } from './pages/main-layout/main-body/loan-detail/l
 //Providers 
 import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator";
 import { TableOverviewExample } from '../app/pages/main-layout/main-body/search/test/table-overview-example/table-overview-example';
-import { AssignedLoansTableComponent } from './assigned-loans-table/assigned-loans-table.component';
+import { AssignedLoansTableComponent } from './pages/main-layout/main-body/dashboard/assigned-loans-box/assigned-loans-table/assigned-loans-table.component';
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,1 +1,31 @@
-<p>assigned-loans-table works!</p>
+<table mat-table [dataSource]="loans" class="mat-elevation-z8">
+
+  <!-- Borrower's Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell [ngStyle]="{'border-left': 'white'}" *matHeaderCellDef> Name </th>
+    <td mat-cell [ngStyle]="{'border-left': 'white'}" *matCellDef="let loan"> {{ loan.name }} </td>
+  </ng-container>
+
+    <!-- Loan Number Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef> Number </th>
+      <td mat-cell *matCellDef="let loan"> {{ loan.number }} </td>
+    </ng-container>
+  
+  
+    <!-- Context Column -->
+    <ng-container matColumnDef="context">
+      <th mat-header-cell *matHeaderCellDef> Context </th>
+      <td mat-cell *matCellDef="let loan"> {{ loan.context }} </td>
+    </ng-container>
+  
+    <!-- Due Date Column -->
+    <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef> Due Date </th>
+      <td mat-cell *matCellDef="let loan"> {{ loan.dueDate | date }} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
