@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,9 +13,15 @@ import { AnalystsComponent } from './pages/main-layout/main-body/analysts/analys
 import { DashboardComponent } from './pages/main-layout/main-body/dashboard/dashboard.component';
 import { ReportsComponent } from './pages/main-layout/main-body/reports/reports.component';
 import { SearchComponent } from './pages/main-layout/main-body/search/search.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AssignDialogComponent } from '../app/dialogs/assign-dialog/assign-dialog.component';
-import { TableOverviewExample } from '../app/pages/main-layout/main-body/search/test/table-overview-example/table-overview-example';
+import { AddManuallyDialogComponent } from './dialogs/add-manually-dialog/add-manually-dialog.component';
+import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.component';
+import { OverallOutstandingPipelineComponent } from './pages/main-layout/main-body/dashboard/overall-outstanding-pipeline/overall-outstanding-pipeline.component';
+import { RecentViewTableComponent } from './pages/main-layout/main-body/dashboard/recent-view-table/recent-view-table.component';
+import { HocReportDialogComponent } from './dialogs/hoc-report-dialog/hoc-report-dialog.component';
+import { CannedReportDialogComponent } from './dialogs/canned-report-dialog/canned-report-dialog.component';
+import { AssignedLoansBoxComponent } from './pages/main-layout/main-body/dashboard/assigned-loans-box/assigned-loans-box.component';
+import { RecentActivityBoxComponent } from './pages/main-layout/main-body/dashboard/recent-activity-box/recent-activity-box.component';
 
 // Import Material UI Modules
 import { MatDialogModule } from '@angular/material/dialog';
@@ -40,13 +47,7 @@ import { LoanDetailComponent } from './pages/main-layout/main-body/loan-detail/l
 
 //Providers 
 import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator";
-import { AddManuallyDialogComponent } from './dialogs/add-manually-dialog/add-manually-dialog.component';
-import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.component';
-import { OverallOutstandingPipelineComponent } from './pages/main-layout/main-body/dashboard/overall-outstanding-pipeline/overall-outstanding-pipeline.component';
-import { RecentViewTableComponent } from './pages/main-layout/main-body/dashboard/recent-view-table/recent-view-table.component';
-import { HocReportDialogComponent } from './dialogs/hoc-report-dialog/hoc-report-dialog.component';
-import { CannedReportDialogComponent } from './dialogs/canned-report-dialog/canned-report-dialog.component';
-
+import { TableOverviewExample } from '../app/pages/main-layout/main-body/search/test/table-overview-example/table-overview-example';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,9 @@ import { CannedReportDialogComponent } from './dialogs/canned-report-dialog/cann
     OverallOutstandingPipelineComponent,
     RecentViewTableComponent,
     HocReportDialogComponent,
-    CannedReportDialogComponent
+    CannedReportDialogComponent,
+    AssignedLoansBoxComponent,
+    RecentActivityBoxComponent,
   ],
   imports: [
     BrowserModule,
