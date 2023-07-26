@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AssignDialogComponent } from '../../../../dialogs/assign-dialog/assign-dialog.component'; // Replace with your actual dialog component
+import { HocReportDialogComponent } from 'src/app/dialogs/hoc-report-dialog/hoc-report-dialog.component';
+import { CannedReportDialogComponent } from 'src/app/dialogs/canned-report-dialog/canned-report-dialog.component';
 
 
 @Component({
@@ -16,7 +18,18 @@ export class ReportsComponent {
 
   handleButtonClick(item: string) {
     if (item === this.items[0]) { // Check if it is the first row
-      const dialogRef = this.dialog.open(AssignDialogComponent, {
+      const dialogRef = this.dialog.open(HocReportDialogComponent, {
+        // Configure dialog options here
+      });
+  
+      // Subscribe to dialog close event if needed
+      dialogRef.afterClosed().subscribe(result => {
+        // Handle dialog close event if needed
+      });
+    }
+
+    if (item === this.items[1]) { // Check if it is the first row
+      const dialogRef = this.dialog.open(CannedReportDialogComponent, {
         // Configure dialog options here
       });
   
@@ -26,6 +39,7 @@ export class ReportsComponent {
       });
     }
   }
+
 
   cards: { mainHeading: string, secondHeading: string }[] = [
     { mainHeading: '0', secondHeading: 'Pending MI FERs' },

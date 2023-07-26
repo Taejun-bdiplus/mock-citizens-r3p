@@ -44,6 +44,8 @@ import { AddManuallyDialogComponent } from './dialogs/add-manually-dialog/add-ma
 import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.component';
 import { OverallOutstandingPipelineComponent } from './pages/main-layout/main-body/dashboard/overall-outstanding-pipeline/overall-outstanding-pipeline.component';
 import { RecentViewTableComponent } from './pages/main-layout/main-body/dashboard/recent-view-table/recent-view-table.component';
+import { HocReportDialogComponent } from './dialogs/hoc-report-dialog/hoc-report-dialog.component';
+import { CannedReportDialogComponent } from './dialogs/canned-report-dialog/canned-report-dialog.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { RecentViewTableComponent } from './pages/main-layout/main-body/dashboar
     AddManuallyDialogComponent,
     UploadDialogComponent,
     OverallOutstandingPipelineComponent,
-    RecentViewTableComponent
+    RecentViewTableComponent,
+    HocReportDialogComponent,
+    CannedReportDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +75,7 @@ import { RecentViewTableComponent } from './pages/main-layout/main-body/dashboar
     ReminderComponent,
     NotificationComponent,
     NgChartsModule,
+    MatIconModule,
 
     // Add Material UI modules to the imports array
     MatInputModule,
