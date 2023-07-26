@@ -114,7 +114,22 @@
 
   .dashabord-third-row {
     margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 17rem;
   }
+
+.dashabord-third-row-left {
+  height: 100%;
+  width: 45%;
+}
+.dashabord-third-row-right {
+  height: 100%;
+  width: 45%;
+}
+
+
 
   .dashabord-fourth-row {
     margin-top: 4rem;
