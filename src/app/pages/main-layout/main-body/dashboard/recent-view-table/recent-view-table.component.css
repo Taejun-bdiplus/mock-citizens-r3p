@@ -1,3 +1,21 @@
+.recent-view {
+  display: flex;
+  flex-direction: column;
+}
+.recent-view-title {
+  display: flex;
+  flex-direction: row;
+}
+.recent-view-title-icon {
+  margin-right: 0.5rem;
+}
+.recent-view-title-text {
+  margin-right: 0.5rem;
+  text-align: center;
+  align-self: center;
+}
+
+
 table[mat-table] {    
     border-radius: 1rem;
     overflow:hidden !important;
@@ -23,3 +41,4 @@ tr[mat-header-row] {
 tr[mat-row] {
   height: 1.85rem;
 }
+
