@@ -12,8 +12,10 @@
     text-decoration: underline;
 }
 .assigned-loans-manage-button {
+    display: flex;
+    flex-direction: row;
     margin-left: auto;
-    margin-right: 2rem;
+    margin-right: 1rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
@@ -23,5 +25,8 @@
     border: none;
     cursor: pointer;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
+}
+.assigned-loans-manage-button-text {
+    margin-right: 0.5rem;
 }
