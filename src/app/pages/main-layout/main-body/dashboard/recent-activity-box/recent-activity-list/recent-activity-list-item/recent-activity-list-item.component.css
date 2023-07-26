@@ -1,0 +1,13 @@
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 2rem; 
+  }
+  
+  .circle-image img {
+    width: 50px;
+    height: 2rem;
+    border-radius: 50%;
+  }
+  

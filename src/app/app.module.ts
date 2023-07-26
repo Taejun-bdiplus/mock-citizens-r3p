@@ -49,6 +49,8 @@ import { LoanDetailComponent } from './pages/main-layout/main-body/loan-detail/l
 import { MatPaginatorIntlCro } from "./pages/main-layout/main-body/search/test/table-overview-example/customPaginator";
 import { TableOverviewExample } from '../app/pages/main-layout/main-body/search/test/table-overview-example/table-overview-example';
 import { AssignedLoansTableComponent } from './pages/main-layout/main-body/dashboard/assigned-loans-box/assigned-loans-table/assigned-loans-table.component';
+import { RecentActivityListComponent } from './pages/main-layout/main-body/dashboard/recent-activity-box/recent-activity-list/recent-activity-list.component';
+import { RecentActivityListItemComponent } from './pages/main-layout/main-body/dashboard/recent-activity-box/recent-activity-list/recent-activity-list-item/recent-activity-list-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +73,8 @@ import { AssignedLoansTableComponent } from './pages/main-layout/main-body/dashb
     AssignedLoansBoxComponent,
     RecentActivityBoxComponent,
     AssignedLoansTableComponent,
+    RecentActivityListComponent,
+    RecentActivityListItemComponent,
   ],
   imports: [
     BrowserModule,
