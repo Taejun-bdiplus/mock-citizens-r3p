@@ -1,27 +1,29 @@
 .dashboard-main {
-    display: flex;
-    flex-direction: column;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .dashboard-main-title {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
 }
 
 .dashabord-first-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 1.7rem;
-    height: 17rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1.7rem;
+  height: 17rem;
 }
+
 .dashabord-first-row-left {
   height: 100%;
   width: 45%;
 }
+
 .dashabord-first-row-right {
   height: 100%;
   width: 50%;
@@ -33,6 +35,7 @@
 .dashabord-second-row {
   margin-top: 4rem;
 }
+
 .filter-button {
   background-color: #008555;
   color: white;
@@ -42,7 +45,8 @@
   border: none;
   border-radius: 6px;
   margin-right: 1rem;
-  }
+}
+
 .filter-button-agent {
   background-color: #008555;
   color: white;
@@ -52,78 +56,79 @@
   border: none;
   border-radius: 6px;
   margin-right: 1rem;
-  }
+}
 
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .card {
-    width: calc(20% - 10px);
-    background-color: #FFFFFF;
-    border: 1px solid whitesmoke;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  width: calc(20% - 10px);
+  background-color: #FFFFFF;
+  border: 1px solid whitesmoke;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
 
 
-  .card-heading {
-    font-size: 30px;
-    font-weight: 500;
-  }
-  
-  .card-text {
-    font-size: 16px;
-    font-weight: 400;
-    color: gray;
-  }
-  
-  .linear-scale {
-    margin-top: 10px;
-  }
-  
-  .scale-input {
-    width: 100%;
-  }
-  
-  .card-button {
-    margin-top: 10px;
-    justify-content: end;
-    display: flex;
-    align-self: flex-end;
-    cursor: pointer;
-  }
 
-  .card-buttonn {
-    color: rgb(7, 74, 7);
-    font-weight: 600;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-  }
+.card-heading {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: gray;
+}
+
+.linear-scale {
+  margin-top: 10px;
+}
+
+.scale-input {
+  width: 100%;
+}
+
+.card-button {
+  margin-top: 10px;
+  justify-content: end;
+  display: flex;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.card-buttonn {
+  color: rgb(7, 74, 7);
+  font-weight: 600;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
 
 
-  .dashabord-third-row {
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 17rem;
-  }
+.dashabord-third-row {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 17rem;
+}
 
 .dashabord-third-row-left {
   height: 100%;
   width: 45%;
 }
+
 .dashabord-third-row-right {
   height: 100%;
   width: 45%;
@@ -131,6 +136,6 @@
 
 
 
-  .dashabord-fourth-row {
-    margin-top: 4rem;
-  }
+.dashabord-fourth-row {
+  margin-top: 4rem;
+}
