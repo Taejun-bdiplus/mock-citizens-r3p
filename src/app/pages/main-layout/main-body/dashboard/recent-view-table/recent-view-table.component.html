@@ -3,7 +3,7 @@
     <!-- Loan Number Column -->
     <ng-container matColumnDef="loanNumber">
       <th mat-header-cell *matHeaderCellDef> Loan Number </th>
-      <td mat-cell *matCellDef="let loan"> {{ loan.loanNumber }} </td>
+      <td mat-cell [ngStyle]="{'border-left': 'white'}" *matCellDef="let loan"> {{ loan.loanNumber }} </td>
     </ng-container>
   
     <!-- Borrower's Name Column -->

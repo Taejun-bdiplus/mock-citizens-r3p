@@ -1,10 +1,28 @@
+table[mat-table] {    
+    border-radius: 1rem;
+    overflow:hidden !important;
+    box-shadow: 0 0 0 0;
+}
 th[mat-header-cell] {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     font-weight: bold;
     text-align: center;
     padding: 0;
+    color: white;
 }
 
 td[mat-cell] {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
+    text-align: center;
+    border-left: 1px solid rgb(206, 206, 206);
+}
+
+tr[mat-header-row] {
+  height: 2.2rem;
+  color: white;
+  background-color: green;
+}
+
+tr[mat-row] {
+  height: 1.85rem;
 }
