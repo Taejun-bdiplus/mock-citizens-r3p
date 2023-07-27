@@ -19,7 +19,7 @@
 }
 
 .text-lines {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   height: 100%;
   width: 100%;
   display: flex;
@@ -37,6 +37,6 @@
 }
 
 .text-lines p:last-child {
-  text-indent: 1rem; /* Apply increased indent to the second line */
+  text-indent: 2.2rem; /* Apply increased indent to the second line */
   font-style: italic; /* Make the second line italic */
 }
