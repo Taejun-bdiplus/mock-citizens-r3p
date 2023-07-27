@@ -28,7 +28,7 @@ export class OverallOutstandingPipelineComponent {
       }],
       },
       options: {
-        aspectRatio: 2.5,
+        aspectRatio: 2.7,
         plugins: {
           legend: {
             position: 'right',
