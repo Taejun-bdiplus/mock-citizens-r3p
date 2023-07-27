@@ -21,7 +21,7 @@
 table[mat-table] {    
     border-radius: 1rem;
     overflow:hidden !important;
-    box-shadow: 0 0 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 th[mat-header-cell] {
     font-size: 0.7rem;
