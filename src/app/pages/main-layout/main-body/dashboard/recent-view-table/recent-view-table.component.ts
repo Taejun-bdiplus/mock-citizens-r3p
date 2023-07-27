@@ -10,66 +10,66 @@ export class RecentViewTableComponent {
 
   loans = [
     {
-      loanNumber: '12345',
+      loanNumber: '1234567890',
       borrowerName: 'John Doe',
       status: 'Approved',
-      context: 'Home Loan',
+      context: 'MI QA',
       dueDate: new Date('2023-07-31'),
       auditor: 'Alice'
     },
     {
-      loanNumber: '67890',
+      loanNumber: '1234567890',
       borrowerName: 'Jane Smith',
       status: 'Pending',
-      context: 'Car Loan',
+      context: 'MI QA',
       dueDate: new Date('2023-08-15'),
       auditor: 'Bob'
     },
     {
-      loanNumber: '67890',
+      loanNumber: '1234567890',
       borrowerName: 'Jane Smith',
       status: 'Pending',
-      context: 'Car Loan',
+      context: 'MI QA',
       dueDate: new Date('2023-08-15'),
       auditor: 'Bob'
     },
     {
-      loanNumber: '67890',
+      loanNumber: '1234567890',
       borrowerName: 'Jane Smith',
       status: 'Pending',
-      context: 'Car Loan',
+      context: 'MI QA',
       dueDate: new Date('2023-08-15'),
       auditor: 'Bob'
     },
     {
-      loanNumber: '67890',
+      loanNumber: '1234567890',
       borrowerName: 'Jane Smith',
       status: 'Pending',
-      context: 'Car Loan',
+      context: 'MI QA',
       dueDate: new Date('2023-08-15'),
       auditor: 'Bob'
     },
     {
-      loanNumber: '67890',
+      loanNumber: '1234567890',
       borrowerName: 'Jane Smith',
       status: 'Pending',
-      context: 'Car Loan',
+      context: 'MI QA',
       dueDate: new Date('2023-08-15'),
       auditor: 'Bob'
     },
     {
-      loanNumber: '67890',
+      loanNumber: '1234567890',
       borrowerName: 'Jane Smith',
       status: 'Pending',
-      context: 'Car Loan',
+      context: 'MI QA',
       dueDate: new Date('2023-08-15'),
       auditor: 'Bob'
     },
     {
-      loanNumber: '67890',
+      loanNumber: '1234567890',
       borrowerName: 'Jane Smith',
       status: 'Pending',
-      context: 'Car Loan',
+      context: 'MI QA',
       dueDate: new Date('2023-08-15'),
       auditor: 'Bob'
     },

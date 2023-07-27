@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class RecentActivityListComponent {
   listItems = [
-    { imageUrl: '../assets/images/user_picture.png', firstLine: 'First Line 1', secondLine: 'Second Line 1' },
-    { imageUrl: '../assets/images/user_picture.png', firstLine: 'First Line 2', secondLine: 'Second Line 2' },
-    { imageUrl: '../assets/images/user_picture.png', firstLine: 'First Line 3', secondLine: 'Second Line 3' },
-    { imageUrl: '../assets/images/user_picture.png', firstLine: 'First Line 4', secondLine: 'Second Line 4' },
-    { imageUrl: '../assets/images/user_picture.png', firstLine: 'First Line 5', secondLine: 'Second Line 5' },
-    { imageUrl: '../assets/images/user_picture.png', firstLine: 'First Line 6', secondLine: 'Second Line 6' }
+    { imageUrl: '../assets/images/user_picture.png', firstLine: 'Chris added note to Loan #1234567890:', secondLine: '"Client was informed of blah blah blah ...' },
+    { imageUrl: '../assets/images/user_picture.png', firstLine: 'Chris added note to Loan #1234567890:', secondLine: '"Client was informed of blah blah blah ...' },
+    { imageUrl: '../assets/images/user_picture.png', firstLine: 'Chris added note to Loan #1234567890:', secondLine: '"Client was informed of blah blah blah ...' },
+    { imageUrl: '../assets/images/user_picture.png', firstLine: 'Chris added note to Loan #1234567890:', secondLine: '"Client was informed of blah blah blah ...' },
+    { imageUrl: '../assets/images/user_picture.png', firstLine: 'Chris added note to Loan #1234567890:', secondLine: '"Client was informed of blah blah blah ...' },
+    { imageUrl: '../assets/images/user_picture.png', firstLine: 'Chris added note to Loan #1234567890:', secondLine: '"Client was informed of blah blah blah ...' }
   ];
 }
