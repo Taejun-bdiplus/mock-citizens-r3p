@@ -32,6 +32,8 @@
     </div>
     
     
+      
+  <div *ngIf="showTable" style="width: 100%;">
     <table *ngIf="showTable" class="table-bordered">
       <thead>
         <tr style="background-color: white;">
@@ -55,16 +57,12 @@
           <td>{{ row.column5 }}</td>
         </tr>
         
-        <!-- <tr>
-          <td>Row 1, Column 1</td>
-          <td>Row 1, Column 2</td>
-          <td>Row 1, Column 3</td>
-          <td>Row 1, Column 4</td>
-          <td>Row 1, Column 5</td>
-        </tr> -->
-        <!-- Add more rows as needed -->
+        
       </tbody>
     </table>
+
+    <button class="dialog-button" (click)="handleButtonClickExport()">Export</button>
+  </div>
     
     
     <button class="scroll-to-top" (click)="scrollToTop()">

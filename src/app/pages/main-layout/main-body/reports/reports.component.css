@@ -182,6 +182,24 @@ p {
   }
 
 
+  .dialog-button {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: green;
+    border-radius: 5px;
+    margin-left: 0px;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+
 
 
 

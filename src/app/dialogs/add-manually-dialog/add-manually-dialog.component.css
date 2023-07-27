@@ -11,7 +11,7 @@
     z-index: 9999;
   }
   
-  .dialog-container {
+  /* .dialog-container {
     background-color: #fff;
     border-radius: 8px;
     padding: 0;
@@ -31,6 +31,33 @@
 
   .dialog-header-text{
     font-size: 15px;
+  } */
+
+
+  .dialog-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 60%;
+    width: 40%;
+    max-height: 100%;
+  }
+
+  .dialog-header {
+    background-color: #006450;
+    padding: 0;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .dialog-header-text{
+    flex: 1;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    justify-content: center;
   }
 
   .dialog-content {

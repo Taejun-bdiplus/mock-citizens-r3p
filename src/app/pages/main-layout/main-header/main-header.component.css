@@ -22,6 +22,7 @@ font-size: 0.9rem;
 border: none;
 border-radius: 6px;
 margin-left: 1.5rem;
+cursor: pointer;
 }
 .header-right {
   width: 10%;

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AssignDialogComponent } from '../../../../dialogs/assign-dialog/assign-dialog.component'; // Replace with your actual dialog component
 import { HocReportDialogComponent } from 'src/app/dialogs/hoc-report-dialog/hoc-report-dialog.component';
 import { CannedReportDialogComponent } from 'src/app/dialogs/canned-report-dialog/canned-report-dialog.component';
+import { ExportReportDialogComponent } from 'src/app/dialogs/export-report-dialog/export-report-dialog.component';
 
 
 @Component({
@@ -38,6 +39,12 @@ export class ReportsComponent {
         // Handle dialog close event if needed
       });
     }
+  }
+
+  handleButtonClickExport(){
+    const dialogRef = this.dialog.open(ExportReportDialogComponent, {
+      // Configure dialog options here
+    });
   }
 
 

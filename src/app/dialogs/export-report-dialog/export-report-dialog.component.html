@@ -1,0 +1,56 @@
+<div class="dialog-container">
+    <div class="dialog-header">
+      <span class="dialog-header-text">Export Table</span>
+      <!-- <span class="cancel-icon" (click)="closeDialog()">Cancel</span> -->
+    </div>
+    <div class="dialog-content">
+        <div class="tablee">
+        <table class="table-bordered">
+            <thead>
+              <tr style="background-color: white;">
+                <th colspan="3" style="text-align: left; border-bottom: 2px solid gray; border-right: none;">Pending MI FERs</th>
+                <th colspan="2" style="text-align: right; border-bottom: 2px solid gray;">Total: 0</th>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Sub-Category</th>
+                <th>Due Date</th>
+                <th>Assigned Analyst</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of reportsTableData" style="text-align: center;">
+                <td>{{ row.column1 }}</td>
+                <td>{{ row.column2 }}</td>
+                <td>{{ row.column3 }}</td>
+                <td>{{ row.column4 }}</td>
+                <td>{{ row.column5 }}</td>
+              </tr>
+              
+              
+            </tbody>
+          </table>
+
+          
+        </div>
+
+        <div class="exportas">
+            <p>Export As: .xlsx</p>
+        </div>
+
+        
+      
+    
+      
+      <!-- <button class="dialog-button">Export</button> -->
+
+      <div class="dialog-buttons">
+        <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
+        <button class="dialog-assign-button">Export</button>
+    </div>
+    </div>
+    
+    
+  </div>
+  

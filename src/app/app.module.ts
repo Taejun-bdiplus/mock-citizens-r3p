@@ -51,6 +51,7 @@ import { TableOverviewExample } from '../app/pages/main-layout/main-body/search/
 import { AssignedLoansTableComponent } from './pages/main-layout/main-body/dashboard/assigned-loans-box/assigned-loans-table/assigned-loans-table.component';
 import { RecentActivityListComponent } from './pages/main-layout/main-body/dashboard/recent-activity-box/recent-activity-list/recent-activity-list.component';
 import { RecentActivityListItemComponent } from './pages/main-layout/main-body/dashboard/recent-activity-box/recent-activity-list/recent-activity-list-item/recent-activity-list-item.component';
+import { ExportReportDialogComponent } from './dialogs/export-report-dialog/export-report-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { RecentActivityListItemComponent } from './pages/main-layout/main-body/d
     AssignedLoansTableComponent,
     RecentActivityListComponent,
     RecentActivityListItemComponent,
+    ExportReportDialogComponent,
   ],
   imports: [
     BrowserModule,
