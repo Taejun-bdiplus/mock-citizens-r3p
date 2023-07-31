@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { AddManuallyDialogComponent } from '../add-manually-dialog/add-manually-dialog.component';
+import { UploadButtonHeaderComponent } from '../upload-button-header/upload-button-header.component';
 
 @Component({
   selector: 'app-upload-dialog',
@@ -26,6 +27,12 @@ export class UploadDialogComponent {
        // Handle dialog close event if needed
      });
    }
+
+   handleButtonClickUpload(){
+    const dialogRef = this.dialog.open(UploadButtonHeaderComponent, {
+      // Configure dialog options here
+    });
+  }
 
   selectedAgency: string = '';
   noticeReceived: string = '';

@@ -1,0 +1,63 @@
+<div class="dialog-container">
+    <div class="dialog-header">
+      <span class="dialog-header-text">Upload Documents</span>
+    </div>
+
+    <div class="">
+        <p>Fannie Mae</p>
+        <p>File Uploaded: 1/1/22 at 6:00 PM</p>
+    </div>
+
+    <div class="dialog-content">
+        <div class="tablee">
+        <div class="table-header">
+            <h4 class="table-header-text">Unassigned FFRs</h4>
+            <p class="table-editicon">Edit Icon</p>
+        </div>
+        <table class="table-bordered">
+            <thead>
+              <tr class="columns">
+                <th><input type="checkbox"></th>
+                <th>Loan #</th>
+                <th>GSE #</th>
+                <th>Notice Received</th>
+                <th>Response Due</th>
+                <th>Review Type</th>
+                <th>Audit Program</th>
+                <th>Auditor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of reportsTableData" style="text-align: center;">
+                <td><input type="checkbox"></td>
+                <td>{{ row.column1 }}</td>
+                <td>{{ row.column2 }}</td>
+                <td>{{ row.column3 }}</td>
+                <td>{{ row.column4 }}</td>
+                <td>{{ row.column5 }}</td>
+                <td>{{ row.column6 }}</td>
+                <td>{{ row.column7 }}</td>
+              </tr>
+              
+              
+            </tbody>
+          </table>
+
+          
+        </div>
+
+        
+      
+    
+      
+      <!-- <button class="dialog-button">Export</button> -->
+
+      <div class="dialog-buttons">
+        <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
+        <button class="dialog-assign-button">Submit</button>
+    </div>
+    </div>
+    
+    
+  </div>
+  

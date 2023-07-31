@@ -52,6 +52,7 @@ import { AssignedLoansTableComponent } from './pages/main-layout/main-body/dashb
 import { RecentActivityListComponent } from './pages/main-layout/main-body/dashboard/recent-activity-box/recent-activity-list/recent-activity-list.component';
 import { RecentActivityListItemComponent } from './pages/main-layout/main-body/dashboard/recent-activity-box/recent-activity-list/recent-activity-list-item/recent-activity-list-item.component';
 import { ExportReportDialogComponent } from './dialogs/export-report-dialog/export-report-dialog.component';
+import { UploadButtonHeaderComponent } from './dialogs/upload-button-header/upload-button-header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +78,7 @@ import { ExportReportDialogComponent } from './dialogs/export-report-dialog/expo
     RecentActivityListComponent,
     RecentActivityListItemComponent,
     ExportReportDialogComponent,
+    UploadButtonHeaderComponent,
   ],
   imports: [
     BrowserModule,
