@@ -10,6 +10,21 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 export class MainSidebarComponent {
   dashboardFocused: boolean = false;
 
+  showRoles = false; // Add a flag to control the display of roles
+  roles: string[] = ['Manager', 'Analyst', 'Senior Analyst'];
+  selectedRole: string = 'Manager';
+
+  // Function to toggle the display of roles
+  toggleRoles() {
+    this.showRoles = !this.showRoles;
+  }
+
+  // Function to set the selected role when clicked
+  selectRole(role: string) {
+    this.selectedRole = role;
+    this.showRoles = false;
+  }
+
   constructor(private router: Router, private location: Location) {}
 
   ngOnInit() {

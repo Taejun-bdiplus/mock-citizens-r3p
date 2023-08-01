@@ -52,11 +52,25 @@
           <div class="main-sidebar-account-right-first-row-user">Hi, User</div>
           <img class="main-sidebar-account-right-first-row-user-eidt" src="../assets/images/user_edit.png" />
         </div>
-        <div class="main-sidebar-account-right-second-row">
-          Manager
+
+
+        <div *ngIf="showRoles" class="main-sidebar-account-right-third-row">
+          <div class="roles-container">
+            <div *ngFor="let role of roles; let last = last" (click)="selectRole(role)"
+              [ngClass]="{ 'selected-role': selectedRole === role }">
+              {{ role }}{{ !last ? ' | ' : '' }}
+            </div>
+          </div>
         </div>
+
+        <div *ngIf="!showRoles" class="main-sidebar-account-right-third-row">
+          <div>{{ selectedRole }}</div>
+        </div>
+
+
+
         <div class="main-sidebar-account-right-third-row">
-          <div style="font-size: 0.7rem; align-self: center;">
+          <div style="font-size: 0.7rem; align-self: center;" (click)="toggleRoles()">
             Switch Role
           </div>
           <div class="main-sidebar-account-right-third-row-logout">

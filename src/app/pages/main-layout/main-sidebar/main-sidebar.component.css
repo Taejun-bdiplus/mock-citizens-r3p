@@ -196,3 +196,16 @@
   .main-sidebar-account-right-third-row-logout-icon{
     margin-left: 0.5rem;
   }
+
+
+  /* In your CSS file */
+.roles-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.7rem;
+}
+
+.roles-container div {
+  cursor: pointer;
+  margin-right: 8px;
+}
