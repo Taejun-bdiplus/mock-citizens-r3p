@@ -144,3 +144,7 @@
   background-color: grey;
   /* Add other styles as needed */
 }
+.filter-button-agent.selected {
+  background-color: grey;
+  /* Add other styles as needed */
+}
