@@ -1,1 +1,7 @@
-<p>filter-agent-dialog works!</p>
+<div class="agent-container">
+    <div class="agent-item" *ngFor="let name of names">
+        <button class="select-button" (click)="handleButtonClick(name)">Select</button>
+      <span class="agent-name">{{ name }}</span>
+    </div>
+  </div>
+  

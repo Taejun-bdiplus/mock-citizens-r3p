@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter-agent-dialog',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter-agent-dialog.component.css']
 })
 export class FilterAgentDialogComponent {
+  names: string[] = ['John', 'John', 'John', 'John', 'John', 'John', 'John'];
 
+  @Output() nameSelected = new EventEmitter<string>();
+
+  handleButtonClick(name: string) {
+    this.nameSelected.emit(name);
+  }
 }
