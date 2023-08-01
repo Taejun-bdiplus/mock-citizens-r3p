@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { SharedService } from './shared/shared.service'; // Import the service
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -112,7 +112,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatChipsModule,
     MatFormFieldModule,
   ],
-  providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlCro}],
+  providers: [SharedService, { provide: MatPaginatorIntl, useClass: MatPaginatorIntlCro}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

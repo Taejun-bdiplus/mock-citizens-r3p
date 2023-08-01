@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
+
+import { SharedService } from '../../../shared/shared.service';
+
+
 @Component({
   selector: 'app-main-sidebar',
   templateUrl: './main-sidebar.component.html',
@@ -23,9 +27,11 @@ export class MainSidebarComponent {
   selectRole(role: string) {
     this.selectedRole = role;
     this.showRoles = false;
+
+    this.sharedService.setSelectedRole(role);
   }
 
-  constructor(private router: Router, private location: Location) {}
+  constructor(private router: Router, private location: Location, private sharedService: SharedService) {}
 
   ngOnInit() {
     const currentUrl: string = this.location.path();

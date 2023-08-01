@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,4 +19,12 @@ export class DashboardComponent {
   ];
 
   showTable: boolean = false;
+
+  selectedRole: string = ''; // Assuming selectedRole is of type string. You should set its value accordingly.
+
+  constructor(private sharedService: SharedService) {
+    this.sharedService.selectedRole$.subscribe(selectedRole => {
+      this.selectedRole = selectedRole;
+    });
+  }
 }

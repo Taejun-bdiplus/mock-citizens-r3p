@@ -3,6 +3,9 @@ import { UploadDialogComponent } from '../../..//dialogs/upload-dialog/upload-di
 import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 
+import { SharedService } from '../../../shared/shared.service';
+
+
 @Component({
   selector: 'app-main-header',
   templateUrl: './main-header.component.html',
@@ -10,7 +13,15 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class MainHeaderComponent {
-  constructor(private dialog: MatDialog, private http: HttpClient) {}
+  selectedRole: string = ''; // Assuming selectedRole is of type string. You should set its value accordingly.
+  
+  constructor(private dialog: MatDialog, private http: HttpClient, private sharedService: SharedService) {
+    this.sharedService.selectedRole$.subscribe(selectedRole => {
+      this.selectedRole = selectedRole;
+    });
+  }
+
+
 
   private apiUrl = 'https://your-api-url.com/upload';
 
