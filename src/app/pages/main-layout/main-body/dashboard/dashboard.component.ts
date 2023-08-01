@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedService } from '../../../../shared/shared.service';
+import { MatDialog } from '@angular/material/dialog';
+import { FilterAgentDialogComponent } from 'src/app/dialogs/filter-agent-dialog/filter-agent-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +24,7 @@ export class DashboardComponent {
 
   selectedRole: string = ''; // Assuming selectedRole is of type string. You should set its value accordingly.
 
-  constructor(private sharedService: SharedService) {
+  constructor(private sharedService: SharedService, private dialog: MatDialog) {
     this.sharedService.selectedRole$.subscribe(selectedRole => {
       this.selectedRole = selectedRole;
     });
@@ -31,5 +33,13 @@ export class DashboardComponent {
   selectedFilter: string = 'All Pending';
   selectFilter(filter: string): void {
     this.selectedFilter = filter;
+
+    if (filter === 'Filter By Agent') {
+      this.showTable = false;
+      const dialogRef = this.dialog.open(FilterAgentDialogComponent, {
+        // Configure dialog options here
+      });
+    }
+
   }
 }
