@@ -1,0 +1,27 @@
+import { Component, OnDestroy } from '@angular/core';
+import { DataService } from './data.service';
+import { Subscription } from 'rxjs';
+
+@Component({
+  selector: 'app-other',
+  template: `
+    <div *ngIf="responseData">
+      <p>API Response in Other Component:</p>
+      <pre>{{ responseData | json }}</pre>
+    </div>
+  `
+})
+export class OtherComponent implements OnDestroy {
+  responseData: any;
+  private responseDataSubscription: Subscription;
+
+  constructor(private dataService: DataService) {
+    this.responseDataSubscription = this.dataService.responseData$.subscribe(response => {
+      this.responseData = response; // Update responseData whenever there's a new response from the service
+    });
+  }
+
+  ngOnDestroy() {
+    this.responseDataSubscription.unsubscribe(); // Unsubscribe to avoid memory leaks
+  }
+}
