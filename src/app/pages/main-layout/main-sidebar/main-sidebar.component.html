@@ -31,9 +31,11 @@
         <img class="search-tab-icon" src="../assets/images/search.png" />
         <div class="search-tab-text">Search</div>
       </div>
-      <div class="analysts-tab" routerLink="/analysts" routerLinkActive="active">
-        <img class="analysts-tab-icon" src="../assets/images/analysts.png" />
-        <div class="analysts-tab-text">Analysts</div>
+      <div *ngIf="selectedRole !== 'Analyst'">
+        <div class="analysts-tab" routerLink="/analysts" routerLinkActive="active">
+          <img class="analysts-tab-icon" src="../assets/images/analysts.png" />
+          <div class="analysts-tab-text">Analysts</div>
+        </div>
       </div>
       <div class="reports-tab" routerLink="/reports" routerLinkActive="active">
         <img class="reports-tab-icon" src="../assets/images/reports.png" />
