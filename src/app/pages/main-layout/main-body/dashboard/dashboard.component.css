@@ -139,3 +139,8 @@
 .dashabord-fourth-row {
   margin-top: 4rem;
 }
+
+.filter-button.selected {
+  background-color: grey;
+  /* Add other styles as needed */
+}

@@ -27,4 +27,9 @@ export class DashboardComponent {
       this.selectedRole = selectedRole;
     });
   }
+
+  selectedFilter: string = 'All Pending';
+  selectFilter(filter: string): void {
+    this.selectedFilter = filter;
+  }
 }

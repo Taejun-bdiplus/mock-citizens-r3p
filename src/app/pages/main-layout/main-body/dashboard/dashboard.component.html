@@ -19,11 +19,36 @@
     <!-- Filter & Reports -->
     <div class="dashabord-second-row">
         <!-- Filter -->
-        <div>
+        <!-- <div>
             <button class="filter-button">All Pending</button>
             <button class="filter-button">My Pending</button>
             <button class="filter-button-agent">Filter By Agent</button>
+        </div> -->
+
+        <div>
+          <button
+            class="filter-button"
+            [class.selected]="selectedFilter === 'All Pending'"
+            (click)="selectFilter('All Pending')"
+          >
+            All Pending
+          </button>
+          <button
+            class="filter-button"
+            [class.selected]="selectedFilter === 'My Pending'"
+            (click)="selectFilter('My Pending')"
+          >
+            My Pending
+          </button>
+          <button
+            class="filter-button-agent"
+            [class.selected]="selectedFilter === 'Filter By Agent'"
+            (click)="selectFilter('Filter By Agent')"
+          >
+            Filter By Agent
+          </button>
         </div>
+        
 
         <!-- Report Cards -->
         <div class="card-container">
