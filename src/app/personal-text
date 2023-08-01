@@ -1,27 +1,116 @@
-import { Component, OnDestroy } from '@angular/core';
-import { DataService } from './data.service';
-import { Subscription } from 'rxjs';
-
-@Component({
-  selector: 'app-other',
-  template: `
-    <div *ngIf="responseData">
-      <p>API Response in Other Component:</p>
-      <pre>{{ responseData | json }}</pre>
-    </div>
-  `
-})
-export class OtherComponent implements OnDestroy {
-  responseData: any;
-  private responseDataSubscription: Subscription;
-
-  constructor(private dataService: DataService) {
-    this.responseDataSubscription = this.dataService.responseData$.subscribe(response => {
-      this.responseData = response; // Update responseData whenever there's a new response from the service
-    });
-  }
-
-  ngOnDestroy() {
-    this.responseDataSubscription.unsubscribe(); // Unsubscribe to avoid memory leaks
-  }
-}
+[
+    {
+        "enterprise": [
+            {
+                "enterprise_id": 3,
+                "enterprise_type_id": 1,
+                "enterprise_name": "FHLMC",
+                "description": "Freddie Mac"
+            },
+            {
+                "enterprise_id": 4,
+                "enterprise_type_id": 1,
+                "enterprise_name": "FNMA",
+                "description": "Fannie Mae"
+            },
+            {
+                "enterprise_id": 5,
+                "enterprise_type_id": 1,
+                "enterprise_name": "FHA/HUD",
+                "description": "Federal Hounsing Administration"
+            },
+            {
+                "enterprise_id": 6,
+                "enterprise_type_id": 1,
+                "enterprise_name": "VA",
+                "description": "Veteran Affairs"
+            }
+        ],
+        "contextResponse": [
+            {
+                "reviewTypeResponseDtos": [
+                    {
+                        "review_type_id": 12,
+                        "review_type_name": "CPL",
+                        "context_id": 8,
+                        "description": "Compliance"
+                    }
+                ],
+                "context_id": 8,
+                "context_name": "FFR",
+                "enterprise_type_id": 1,
+                "description": "Full File Review"
+            },
+            {
+                "reviewTypeResponseDtos": [],
+                "context_id": 9,
+                "context_name": "QA Audit",
+                "enterprise_type_id": 1,
+                "description": "QA Audit"
+            },
+            {
+                "reviewTypeResponseDtos": [
+                    {
+                        "review_type_id": 13,
+                        "review_type_name": "CPL/PL",
+                        "context_id": 10,
+                        "description": "Dual Review for both Compliance & Performing"
+                    },
+                    {
+                        "review_type_id": 14,
+                        "review_type_name": "DCCR",
+                        "context_id": 10,
+                        "description": "Dual Compliance Credit Review"
+                    }
+                ],
+                "context_id": 10,
+                "context_name": "Repurchase",
+                "enterprise_type_id": 1,
+                "description": "Repurchase"
+            },
+            {
+                "reviewTypeResponseDtos": [
+                    {
+                        "review_type_id": 15,
+                        "review_type_name": "DPPR",
+                        "context_id": 11,
+                        "description": "Discretionary Post Purchase Review"
+                    },
+                    {
+                        "review_type_id": 16,
+                        "review_type_name": "EPD",
+                        "context_id": 11,
+                        "description": "Early Payment Default Review"
+                    },
+                    {
+                        "review_type_id": 17,
+                        "review_type_name": "LOS",
+                        "context_id": 11,
+                        "description": "Loss Mitigation Review"
+                    }
+                ],
+                "context_id": 11,
+                "context_name": "MI FFR",
+                "enterprise_type_id": 1,
+                "description": "Mortgage Insurer Full File Review"
+            }
+        ],
+        "enterprise_type_id": 1,
+        "enterprise_type_name": "GSE",
+        "description": "Government Sponsored Enterprise"
+    },
+    {
+        "enterprise": [
+            {
+                "enterprise_id": 7,
+                "enterprise_type_id": 2,
+                "enterprise_name": "Essent",
+                "description": "Essent"
+            }
+        ],
+        "contextResponse": [],
+        "enterprise_type_id": 2,
+        "enterprise_type_name": "GA",
+        "description": "Government Agency"
+    }
+]
