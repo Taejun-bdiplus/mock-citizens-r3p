@@ -56,6 +56,7 @@ import { RecentActivityListItemComponent } from './pages/main-layout/main-body/d
 import { ExportReportDialogComponent } from './dialogs/export-report-dialog/export-report-dialog.component';
 import { UploadButtonHeaderComponent } from './dialogs/upload-button-header/upload-button-header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterAgentDialogComponent } from './dialogs/filter-agent-dialog/filter-agent-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +83,7 @@ import { HttpClientModule } from '@angular/common/http';
     RecentActivityListItemComponent,
     ExportReportDialogComponent,
     UploadButtonHeaderComponent,
+    FilterAgentDialogComponent,
   ],
   imports: [
     HttpClientModule,
