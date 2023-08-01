@@ -53,6 +53,7 @@ import { RecentActivityListComponent } from './pages/main-layout/main-body/dashb
 import { RecentActivityListItemComponent } from './pages/main-layout/main-body/dashboard/recent-activity-box/recent-activity-list/recent-activity-list-item/recent-activity-list-item.component';
 import { ExportReportDialogComponent } from './dialogs/export-report-dialog/export-report-dialog.component';
 import { UploadButtonHeaderComponent } from './dialogs/upload-button-header/upload-button-header.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +83,7 @@ import { UploadButtonHeaderComponent } from './dialogs/upload-button-header/uplo
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
