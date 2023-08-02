@@ -1,8 +1,12 @@
 .reminder-icon {
   vertical-align: middle;
   height: 2.2rem;
+  margin-top: 0.22rem;
 }
-
+.reminder-icon-red-dot {
+  vertical-align: middle;
+  height: 2.2rem;
+}
 ::ng-deep .mat-mdc-menu-panel { /* 1 */
   max-width: 25rem !important;
   border: 0.2rem solid #018555  !important;
