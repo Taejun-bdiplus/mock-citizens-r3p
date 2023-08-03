@@ -131,13 +131,13 @@
 //   template: `
 //     <div>
 //       <p>Select Context:</p>
-//       <select (change)="onContextSelected($event.target.value)">
+//       <select (change)="onContextSelected($event.target.value)" [(ngModel)]="selectedContextName">
 //         <option *ngFor="let context of contexts" [value]="context.context_name">{{ context.context_name }}</option>
 //       </select>
 //     </div>
 //     <div *ngIf="selectedContext">
 //       <p>Select Review Type:</p>
-//       <select>
+//       <select [(ngModel)]="selectedReviewTypeName">
 //         <option *ngFor="let reviewType of selectedContext.reviewTypeResponseDtos" [value]="reviewType.review_type_name">{{ reviewType.review_type_name }}</option>
 //       </select>
 //     </div>
@@ -146,6 +146,8 @@
 // export class OtherComponent implements OnDestroy {
 //   contexts: any[];
 //   selectedContext: any;
+//   selectedContextName: string;
+//   selectedReviewTypeName: string;
 //   private responseDataSubscription: Subscription;
 
 //   constructor(private dataService: DataService) {
@@ -154,14 +156,21 @@
 //     });
 //   }
 
+//   ngOnInit() {
+//     this.selectedContextName = this.contexts[0].context_name; // Initialize the first context as the selected one on fresh reload
+//     this.onContextSelected(this.selectedContextName);
+//   }
+
 //   ngOnDestroy() {
 //     this.responseDataSubscription.unsubscribe(); // Unsubscribe to avoid memory leaks
 //   }
 
 //   onContextSelected(selectedValue: string) {
 //     this.selectedContext = this.contexts.find((context: any) => context.context_name === selectedValue);
+//     if (this.selectedContext) {
+//       this.selectedReviewTypeName = this.selectedContext.reviewTypeResponseDtos.length > 0
+//         ? this.selectedContext.reviewTypeResponseDtos[0].review_type_name // Set the first review type as selected if available
+//         : null; // Set to null if no review types available
+//     }
 //   }
 // }
-
-
-
