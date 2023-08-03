@@ -167,7 +167,7 @@
 
   /* //////////////////////   upload file css /////////////////// */
 
-  .file-upload-box {
+  .drop-zone {
     margin-top: 30px;
     width: 100%;
     border: 2px dashed gray;
@@ -175,6 +175,12 @@
     height: 50%;
     padding-top: 20px;
     padding-bottom: 20px;
+    cursor: pointer;
+  }
+
+
+  .drop-zone.dragging {
+    background-color: rgb(206, 234, 206);
   }
   
   .upload-icon {

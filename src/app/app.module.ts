@@ -57,8 +57,11 @@ import { ExportReportDialogComponent } from './dialogs/export-report-dialog/expo
 import { UploadButtonHeaderComponent } from './dialogs/upload-button-header/upload-button-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterAgentDialogComponent } from './dialogs/filter-agent-dialog/filter-agent-dialog.component';
+import { DragDropDirective } from './dialogs/drag-drop.directive';
+import { SelectAnalystUploadComponent } from './dialogs/select-analyst-upload/select-analyst-upload.component';
 @NgModule({
   declarations: [
+    DragDropDirective,
     AppComponent,
     MainLayoutComponent,
     MainSidebarComponent,
@@ -84,6 +87,7 @@ import { FilterAgentDialogComponent } from './dialogs/filter-agent-dialog/filter
     ExportReportDialogComponent,
     UploadButtonHeaderComponent,
     FilterAgentDialogComponent,
+    SelectAnalystUploadComponent,
   ],
   imports: [
     HttpClientModule,

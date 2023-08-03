@@ -1,0 +1,71 @@
+<div class="dialog-container">
+    <div class="dialog-header">
+      <h2 class="dialog-header-text">Assign Loan</h2>
+    </div>
+    <div class="dialog-content">
+      <div class="dialog-heading-row">
+        <h3>Loan Number: <span class="dialog-heading"></span></h3>
+        <h3>Due Date: <span class="dialog-heading"></span></h3>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <span>Search: </span>
+        <span class="element">
+          <input type="text" id="responsedue" [(ngModel)]="responsedue" />
+        </span>
+      </div>
+      <!-- <h4 class="dialog-subheading">Unassigned Loans</h4> -->
+      <table class="dialog-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Analyst</th>
+            <th>Current Loans</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of tableData" style="text-align: center;">
+            <td><input type="checkbox" /></td>
+            <td>{{ row.column1 }}</td>
+            <td>{{ row.column2 }}</td>
+            <td>{{ row.column3 }}</td>
+          </tr>
+          <!-- <tr>
+            <td><input type="checkbox"></td>
+            <td>6756675759</td>
+            <td>John Doe</td>
+            <td>1/11/22</td>
+            <td>MI QA AUDIT</td>
+          </tr> -->
+          <!-- <tr>
+            <td><input type="checkbox"></td>
+            <td>6767786787</td>
+            <td>John Doe</td>
+            <td>2/3/22</td>
+            <td>MI QA AUDIT</td>
+          </tr> -->
+          <!-- <tr>
+            <td><input type="checkbox"></td>
+            <td>6767786787</td>
+            <td>John Doe</td>
+            <td>2/3/22</td>
+            <td>MI QA AUDIT</td>
+          </tr> -->
+          <!-- <tr>
+            <td><input type="checkbox"></td>
+            <td>6760501287</td>
+            <td>John Doe</td>
+            <td>12/11/22</td>
+            <td>MI QA AUDIT</td>
+          </tr> -->
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+    <div class="dialog-buttons">
+        <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
+        <button class="dialog-assign-button">Assign</button>
+    </div>
+    <!-- <button class="dialog-close-button" (click)="closeDialog()">Close</button> -->
+  </div>
+  

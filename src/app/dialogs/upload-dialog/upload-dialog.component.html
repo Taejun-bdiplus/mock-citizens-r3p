@@ -57,22 +57,30 @@
         </div>
 
 
-        <div class="file-upload-box">
+        <div class="drop-zone" [class.dragging]="fileDragging" appDragDrop (fileDragged)="fileDragging = $event" (fileDropped)="onFileDropped($event)">
           <div class="upload-icon">
             <i class="fas fa-cloud-upload-alt"></i>
           </div>
           <div class="upload-text">
 
-            <span *ngIf="!selectedFile">Choose file to upload</span>
-            <p>.xlsx</p>
+            <!-- <span *ngIf="!selectedFile">Drag and drop file or Choose file to upload</span> -->
+            <span>Drag and drop file or Choose file to upload</span>
+            <p style="font-weight: 300;">.xlsx</p>
 
-            <div *ngIf="!selectedFile"><input type="file" (change)="onFileSelected($event)" /></div>
             
-            <button *ngIf="selectedFile" (click)="clearSelection()">Clear</button>
 
-            <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
+            <div *ngIf="!selectedFile" class="choose-file"><input type="file"  #fileInput (change)="onFileSelected($event)" /></div>
+
+            <span *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</span>
+
+            <button *ngIf="selectedFile" (click)="clearSelectedFile()">Clear File</button>
+            
+
+            
           </div>
         </div>
+
+        
 
         <div class="add-manually">
           <p>Or</p>

@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { SelectAnalystUploadComponent } from '../select-analyst-upload/select-analyst-upload.component';
+import { MatDialog } from '@angular/material/dialog';
+
+
 
 @Component({
   selector: 'app-add-manually-dialog',
@@ -8,7 +12,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddManuallyDialogComponent {
 
-  constructor(public dialogRef: MatDialogRef<AddManuallyDialogComponent>) {}
+  constructor(public dialogRef: MatDialogRef<AddManuallyDialogComponent>, private dialog: MatDialog) {}
 
   selectedAgency: string = '';
   noticeReceived: string = '';
@@ -72,6 +76,17 @@ export class AddManuallyDialogComponent {
       // Default options for other cases
       this.secondOptions = [];
     }
+  }
+
+  
+
+
+  openAssignDialog(): void {
+    this.dialog.open(SelectAnalystUploadComponent, {
+      width: '400px',
+      panelClass: 'assign-dialog-container',
+      autoFocus: false
+    });
   }
   
 

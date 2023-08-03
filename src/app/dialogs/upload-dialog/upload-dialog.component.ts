@@ -1,8 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { AddManuallyDialogComponent } from '../add-manually-dialog/add-manually-dialog.component';
 import { UploadButtonHeaderComponent } from '../upload-button-header/upload-button-header.component';
+import { HttpClient } from '@angular/common/http';
+import { DragDropDirective } from '../drag-drop.directive';
 
 @Component({
   selector: 'app-upload-dialog',
@@ -10,9 +12,11 @@ import { UploadButtonHeaderComponent } from '../upload-button-header/upload-butt
   styleUrls: ['./upload-dialog.component.css']
 })
 export class UploadDialogComponent {
+  @ViewChild('fileInput', { static: false }) fileInput!: ElementRef;
+  selectedFile: File | null = null;
+  fileDragging = false;
 
-
-  constructor(private dialog: MatDialog,public dialogRef: MatDialogRef<UploadDialogComponent>) {}
+  constructor(private dialog: MatDialog,public dialogRef: MatDialogRef<UploadDialogComponent>, private http: HttpClient) {}
 
 
   handleButtonClick() {
@@ -48,15 +52,40 @@ export class UploadDialogComponent {
     this.selectedAgency = agency === '' ? '' : 'Selected: ' + agency;
   }
 
+  // /////////////////////////////////drag-drop///////////////////////
 
-  selectedFile: File | null = null;
+  
 
-  onFileSelected(event: any) {
-    const fileList: FileList = event.target.files;
-    if (fileList.length > 0) {
-      this.selectedFile = fileList[0];
+  onFileSelected(event: Event) {
+    const inputElement = this.fileInput.nativeElement as HTMLInputElement;
+    if (inputElement.files && inputElement.files.length > 0) {
+      this.selectedFile = inputElement.files[0];
+      this.uploadFile(this.selectedFile);
     }
   }
+
+  onFileDropped(file: File) {
+    this.selectedFile = file;
+    this.uploadFile(this.selectedFile);
+  }
+
+  private uploadFile(file: File) {
+    // Your file upload logic here (e.g., display the file name, handle file data, etc.)
+    console.log('File selected for upload:', file.name);
+  }
+
+  clearSelectedFile() {
+    this.selectedFile = null;
+  }
+
+
+  
+  // ////////////////////////////////////////////////////////////////
+
+
+  
+
+  
 
   clearSelection() {
     this.selectedFile = null;
