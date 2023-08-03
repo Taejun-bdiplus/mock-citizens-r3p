@@ -116,7 +116,52 @@
 ]
 
 
-// getEnterpriseDisplayName(enterprise: any): string {
-//     const enterpriseType = enterprise.enterprise_type_id === 1 ? 'GSE' : 'GA';
-//     return `${enterpriseType} - ${enterprise.enterprise_name}`;
+
+
+
+
+
+
+// import { Component, OnDestroy } from '@angular/core';
+// import { DataService } from './data.service';
+// import { Subscription } from 'rxjs';
+
+// @Component({
+//   selector: 'app-other',
+//   template: `
+//     <div>
+//       <p>Select Context:</p>
+//       <select (change)="onContextSelected($event.target.value)">
+//         <option *ngFor="let context of contexts" [value]="context.context_name">{{ context.context_name }}</option>
+//       </select>
+//     </div>
+//     <div *ngIf="selectedContext">
+//       <p>Select Review Type:</p>
+//       <select>
+//         <option *ngFor="let reviewType of selectedContext.reviewTypeResponseDtos" [value]="reviewType.review_type_name">{{ reviewType.review_type_name }}</option>
+//       </select>
+//     </div>
+//   `
+// })
+// export class OtherComponent implements OnDestroy {
+//   contexts: any[];
+//   selectedContext: any;
+//   private responseDataSubscription: Subscription;
+
+//   constructor(private dataService: DataService) {
+//     this.responseDataSubscription = this.dataService.responseData$.subscribe((response: any[]) => {
+//       this.contexts = response.flatMap((item: any) => item.contextResponse);
+//     });
+//   }
+
+//   ngOnDestroy() {
+//     this.responseDataSubscription.unsubscribe(); // Unsubscribe to avoid memory leaks
+//   }
+
+//   onContextSelected(selectedValue: string) {
+//     this.selectedContext = this.contexts.find((context: any) => context.context_name === selectedValue);
+//   }
 // }
+
+
+
