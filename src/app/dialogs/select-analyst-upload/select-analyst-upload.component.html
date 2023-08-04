@@ -1,4 +1,4 @@
-<div class="dialog-container">
+<div class="dialog-container" >
     <div class="dialog-header">
       <h2 class="dialog-header-text">Assign Loan</h2>
     </div>
@@ -13,7 +13,8 @@
           <input type="text" id="responsedue" [(ngModel)]="responsedue" />
         </span>
       </div>
-      <!-- <h4 class="dialog-subheading">Unassigned Loans</h4> -->
+
+      <div>
       <table class="dialog-table">
         <thead>
           <tr>
@@ -30,16 +31,14 @@
             <td>{{ row.column2 }}</td>
             <td>{{ row.column3 }}</td>
           </tr>
-          
-          
-          <!-- Add more rows as needed -->
         </tbody>
       </table>
+    </div>
+
     </div>
     <div class="dialog-buttons">
         <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
         <button class="dialog-assign-button">Assign</button>
     </div>
-    <!-- <button class="dialog-close-button" (click)="closeDialog()">Close</button> -->
   </div>
   
