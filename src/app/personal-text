@@ -165,3 +165,26 @@ Post method
 
 // chrome.exe --user-data-dir="C:\Users\N119807\\chrome-dev-disabled-security" --disable-web-security --disable-site-isolation-trials
 
+
+
+
+Sample Response [
+    {
+        "colleague_id": 1,
+        "colleague_fullname": "Rajat K",
+        "email": "rajatkesarwani2011@gmail.com",
+        "phone": "+91-1234567889",
+        "manager_id": 0,
+        "active": 1,
+        "no_of_assignment": 1,
+        "role_name": "Analyst",
+        "role_id": "2"
+    }
+]
+
+API URL: https://r3p.p2.ocp.citizensbank.com/r3p-pipeline/colleague
+
+Method: GET
+
+Colleague API for the Select Analyst 
+
