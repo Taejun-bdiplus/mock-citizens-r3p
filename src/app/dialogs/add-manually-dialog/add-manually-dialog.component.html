@@ -69,7 +69,16 @@
             <label for="Assigned">Assigned</label>
           </div>
           <div class="element">
-            <button class="dialog-upload-button" (click)="openAssignDialog()"> Select Analyst </button>
+            <!-- <button class="dialog-upload-button" (click)="openAssignDialog()"> Select Analyst </button> -->
+            <!-- <button class="dialog-upload-button" (click)="openAssignDialog()">
+              {{ assignedAnalyst ? assignedAnalyst : 'Select Analyst' }}
+            </button> -->
+            <button class="dialog-upload-button"
+              [ngClass]="{'assigned-button': assignedAnalyst}"
+              [disabled]="assignedAnalyst"
+              (click)="openAssignDialog()">
+              {{ assignedAnalyst ? assignedAnalyst : 'Select Analyst' }}
+            </button>
           </div>
           
 

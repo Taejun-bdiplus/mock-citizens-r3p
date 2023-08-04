@@ -26,7 +26,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let row of tableData" style="text-align: center;">
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" (change)="onCheckboxChange(row)" /></td>
             <td>{{ row.column1 }}</td>
             <td>{{ row.column2 }}</td>
             <td>{{ row.column3 }}</td>
@@ -38,7 +38,7 @@
     </div>
     <div class="dialog-buttons">
         <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
-        <button class="dialog-assign-button">Assign</button>
+        <button class="dialog-assign-button" (click)="assignAnalyst()">Assign</button>
     </div>
   </div>
   

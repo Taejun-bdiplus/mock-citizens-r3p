@@ -82,12 +82,18 @@ export class AddManuallyDialogComponent {
 
   ///////////////////////////////////////////////////////////////
 
+  assignedAnalyst: string = '';
+
 
   openAssignDialog(): void {
-    this.dialog.open(SelectAnalystUploadComponent, {
+    const dialogRef = this.dialog.open(SelectAnalystUploadComponent, {
       width: '400px',
       panelClass: 'assign-dialog-container',
       autoFocus: false
+    });
+
+    dialogRef.componentInstance.analystAssigned.subscribe((analystName: string) => {
+      this.assignedAnalyst = analystName;
     });
   }
 

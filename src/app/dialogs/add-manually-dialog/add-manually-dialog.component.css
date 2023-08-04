@@ -233,6 +233,19 @@
     /* padding: 10px; */
     margin-top: 30px;
   }
+
+  .dialog-upload-button:disabled {
+    opacity: 0.8; /* Example: reduce opacity for a disabled look */
+    cursor: not-allowed; /* Example: change cursor to indicate unclickable */
+    /* Add any other styling you want */
+  }
+
+  .assigned-button {
+    /* background-color: transparent; Remove background color */
+    /* Add any other styling you want */
+    background-color: white;
+    color: black;
+  }
   
   
   
