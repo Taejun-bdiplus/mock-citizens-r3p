@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { SelectAnalystUploadComponent } from '../select-analyst-upload/select-analyst-upload.component';
 import { MatDialog } from '@angular/material/dialog';
+import { DataService } from 'src/app/data.service';
 
 
 
@@ -12,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AddManuallyDialogComponent {
 
-  constructor(public dialogRef: MatDialogRef<AddManuallyDialogComponent>, private dialog: MatDialog) {}
+  constructor(public dialogRef: MatDialogRef<AddManuallyDialogComponent>, private dialog: MatDialog, private dataService: DataService) {}
 
   selectedAgency: string = '';
   noticeReceived: string = '';
@@ -87,6 +88,39 @@ export class AddManuallyDialogComponent {
       panelClass: 'assign-dialog-container',
       autoFocus: false
     });
+  }
+
+
+  // api call on submit button ///////////////////
+
+  onSubmit() {
+    const payload = {
+    "loan_number": this.loan,
+    "requester_ent_id": 0,
+    "requester_loan_number": "string",
+    "responsible_ent_id": 0,
+    "requester_ent_loan_number": "string",
+    "context_id": 0,
+    "channel_id": 0,
+    "task_name": "string",
+    "document_type": "string",
+    "received_date": "2023-07-17T08:39:01.129Z",
+    "loan_due_date": "2023-07-17T08:39:01.129Z",
+    "loan_status": "string",
+    "comments": "string",
+    "colleague_id":123
+    };
+
+    this.dataService.submitLoanData(payload).subscribe(
+      response => {
+        console.log('API response:', response);
+        // Handle success here
+      },
+      error => {
+        console.error('API error:', error);
+        // Handle error here
+      }
+    );
   }
   
 
