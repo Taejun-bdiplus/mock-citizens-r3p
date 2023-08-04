@@ -159,3 +159,8 @@ https://r3p.p2.ocp.citizensbank.com/r3p-pipeline/review
  
 
 Post method
+
+
+
+chrome.exe --user-data-dir="C:\Users\N119807\\chrome-dev-disabled-security" --disable-web-security --disable-site-isolation-trials
+
