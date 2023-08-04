@@ -122,55 +122,40 @@
 
 
 
-// import { Component, OnDestroy } from '@angular/core';
-// import { DataService } from './data.service';
-// import { Subscription } from 'rxjs';
+{
 
-// @Component({
-//   selector: 'app-other',
-//   template: `
-//     <div>
-//       <p>Select Context:</p>
-//       <select (change)="onContextSelected($event.target.value)" [(ngModel)]="selectedContextName">
-//         <option *ngFor="let context of contexts" [value]="context.context_name">{{ context.context_name }}</option>
-//       </select>
-//     </div>
-//     <div *ngIf="selectedContext">
-//       <p>Select Review Type:</p>
-//       <select [(ngModel)]="selectedReviewTypeName">
-//         <option *ngFor="let reviewType of selectedContext.reviewTypeResponseDtos" [value]="reviewType.review_type_name">{{ reviewType.review_type_name }}</option>
-//       </select>
-//     </div>
-//   `
-// })
-// export class OtherComponent implements OnDestroy {
-//   contexts: any[];
-//   selectedContext: any;
-//   selectedContextName: string;
-//   selectedReviewTypeName: string;
-//   private responseDataSubscription: Subscription;
+    "loan_number": "string",
 
-//   constructor(private dataService: DataService) {
-//     this.responseDataSubscription = this.dataService.responseData$.subscribe((response: any[]) => {
-//       this.contexts = response.flatMap((item: any) => item.contextResponse);
-//     });
-//   }
+    "requester_ent_id": 0,
 
-//   ngOnInit() {
-//     this.selectedContextName = this.contexts[0].context_name; // Initialize the first context as the selected one on fresh reload
-//     this.onContextSelected(this.selectedContextName);
-//   }
+    "requester_loan_number": "string",
 
-//   ngOnDestroy() {
-//     this.responseDataSubscription.unsubscribe(); // Unsubscribe to avoid memory leaks
-//   }
+    "responsible_ent_id": 0,
 
-//   onContextSelected(selectedValue: string) {
-//     this.selectedContext = this.contexts.find((context: any) => context.context_name === selectedValue);
-//     if (this.selectedContext) {
-//       this.selectedReviewTypeName = this.selectedContext.reviewTypeResponseDtos.length > 0
-//         ? this.selectedContext.reviewTypeResponseDtos[0].review_type_name // Set the first review type as selected if available
-//         : null; // Set to null if no review types available
-//     }
-//   }
-// }
+    "requester_ent_loan_number": "string",
+
+    "context_id": 0,
+
+    "channel_id": 0,
+
+    "task_name": "string",
+
+    "document_type": "string",
+
+    "received_date": "2023-07-17T08:39:01.129Z",
+
+    "loan_due_date": "2023-07-17T08:39:01.129Z",
+
+    "loan_status": "string",
+
+    "comments": "string",
+
+    "colleague_id":123
+
+}
+
+https://r3p.p2.ocp.citizensbank.com/r3p-pipeline/review
+
+ 
+
+Post method
