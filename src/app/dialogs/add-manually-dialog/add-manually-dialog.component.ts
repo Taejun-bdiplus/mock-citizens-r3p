@@ -1,8 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { SelectAnalystUploadComponent } from '../select-analyst-upload/select-analyst-upload.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DataService } from 'src/app/data.service';
+import { NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 
 
@@ -121,6 +123,24 @@ export class AddManuallyDialogComponent {
         // Handle error here
       }
     );
+  }
+
+  ///////////////////////////////////////////////////////////////////
+
+  receiveDate: Date | null = null;
+  responseDueDate: Date | null = null;
+
+  // openDatePicker(section: string, datepicker: MatDatepicker<Date>) {
+  //   datepicker.open();
+  // }
+
+  @ViewChild('receiveDatePicker') receiveDatePicker!: MatDatepicker<Date>;
+  @ViewChild('responseDatePicker') responseDatePicker!: MatDatepicker<Date>;
+
+
+  openDatePicker(section: string) {
+    const datepicker = section === 'receive' ? this.receiveDatePicker : this.responseDatePicker;
+    datepicker.open();
   }
   
 

@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedService } from './shared/shared.service'; // Import the service
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,6 +62,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilterAgentDialogComponent } from './dialogs/filter-agent-dialog/filter-agent-dialog.component';
 import { DragDropDirective } from './dialogs/drag-drop.directive';
 import { SelectAnalystUploadComponent } from './dialogs/select-analyst-upload/select-analyst-upload.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     DragDropDirective,
@@ -100,6 +104,9 @@ import { SelectAnalystUploadComponent } from './dialogs/select-analyst-upload/se
     NotificationComponent,
     NgChartsModule,
     MatIconModule,
+    // FontAwesomeModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
     // Add Material UI modules to the imports array
     MatInputModule,
@@ -117,7 +124,12 @@ import { SelectAnalystUploadComponent } from './dialogs/select-analyst-upload/se
     MatPaginatorModule,
     MatChipsModule,
     MatFormFieldModule,
+    NgbModule,
   ],
+
+  
+
+
   providers: [SharedService, { provide: MatPaginatorIntl, useClass: MatPaginatorIntlCro}],
   bootstrap: [AppComponent]
 })
