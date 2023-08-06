@@ -1,35 +1,36 @@
 .agent-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 20rem;
-    height: 25rem;
-    border-radius: 10px !important;
-  }
-  ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
-    border-radius: 10px !important;
-  }
-  .agent-item {
-    display: flex;
-    margin: 0.5rem 0 0.5rem 0;
-    width: 100%;
-    justify-content: space-evenly;
-  }
-  
-  .agent-name {
-    align-self: center;
-    font-weight: 500;
-  }
-  
-  .select-button {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 5.5rem;
-    height: 2rem;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  height: 25rem;
+  border-radius: 10px !important;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 10px !important;
+}
+
+.agent-item {
+  display: flex;
+  margin: 0.5rem 0 0.5rem 0;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.agent-name {
+  align-self: center;
+  font-weight: 500;
+}
+
+.select-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 5.5rem;
+  height: 2rem;
+}

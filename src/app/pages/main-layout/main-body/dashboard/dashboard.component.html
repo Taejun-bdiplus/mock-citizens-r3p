@@ -1,96 +1,75 @@
 <div class="dashboard-main">
-    <div class="dashboard-main-title">
-        Dashboard
-    </div>
-    <!-- Overall Outstanding Pipeline & Recently Viewed -->
-    <div class="dashabord-first-row">
-      <!-- Overall Outstanding Pipeline - Pie chart -->
-      <div class="dashabord-first-row-left">
-        <app-overall-outstanding-pipeline></app-overall-outstanding-pipeline>
-      </div>
-
-      <!-- Recently Viewed -->
-      <div class="dashabord-first-row-right">
-        <app-recent-view-table></app-recent-view-table>
-      </div>
-      
+  <div class="dashboard-main-title">
+    Dashboard
+  </div>
+  <!-- Overall Outstanding Pipeline & Recently Viewed -->
+  <div class="dashabord-first-row">
+    <!-- Overall Outstanding Pipeline - Pie chart -->
+    <div class="dashabord-first-row-left">
+      <app-overall-outstanding-pipeline></app-overall-outstanding-pipeline>
     </div>
 
-    <!-- Filter & Reports -->
-    <div class="dashabord-second-row">
-        <!-- Filter -->
-        <!-- <div>
-            <button class="filter-button">All Pending</button>
-            <button class="filter-button">My Pending</button>
-            <button class="filter-button-agent">Filter By Agent</button>
-        </div> -->
+    <!-- Recently Viewed -->
+    <div class="dashabord-first-row-right">
+      <app-recent-view-table></app-recent-view-table>
+    </div>
 
-        <div>
-          <button
-            class="filter-button"
-            [class.selected]="selectedFilter === 'All Pending'"
-            (click)="selectFilter('All Pending')"
-          >
-            All Pending
-          </button>
-          <button
-            class="filter-button"
-            [class.selected]="selectedFilter === 'My Pending'"
-            (click)="selectFilter('My Pending')"
-          >
-            My Pending
-          </button>
-          <button
-            *ngIf=!filterByAgentWithName
-            class="filter-button-agent"
-            [class.selected]="selectedFilter === 'Filter By Agent'"
-            (click)="selectFilter('Filter By Agent')"
-          >
-            Filter By Agent
-          </button>
-          <button
-            *ngIf=filterByAgentWithName
-            class="filter-button-agent-with-name"
-            [class.selected]="selectedFilter === 'Filter By Agent'"
-            (click)="selectFilter('Filter By Agent')"
-          >
-          {{ filterButtonLabel }}
-        </button>
-        </div>
-        
+  </div>
 
-        <!-- Report Cards -->
-        <div class="card-container">
-            <div class="card" *ngFor="let card of cards; let i = index">
-                <div class="card-content">
-                    <h2 class="card-heading">{{ card.mainHeading }}</h2>
-                    <p class="card-text">{{ card.secondHeading }}</p>
-                  <div class="linear-scale">
-                    <input type="range" min="0" max="15" value="0" class="scale-input" />
-                  </div>
-                  <div class="card-button" (click)="showTable = true">
-                    <button class="card-buttonn">
-                      See more <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-        
-              </div>
+  <!-- Filter & Reports -->
+  <div class="dashabord-second-row">
+    <div>
+      <button class="filter-button" [class.selected]="selectedFilter === 'All Pending'"
+        (click)="selectFilter('All Pending')">
+        All Pending
+      </button>
+      <button class="filter-button" [class.selected]="selectedFilter === 'My Pending'"
+        (click)="selectFilter('My Pending')">
+        My Pending
+      </button>
+      <button *ngIf=!filterByAgentWithName class="filter-button-agent"
+        [class.selected]="selectedFilter === 'Filter By Agent'" (click)="selectFilter('Filter By Agent')">
+        Filter By Agent
+      </button>
+      <button *ngIf=filterByAgentWithName class="filter-button-agent-with-name"
+        [class.selected]="selectedFilter === 'Filter By Agent'" (click)="selectFilter('Filter By Agent')">
+        {{ filterButtonLabel }}
+      </button>
+    </div>
+
+
+    <!-- Report Cards -->
+    <div class="card-container">
+      <div class="card" *ngFor="let card of cards; let i = index">
+        <div class="card-content">
+          <h2 class="card-heading">{{ card.mainHeading }}</h2>
+          <p class="card-text">{{ card.secondHeading }}</p>
+          <div class="linear-scale">
+            <input type="range" min="0" max="15" value="0" class="scale-input" />
+          </div>
+          <div class="card-button" (click)="showTable = true">
+            <button class="card-buttonn">
+              See more <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
         </div>
+      </div>
     </div>
 
     <!-- Assigned Loans & Recent Activity -->
     <div class="dashabord-third-row">
-        <div class="dashabord-third-row-left">
-          <app-assigned-loans-box></app-assigned-loans-box>
-        </div>
+      <div class="dashabord-third-row-left">
+        <app-assigned-loans-box></app-assigned-loans-box>
+      </div>
 
-        <div class="dashabord-third-row-right">
-          <app-recent-activity-box></app-recent-activity-box>
-        </div>
+      <div class="dashabord-third-row-right">
+        <app-recent-activity-box></app-recent-activity-box>
+      </div>
     </div>
 
     <!-- Search -->
     <div class="dashabord-fourth-row">
-        <table-overview-example></table-overview-example>
+      <table-overview-example></table-overview-example>
     </div>
-</div>
+  </div>

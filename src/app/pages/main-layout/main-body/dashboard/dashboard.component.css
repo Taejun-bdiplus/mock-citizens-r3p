@@ -31,7 +31,6 @@
   margin-top: -1.7rem;
 }
 
-
 .dashabord-second-row {
   margin-top: 4rem;
 }
@@ -57,6 +56,7 @@
   border-radius: 6px;
   margin-right: 1rem;
 }
+
 .filter-button-agent-with-name {
   background-color: #008555;
   color: white;
@@ -67,8 +67,6 @@
   border-radius: 6px;
   margin-right: 1rem;
 }
-
-
 
 .card-container {
   display: flex;
@@ -88,8 +86,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
-
-
 
 .card-heading {
   font-size: 30px;
@@ -126,7 +122,6 @@
   cursor: pointer;
 }
 
-
 .dashabord-third-row {
   margin-top: 4rem;
   display: flex;
@@ -145,8 +140,6 @@
   width: 43%;
 }
 
-
-
 .dashabord-fourth-row {
   margin-top: 4rem;
 }
@@ -154,9 +147,11 @@
 .filter-button.selected {
   background-color: grey;
 }
+
 .filter-button-agent.selected {
   background-color: grey;
 }
+
 .filter-button-agent-with-name.selected {
   background-color: grey;
 }
