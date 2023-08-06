@@ -102,7 +102,7 @@
             <label for="notice-received">Notice Received</label>
           </div>
           <div class="element" (click)="openDatePicker('receive')">
-            <input type="text" id="notice-received" matInput [matDatepicker]="receiveDatePicker" />
+            <input type="text" id="notice-received" [(ngModel)]="noticeReceived" matInput [matDatepicker]="receiveDatePicker" />
             <mat-datepicker #receiveDatePicker></mat-datepicker>
             <!-- <fa-icon class="datepicker-icon" [icon]="['fas', 'calendar-alt']"></fa-icon> -->
           </div>
@@ -115,7 +115,7 @@
             <label for="responsedue">Response Due</label>
           </div>
           <div class="element" (click)="openDatePicker('response')">
-            <input type="text" id="notice-received" matInput [matDatepicker]="responseDatePicker" />
+            <input type="text" id="notice-received" [(ngModel)]="responsedue" matInput [matDatepicker]="responseDatePicker" />
             <mat-datepicker #responseDatePicker></mat-datepicker>
             <!-- <fa-icon class="datepicker-icon" [icon]="['fas', 'calendar-alt']"></fa-icon> -->
           </div>

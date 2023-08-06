@@ -94,8 +94,20 @@ export class AddManuallyDialogComponent {
 
     dialogRef.componentInstance.analystAssigned.subscribe((analystName: string) => {
       this.assignedAnalyst = analystName;
+      this.callSelectAnalystApi(analystName);
     });
   }
+
+  // receivedDate: Date | null = null;
+  // loanDueDate: Date | null = null;
+
+  // onDateSelected(event: any, section: string) {
+  //   if (section === 'receive') {
+  //     this.receivedDate = event.value;
+  //   } else if (section === 'response') {
+  //     this.loanDueDate = event.value;
+  //   }
+  // }
 
   
 
@@ -113,8 +125,8 @@ export class AddManuallyDialogComponent {
     "channel_id": 0,
     "task_name": "string",
     "document_type": "string",
-    "received_date": "2023-07-17T08:39:01.129Z",
-    "loan_due_date": "2023-07-17T08:39:01.129Z",
+    "received_date": this.noticeReceived,
+    "loan_due_date": this.responsedue,
     "loan_status": "string",
     "comments": "string",
     "colleague_id":123
@@ -130,6 +142,7 @@ export class AddManuallyDialogComponent {
         // Handle error here
       }
     );
+    this.closeDialog();
   }
 
   ///////////////////////////////////////////////////////////////////
@@ -148,6 +161,37 @@ export class AddManuallyDialogComponent {
   openDatePicker(section: string) {
     const datepicker = section === 'receive' ? this.receiveDatePicker : this.responseDatePicker;
     datepicker.open();
+  }
+
+
+
+  // //// api call on Select Analyst button /////////////////
+
+  callSelectAnalystApi(analystName: string) {
+    const payload = [
+      {
+        "colleague_id": 1,
+        "colleague_fullname": analystName,
+        "email": "rajatkesarwani2011@gmail.com",
+        "phone": "+91-1234567889",
+        "manager_id": 0,
+        "active": 1,
+        "no_of_assignment": 1,
+        "role_name": "Analyst",
+        "role_id": "2"
+      }
+    ];
+
+    this.dataService.selectAnalyst(payload).subscribe(
+      response => {
+        console.log('Select Analyst API response:', response);
+        // Handle success here
+      },
+      error => {
+        console.error('Select Analyst API error:', error);
+        // Handle error here
+      }
+    );
   }
   
 
