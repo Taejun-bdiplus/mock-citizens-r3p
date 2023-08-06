@@ -41,12 +41,21 @@
             My Pending
           </button>
           <button
+            *ngIf=!filterByAgentWithName
             class="filter-button-agent"
             [class.selected]="selectedFilter === 'Filter By Agent'"
             (click)="selectFilter('Filter By Agent')"
           >
             Filter By Agent
           </button>
+          <button
+            *ngIf=filterByAgentWithName
+            class="filter-button-agent-with-name"
+            [class.selected]="selectedFilter === 'Filter By Agent'"
+            (click)="selectFilter('Filter By Agent')"
+          >
+          {{ filterButtonLabel }}
+        </button>
         </div>
         
 

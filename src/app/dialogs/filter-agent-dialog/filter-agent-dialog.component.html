@@ -1,6 +1,6 @@
 <div class="agent-container">
   <div class="agent-item" *ngFor="let name of names">
-    <button class="select-button" (click)="handleButtonClick(name)">Select</button>
+    <button class="select-button" (click)="selectName(name)">Select</button>
     <span class="agent-name">{{ name }}</span>
   </div>
 </div>

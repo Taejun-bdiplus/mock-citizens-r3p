@@ -57,6 +57,17 @@
   border-radius: 6px;
   margin-right: 1rem;
 }
+.filter-button-agent-with-name {
+  background-color: #008555;
+  color: white;
+  height: 2.5rem;
+  width: 13rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  margin-right: 1rem;
+}
+
 
 
 .card-container {
@@ -142,9 +153,10 @@
 
 .filter-button.selected {
   background-color: grey;
-  /* Add other styles as needed */
 }
 .filter-button-agent.selected {
   background-color: grey;
-  /* Add other styles as needed */
+}
+.filter-button-agent-with-name.selected {
+  background-color: grey;
 }

@@ -11,4 +11,10 @@ export class SharedService {
   setSelectedRole(selectedRole: string) {
     this.selectedRoleSubject.next(selectedRole);
   }
+
+  private nameSelectedValueSource = new BehaviorSubject<string>('');
+  nameSelectedValue$ = this.nameSelectedValueSource.asObservable();
+  setNameSelectedValue(value: string) {
+    this.nameSelectedValueSource.next(value);
+  }
 }
