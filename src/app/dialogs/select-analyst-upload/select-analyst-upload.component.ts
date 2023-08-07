@@ -29,6 +29,7 @@ export class SelectAnalystUploadComponent {
   // ];
   @Input() tableData: any[] = [];
   selectedAnalyst: any = null;
+  selectedAnalystId: number = 0;
   
 
 
@@ -45,9 +46,10 @@ export class SelectAnalystUploadComponent {
   // }
   assignAnalyst() {
     if (this.selectedAnalyst) {
+      this.selectedAnalystId = this.selectedAnalyst.colleague_id;
       this.analystAssigned.emit({
         name: this.selectedAnalyst.column1,
-        id: this.selectedAnalyst.colleague_id  // Emit both name and colleague_id
+        id: this.selectedAnalystId
       });
     }
   }

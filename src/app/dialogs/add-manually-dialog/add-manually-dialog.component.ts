@@ -91,15 +91,16 @@ export class AddManuallyDialogComponent {
       width: '400px',
       panelClass: 'assign-dialog-container',
       autoFocus: false,
-      data: { tableData: [] }
+      data: {
+        tableData: [],
+        assignedAnalyst: this.assignedAnalyst,
+        selected: !!this.selectedAnalystId
+      }
     });
 
-    // dialogRef.componentInstance.analystAssigned.subscribe((analystName: string) => {
-    //   this.assignedAnalyst = analystName;
-    // });
     dialogRef.componentInstance.analystAssigned.subscribe((analystData: any) => {
       this.assignedAnalyst = analystData.name;
-      this.selectedAnalystId = analystData.id;
+      this.selectedAnalystId = analystData.id; // Assign the selected analyst's colleague_id
     });
 
     this.dataService.selectAnalyst().subscribe(
