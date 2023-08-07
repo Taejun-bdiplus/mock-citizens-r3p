@@ -28,17 +28,27 @@ export class SelectAnalystUploadComponent {
   //   { column1: 'Sarah Smith', column2: 'Value 4', column3: 'Data 4', selected: false },
   // ];
   @Input() tableData: any[] = [];
+  selectedAnalyst: any = null;
   
 
 
   selectedRow: any = null; // Track the selected row
 
-  @Output() analystAssigned = new EventEmitter<string>();
+  // @Output() analystAssigned = new EventEmitter<string>();
+  @Output() analystAssigned: EventEmitter<any> = new EventEmitter<any>();
 
+  // assignAnalyst() {
+  //   if (this.selectedRow) {
+  //     this.analystAssigned.emit(this.selectedRow.column1); // Emit the analyst's name
+  //     this.closeDialog();
+  //   }
+  // }
   assignAnalyst() {
-    if (this.selectedRow) {
-      this.analystAssigned.emit(this.selectedRow.column1); // Emit the analyst's name
-      this.closeDialog();
+    if (this.selectedAnalyst) {
+      this.analystAssigned.emit({
+        name: this.selectedAnalyst.column1,
+        id: this.selectedAnalyst.colleague_id  // Emit both name and colleague_id
+      });
     }
   }
 

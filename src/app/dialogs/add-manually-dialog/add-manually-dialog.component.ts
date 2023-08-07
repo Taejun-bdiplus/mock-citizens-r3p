@@ -83,6 +83,7 @@ export class AddManuallyDialogComponent {
   ///////////////////////////////////////////////////////////////
 
   assignedAnalyst: string = '';
+  selectedAnalystId: number = 0;
 
 
   openAssignDialog(): void {
@@ -93,8 +94,12 @@ export class AddManuallyDialogComponent {
       data: { tableData: [] }
     });
 
-    dialogRef.componentInstance.analystAssigned.subscribe((analystName: string) => {
-      this.assignedAnalyst = analystName;
+    // dialogRef.componentInstance.analystAssigned.subscribe((analystName: string) => {
+    //   this.assignedAnalyst = analystName;
+    // });
+    dialogRef.componentInstance.analystAssigned.subscribe((analystData: any) => {
+      this.assignedAnalyst = analystData.name;
+      this.selectedAnalystId = analystData.id;
     });
 
     this.dataService.selectAnalyst().subscribe(
@@ -103,7 +108,8 @@ export class AddManuallyDialogComponent {
           column1: item.colleague_fullname,
           column2: 'Value 1', // Example data, you can modify as needed
           column3: 'Data 1',  // Example data, you can modify as needed
-          selected: false
+          selected: false,
+          colleague_id: item.colleague_id
         }));
       },
       error => {
@@ -113,17 +119,7 @@ export class AddManuallyDialogComponent {
     );
   }
 
-  // receivedDate: Date | null = null;
-  // loanDueDate: Date | null = null;
-
-  // onDateSelected(event: any, section: string) {
-  //   if (section === 'receive') {
-  //     this.receivedDate = event.value;
-  //   } else if (section === 'response') {
-  //     this.loanDueDate = event.value;
-  //   }
-  // }
-
+  
   
 
 
@@ -144,7 +140,7 @@ export class AddManuallyDialogComponent {
     "loan_due_date": this.responsedue,
     "loan_status": "string",
     "comments": "string",
-    "colleague_id":123
+    "colleague_id":this.selectedAnalystId
     };
 
     this.dataService.submitLoanData(payload).subscribe(
@@ -180,34 +176,9 @@ export class AddManuallyDialogComponent {
 
 
 
-  // //// api call on Select Analyst button /////////////////
+  
 
-  // callSelectAnalystApi(analystName: string) {
-  //   const payload = [
-  //     {
-  //       "colleague_id": 1,
-  //       "colleague_fullname": analystName,
-  //       "email": "rajatkesarwani2011@gmail.com",
-  //       "phone": "+91-1234567889",
-  //       "manager_id": 0,
-  //       "active": 1,
-  //       "no_of_assignment": 1,
-  //       "role_name": "Analyst",
-  //       "role_id": "2"
-  //     }
-  //   ];
-
-  //   this.dataService.selectAnalyst().subscribe(
-  //     response => {
-  //       console.log('Select Analyst API response:', response);
-  //       // Handle success here
-  //     },
-  //     error => {
-  //       console.error('Select Analyst API error:', error);
-  //       // Handle error here
-  //     }
-  //   );
-  // }
+  
 
   
   
