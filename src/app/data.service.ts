@@ -16,8 +16,12 @@ export class DataService {
 
   // getColleague api
   private baseUrl = 'https://r3p.p2.ocp.citizensbank.com/r3p-pipeline';
-  selectAnalyst(payload: any): Observable<any> {
+  selectAnalyst(): Observable<any[]> {
     const url = `${this.baseUrl}/colleague`;
-    return this.http.post(url, payload);
+    return this.http.get<any[]>(url);
   }
+  // selectAnalyst(payload: any): Observable<any> {
+  //   const url = `${this.baseUrl}/colleague`;
+  //   return this.http.post(url, payload);
+  // }
 }

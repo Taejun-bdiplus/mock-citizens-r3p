@@ -89,13 +89,28 @@ export class AddManuallyDialogComponent {
     const dialogRef = this.dialog.open(SelectAnalystUploadComponent, {
       width: '400px',
       panelClass: 'assign-dialog-container',
-      autoFocus: false
+      autoFocus: false,
+      data: { tableData: [] }
     });
 
     dialogRef.componentInstance.analystAssigned.subscribe((analystName: string) => {
       this.assignedAnalyst = analystName;
-      this.callSelectAnalystApi(analystName);
     });
+
+    this.dataService.selectAnalyst().subscribe(
+      (response: any[]) => {
+        dialogRef.componentInstance.tableData = response.map(item => ({
+          column1: item.colleague_fullname,
+          column2: 'Value 1', // Example data, you can modify as needed
+          column3: 'Data 1',  // Example data, you can modify as needed
+          selected: false
+        }));
+      },
+      error => {
+        console.error('Select Analyst API error:', error);
+        // Handle error here
+      }
+    );
   }
 
   // receivedDate: Date | null = null;
@@ -167,32 +182,34 @@ export class AddManuallyDialogComponent {
 
   // //// api call on Select Analyst button /////////////////
 
-  callSelectAnalystApi(analystName: string) {
-    const payload = [
-      {
-        "colleague_id": 1,
-        "colleague_fullname": analystName,
-        "email": "rajatkesarwani2011@gmail.com",
-        "phone": "+91-1234567889",
-        "manager_id": 0,
-        "active": 1,
-        "no_of_assignment": 1,
-        "role_name": "Analyst",
-        "role_id": "2"
-      }
-    ];
+  // callSelectAnalystApi(analystName: string) {
+  //   const payload = [
+  //     {
+  //       "colleague_id": 1,
+  //       "colleague_fullname": analystName,
+  //       "email": "rajatkesarwani2011@gmail.com",
+  //       "phone": "+91-1234567889",
+  //       "manager_id": 0,
+  //       "active": 1,
+  //       "no_of_assignment": 1,
+  //       "role_name": "Analyst",
+  //       "role_id": "2"
+  //     }
+  //   ];
 
-    this.dataService.selectAnalyst(payload).subscribe(
-      response => {
-        console.log('Select Analyst API response:', response);
-        // Handle success here
-      },
-      error => {
-        console.error('Select Analyst API error:', error);
-        // Handle error here
-      }
-    );
-  }
+  //   this.dataService.selectAnalyst().subscribe(
+  //     response => {
+  //       console.log('Select Analyst API response:', response);
+  //       // Handle success here
+  //     },
+  //     error => {
+  //       console.error('Select Analyst API error:', error);
+  //       // Handle error here
+  //     }
+  //   );
+  // }
+
+  
   
 
 
