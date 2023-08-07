@@ -248,3 +248,85 @@ Post method
     }
 ]
 
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+import { Component, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SelectAnalystUploadComponent } from '../select-analyst-upload/select-analyst-upload.component';
+import { DataService } from 'src/app/data.service';
+
+@Component({
+  selector: 'app-add-manually-dialog',
+  templateUrl: './add-manually-dialog.component.html',
+  styleUrls: ['./add-manually-dialog.component.css']
+})
+export class AddManuallyDialogComponent {
+  assignedAnalyst: string = '';
+  selectedAnalystId: number = 0; // Property to store selected analyst's colleague_id
+  
+  constructor(private dialog: MatDialog, private dataService: DataService) {}
+
+  openAssignDialog(): void {
+    const dialogRef = this.dialog.open(SelectAnalystUploadComponent, {
+      width: '400px',
+      panelClass: 'assign-dialog-container',
+      autoFocus: false,
+      data: { 
+        tableData: [],
+        assignedAnalyst: this.assignedAnalyst,
+        selected: !!this.selectedAnalystId
+      }
+    });
+
+    dialogRef.componentInstance.analystAssigned.subscribe((analystData: any) => {
+      this.assignedAnalyst = analystData.name;
+      this.selectedAnalystId = analystData.id;
+    });
+
+    this.dataService.selectAnalyst().subscribe(
+      (response: any[]) => {
+        dialogRef.componentInstance.tableData = response.map(item => ({
+          column1: item.colleague_fullname,
+          column2: 'Value 1',
+          column3: 'Data 1',
+          selected: false,
+          colleague_id: item.colleague_id
+        }));
+      },
+      error => {
+        console.error('Select Analyst API error:', error);
+      }
+    );
+  }
+
+  onSubmit() {
+    const payload = {
+      // ... your existing payload fields ...
+      colleague_id: this.selectedAnalystId
+    };
+
+    this.dataService.submitLoanData(payload).subscribe(
+      response => {
+        console.log('API response:', response);
+      },
+      error => {
+        console.error('API error:', error);
+      }
+    );
+  }
+
+  // ... other code ...
+}
+
+
