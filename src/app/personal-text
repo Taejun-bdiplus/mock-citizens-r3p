@@ -188,3 +188,63 @@ Post method
 
 // Colleague API for the Select Analyst 
 
+
+
+[
+    {
+        "colleague_id": 1,
+        "colleague_fullname": "Hrishikesh Trivedi",
+        "email": "hrishikesh.trivedi@citizensbank.com",
+        "phone": "+919825949629",
+        "manager_id": 0,
+        "active": 1,
+        "no_of_assignment": 0,
+        "role_name": null,
+        "role_id": 0
+    },
+    {
+        "colleague_id": 2,
+        "colleague_fullname": "Sandra H Butler",
+        "email": "sandra.h.butler@citizensbank.com",
+        "phone": "+19046143439",
+        "manager_id": 1,
+        "active": 1,
+        "no_of_assignment": 0,
+        "role_name": null,
+        "role_id": 0
+    },
+    {
+        "colleague_id": 3,
+        "colleague_fullname": "Satish U",
+        "email": "satish.u@citizensbank.com",
+        "phone": "+918618679950",
+        "manager_id": 0,
+        "active": 1,
+        "no_of_assignment": 0,
+        "role_name": null,
+        "role_id": 0
+    },
+    {
+        "colleague_id": 4,
+        "colleague_fullname": "Rajat Kesarvani",
+        "email": "rajat.kesarwani@citizensbank.com",
+        "phone": "+919310145625",
+        "manager_id": 0,
+        "active": 1,
+        "no_of_assignment": 0,
+        "role_name": null,
+        "role_id": 0
+    },
+    {
+        "colleague_id": 5,
+        "colleague_fullname": "Pushpa Latha B",
+        "email": "pushpalatha.b@citizensbank.com",
+        "phone": "+919901273776",
+        "manager_id": 0,
+        "active": 0,
+        "no_of_assignment": 0,
+        "role_name": null,
+        "role_id": 0
+    }
+]
+
