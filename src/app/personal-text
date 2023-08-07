@@ -261,72 +261,251 @@ Post method
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-import { Component, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { SelectAnalystUploadComponent } from '../select-analyst-upload/select-analyst-upload.component';
-import { DataService } from 'src/app/data.service';
-
-@Component({
-  selector: 'app-add-manually-dialog',
-  templateUrl: './add-manually-dialog.component.html',
-  styleUrls: ['./add-manually-dialog.component.css']
-})
-export class AddManuallyDialogComponent {
-  assignedAnalyst: string = '';
-  selectedAnalystId: number = 0; // Property to store selected analyst's colleague_id
-  
-  constructor(private dialog: MatDialog, private dataService: DataService) {}
-
-  openAssignDialog(): void {
-    const dialogRef = this.dialog.open(SelectAnalystUploadComponent, {
-      width: '400px',
-      panelClass: 'assign-dialog-container',
-      autoFocus: false,
-      data: { 
-        tableData: [],
-        assignedAnalyst: this.assignedAnalyst,
-        selected: !!this.selectedAnalystId
-      }
-    });
-
-    dialogRef.componentInstance.analystAssigned.subscribe((analystData: any) => {
-      this.assignedAnalyst = analystData.name;
-      this.selectedAnalystId = analystData.id;
-    });
-
-    this.dataService.selectAnalyst().subscribe(
-      (response: any[]) => {
-        dialogRef.componentInstance.tableData = response.map(item => ({
-          column1: item.colleague_fullname,
-          column2: 'Value 1',
-          column3: 'Data 1',
-          selected: false,
-          colleague_id: item.colleague_id
-        }));
-      },
-      error => {
-        console.error('Select Analyst API error:', error);
-      }
-    );
-  }
-
-  onSubmit() {
-    const payload = {
-      // ... your existing payload fields ...
-      colleague_id: this.selectedAnalystId
-    };
-
-    this.dataService.submitLoanData(payload).subscribe(
-      response => {
-        console.log('API response:', response);
-      },
-      error => {
-        console.error('API error:', error);
-      }
-    );
-  }
-
-  // ... other code ...
-}
-
-
+[
+    {
+        "enterprise": [
+            {
+                "enterprise_id": 1,
+                "enterprise_type_id": 1,
+                "enterprise_name": "FHLMC",
+                "description": "Freddie Mac"
+            },
+            {
+                "enterprise_id": 2,
+                "enterprise_type_id": 1,
+                "enterprise_name": "FNMA",
+                "description": "Fannie Mae"
+            }
+        ],
+        "contextResponse": [
+            {
+                "reviewTypeResponseDtos": [
+                    {
+                        "review_type_id": 1,
+                        "review_type_name": "CPL",
+                        "context_id": 1,
+                        "description": "Compliance"
+                    },
+                    {
+                        "review_type_id": 2,
+                        "review_type_name": "CPL/NPL",
+                        "context_id": 1,
+                        "description": "Dual Review for both Compliance & Non_Performing"
+                    },
+                    {
+                        "review_type_id": 3,
+                        "review_type_name": "CPL/PL",
+                        "context_id": 1,
+                        "description": "Dual Review for both Compliance & Performing"
+                    },
+                    {
+                        "review_type_id": 4,
+                        "review_type_name": "DCCR",
+                        "context_id": 1,
+                        "description": "Dual Compliance Credit Review"
+                    },
+                    {
+                        "review_type_id": 5,
+                        "review_type_name": "DPPR",
+                        "context_id": 1,
+                        "description": "Discretionary Post Purchase Review"
+                    },
+                    {
+                        "review_type_id": 6,
+                        "review_type_name": "EPD",
+                        "context_id": 1,
+                        "description": "Early Payment Default Review"
+                    },
+                    {
+                        "review_type_id": 7,
+                        "review_type_name": "LOS",
+                        "context_id": 1,
+                        "description": "Loss Mitigation Review"
+                    },
+                    {
+                        "review_type_id": 8,
+                        "review_type_name": "MBS",
+                        "context_id": 1,
+                        "description": "Mortgage Backed Security"
+                    },
+                    {
+                        "review_type_id": 9,
+                        "review_type_name": "NPL",
+                        "context_id": 1,
+                        "description": "Non-Performing"
+                    },
+                    {
+                        "review_type_id": 10,
+                        "review_type_name": "PFR",
+                        "context_id": 1,
+                        "description": "Post Foreclosure Review"
+                    },
+                    {
+                        "review_type_id": 11,
+                        "review_type_name": "PL",
+                        "context_id": 1,
+                        "description": "Performing"
+                    },
+                    {
+                        "review_type_id": 12,
+                        "review_type_name": "PPR",
+                        "context_id": 1,
+                        "description": "Post Purchase Review"
+                    },
+                    {
+                        "review_type_id": 13,
+                        "review_type_name": "PPR CmpAPL",
+                        "context_id": 1,
+                        "description": "Post Purchase Review Compliance/Anti-Predatory Lending"
+                    },
+                    {
+                        "review_type_id": 14,
+                        "review_type_name": "RPPR",
+                        "context_id": 1,
+                        "description": "Random Post Purchase Review"
+                    },
+                    {
+                        "review_type_id": 15,
+                        "review_type_name": "RV",
+                        "context_id": 1,
+                        "description": "Recourse Violation"
+                    },
+                    {
+                        "review_type_id": 16,
+                        "review_type_name": "CBR",
+                        "context_id": 1,
+                        "description": "Component Based Review"
+                    }
+                ],
+                "context_id": 1,
+                "context_name": "FFR",
+                "enterprise_type_id": 1,
+                "description": "Full File Review"
+            },
+            {
+                "reviewTypeResponseDtos": [],
+                "context_id": 2,
+                "context_name": "QA Audit",
+                "enterprise_type_id": 1,
+                "description": "QA Audit"
+            },
+            {
+                "reviewTypeResponseDtos": [],
+                "context_id": 3,
+                "context_name": "Repurchase",
+                "enterprise_type_id": 1,
+                "description": "Repurchase"
+            },
+            {
+                "reviewTypeResponseDtos": [],
+                "context_id": 4,
+                "context_name": "Self Reporting",
+                "enterprise_type_id": 1,
+                "description": "Self Reporting"
+            }
+        ],
+        "enterprise_type_id": 1,
+        "enterprise_type_name": "GSE",
+        "description": "Government Sponsored Enterprise"
+    },
+    {
+        "enterprise": [
+            {
+                "enterprise_id": 3,
+                "enterprise_type_id": 2,
+                "enterprise_name": "FHA/HUD",
+                "description": "Federal Hounsing Administration"
+            },
+            {
+                "enterprise_id": 4,
+                "enterprise_type_id": 2,
+                "enterprise_name": "VA",
+                "description": "Veteran Affairs"
+            }
+        ],
+        "contextResponse": [
+            {
+                "reviewTypeResponseDtos": [],
+                "context_id": 7,
+                "context_name": "Gov Audit",
+                "enterprise_type_id": 2,
+                "description": "Government Audit"
+            }
+        ],
+        "enterprise_type_id": 2,
+        "enterprise_type_name": "GA",
+        "description": "Government Agency"
+    },
+    {
+        "enterprise": [
+            {
+                "enterprise_id": 5,
+                "enterprise_type_id": 3,
+                "enterprise_name": "Arch",
+                "description": "Arch"
+            },
+            {
+                "enterprise_id": 6,
+                "enterprise_type_id": 3,
+                "enterprise_name": "Enact",
+                "description": "Enact"
+            },
+            {
+                "enterprise_id": 7,
+                "enterprise_type_id": 3,
+                "enterprise_name": "Essent",
+                "description": "Essent"
+            },
+            {
+                "enterprise_id": 8,
+                "enterprise_type_id": 3,
+                "enterprise_name": "MGIC",
+                "description": "MGIC"
+            },
+            {
+                "enterprise_id": 9,
+                "enterprise_type_id": 3,
+                "enterprise_name": "NMI",
+                "description": "NMI"
+            },
+            {
+                "enterprise_id": 10,
+                "enterprise_type_id": 3,
+                "enterprise_name": "Radian",
+                "description": "Radian"
+            }
+        ],
+        "contextResponse": [
+            {
+                "reviewTypeResponseDtos": [
+                    {
+                        "review_type_id": 17,
+                        "review_type_name": "MI/F",
+                        "context_id": 5,
+                        "description": "MI/Full"
+                    },
+                    {
+                        "review_type_id": 18,
+                        "review_type_name": "MI/C",
+                        "context_id": 5,
+                        "description": "MI/Closing"
+                    }
+                ],
+                "context_id": 5,
+                "context_name": "MI FFR",
+                "enterprise_type_id": 3,
+                "description": "Mortgage Insurer Full File Review"
+            },
+            {
+                "reviewTypeResponseDtos": [],
+                "context_id": 6,
+                "context_name": "MI QA Audit",
+                "enterprise_type_id": 3,
+                "description": "Mortgage Insurer QA Audit"
+            }
+        ],
+        "enterprise_type_id": 3,
+        "enterprise_type_name": "MI",
+        "description": "Mortgage Insurer"
+    }
+]
