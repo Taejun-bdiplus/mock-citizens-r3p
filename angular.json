@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
@@ -95,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d3aabd50-09e8-41de-8ea8-d49309031c01"
   }
 }
