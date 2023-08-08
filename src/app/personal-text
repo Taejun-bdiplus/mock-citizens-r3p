@@ -1,194 +1,479 @@
-[
-    {
-        "enterprise": [
-            {
-                "enterprise_id": 3,
-                "enterprise_type_id": 1,
-                "enterprise_name": "FHLMC",
-                "description": "Freddie Mac"
-            },
-            {
-                "enterprise_id": 4,
-                "enterprise_type_id": 1,
-                "enterprise_name": "FNMA",
-                "description": "Fannie Mae"
-            },
-            {
-                "enterprise_id": 5,
-                "enterprise_type_id": 1,
-                "enterprise_name": "FHA/HUD",
-                "description": "Federal Hounsing Administration"
-            },
-            {
-                "enterprise_id": 6,
-                "enterprise_type_id": 1,
-                "enterprise_name": "VA",
-                "description": "Veteran Affairs"
-            }
-        ],
-        "contextResponse": [
-            {
-                "reviewTypeResponseDtos": [
-                    {
-                        "review_type_id": 12,
-                        "review_type_name": "CPL",
-                        "context_id": 8,
-                        "description": "Compliance"
-                    }
-                ],
-                "context_id": 8,
-                "context_name": "FFR",
-                "enterprise_type_id": 1,
-                "description": "Full File Review"
-            },
-            {
-                "reviewTypeResponseDtos": [],
-                "context_id": 9,
-                "context_name": "QA Audit",
-                "enterprise_type_id": 1,
-                "description": "QA Audit"
-            },
-            {
-                "reviewTypeResponseDtos": [
-                    {
-                        "review_type_id": 13,
-                        "review_type_name": "CPL/PL",
-                        "context_id": 10,
-                        "description": "Dual Review for both Compliance & Performing"
-                    },
-                    {
-                        "review_type_id": 14,
-                        "review_type_name": "DCCR",
-                        "context_id": 10,
-                        "description": "Dual Compliance Credit Review"
-                    }
-                ],
-                "context_id": 10,
-                "context_name": "Repurchase",
-                "enterprise_type_id": 1,
-                "description": "Repurchase"
-            },
-            {
-                "reviewTypeResponseDtos": [
-                    {
-                        "review_type_id": 15,
-                        "review_type_name": "DPPR",
-                        "context_id": 11,
-                        "description": "Discretionary Post Purchase Review"
-                    },
-                    {
-                        "review_type_id": 16,
-                        "review_type_name": "EPD",
-                        "context_id": 11,
-                        "description": "Early Payment Default Review"
-                    },
-                    {
-                        "review_type_id": 17,
-                        "review_type_name": "LOS",
-                        "context_id": 11,
-                        "description": "Loss Mitigation Review"
-                    }
-                ],
-                "context_id": 11,
-                "context_name": "MI FFR",
-                "enterprise_type_id": 1,
-                "description": "Mortgage Insurer Full File Review"
-            }
-        ],
-        "enterprise_type_id": 1,
-        "enterprise_type_name": "GSE",
-        "description": "Government Sponsored Enterprise"
-    },
-    {
-        "enterprise": [
-            {
-                "enterprise_id": 7,
-                "enterprise_type_id": 2,
-                "enterprise_name": "Essent",
-                "description": "Essent"
-            }
-        ],
-        "contextResponse": [],
-        "enterprise_type_id": 2,
-        "enterprise_type_name": "GA",
-        "description": "Government Agency"
-    }
-]
+import { Component, EventEmitter, Output, ViewChild  } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { DataService } from 'src/app/data.service';
+import { Subscription } from 'rxjs';
+import { SelectAnalystUploadComponent } from '../select-analyst-upload/select-analyst-upload.component';
+import { MatDialog } from '@angular/material/dialog';
+// import { NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
+import { MatDatepicker } from '@angular/material/datepicker';
+
+@Component({
+  selector: 'app-add-manually-dialog',
+  templateUrl: './add-manually-dialog.component.html',
+  styleUrls: ['./add-manually-dialog.component.css']
+})
+export class AddManuallyDialogComponent {
+
+  // responseData: any;
+  private responseDataSubscription: Subscription;
+  enterprise : any[] = [];
+  enterprises : any[] = [];
+  contexts : any[] = [];
+  selectedContext: any;
+  selectedContextName: string = "";
+  selectedReviewTypeName: string = "";
+  responseEnterpriseType : any[] = [];
+
+  requester_ent_id : string = "";
+  context_id : string = "";
+  review_type_id : string = "";
+
+  constructor(public dialogRef: MatDialogRef<AddManuallyDialogComponent>, private dataService: DataService, private dialog: MatDialog) {
+    this.responseDataSubscription = this.dataService.responseData$.subscribe(response => {
+      // this.responseData = response;
+      // console.log("Response: ", this.responseData); // Update responseData whenever there's a new response from the service
+      // this.enterprises = response[0].enterprise;
+      // console.log("Enterprises: ", this.enterprises);
+      this.contexts = response.flatMap((item:any) => item.contextResponse);
+      this.enterprises = response.flatMap((item: any) => item.enterprise);
+      this.responseEnterpriseType = response;
+    });
+  };
+
+  getEnterpriseDisplayName(enterprise: any): string {
+        const enterpriseType = enterprise.enterprise_type_id === 1 ? 'GSE' : enterprise.enterprise_type_id === 2 ? 'GA' : 'MI';
+        return `${enterpriseType} - ${enterprise.enterprise_name}`;
+  }
+  
+  
+
+  
 
 
+  // ///////////////////////////////////////////////////////////////////////////////////
 
 
+  ngOnInit() {
+    this.initialOnAgencySelected("GSE - FHLMC");
 
-
-/*
-
-{
-
-    "loan_number": "string",
-
-    "requester_ent_id": 0,
-
-    "requester_loan_number": "string",
-
-    "responsible_ent_id": 0,
-
-    "requester_ent_loan_number": "string",
-
-    "context_id": 0,
-
-    "channel_id": 0,
-
-    "task_name": "string",
-
-    "document_type": "string",
-
-    "received_date": "2023-07-17T08:39:01.129Z",
-
-    "loan_due_date": "2023-07-17T08:39:01.129Z",
-
-    "loan_status": "string",
-
-    "comments": "string",
-
-    "colleague_id":123
-
+    this.selectedContextName = this.contexts[0].context_name; // Initialize the first context as the selected one on fresh reload
+    this.onContextSelected(this.selectedContextName);
 }
 
-https://r3p.p2.ocp.citizensbank.com/r3p-pipeline/review
+
+onContextSelected(selectedValue: string) {
+    this.selectedContext = this.contexts.find((context: any) => context.context_name === selectedValue);
+    if (this.selectedContext) {
+      this.selectedReviewTypeName = this.selectedContext.reviewTypeResponseDtos.length > 0
+        ? this.selectedContext.reviewTypeResponseDtos[0].review_type_name // Set the first review type as selected if available
+        : null; // Set to null if no review types available
+
+      // set review_type_id of the first option once Context option is changed
+      const foundReviewTypeResponse = this.selectedContext.reviewTypeResponseDtos.find((obj: { review_type_name: string; }) => obj.review_type_name === this.selectedContext.reviewTypeResponseDtos[0].review_type_name);
+      if (foundReviewTypeResponse) {
+        this.review_type_id = foundReviewTypeResponse.review_type_id
+      }
+    }
+
+    const foundObject = this.contexts.find(obj => obj.context_name === selectedValue)
+    if (foundObject) {
+      this.context_id = foundObject.context_id
+      this.selectedContextName = foundObject.context_name
+    }
+  }
+
+  onReviewTypeSelected(selectedValue: string) {
+    this.selectedContext = this.contexts.find((context: any) => context.context_name === this.selectedContextName);
+    if (this.selectedContext) {
+      const foundReviewTypeResponse = this.selectedContext.reviewTypeResponseDtos.find((obj: { review_type_name: string; }) => obj.review_type_name === this.selectedReviewTypeName);
+      if (foundReviewTypeResponse) {
+        this.review_type_id = foundReviewTypeResponse.review_type_id
+      }
+    }
+  }
+
+  selectedAgency: string = '';
+  noticeReceived: string = '';
+  responsedue: string = '';
+  loan: string = '';
+  idSelectedValue: string = '';
+
+  onAgencySelected(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    const agency: string = target.value as string;
+    const selected_enterprise_name = agency.split(" ").pop();
+
+    this.selectedAgency = agency === '' ? '' : 'Selected: ' + agency;
+
+    const foundObject = this.enterprises.find(obj => obj.enterprise_name === selected_enterprise_name)
+    if (foundObject) {
+      this.requester_ent_id = foundObject.enterprise_id
+    }
+  }
+  
+  initialOnAgencySelected(agency: string) {
+    const selected_enterprise_name = agency.split(" ").pop();
+    
+    this.selectedAgency = agency === '' ? '' : 'Selected: ' + agency;
+    
+    const foundObject = this.enterprises.find(obj => obj.enterprise_name === selected_enterprise_name)
+    if (foundObject) {
+      this.requester_ent_id = foundObject.enterprise_id
+    }
+  }
+
+
+  selectedFile: File | null = null;
+
+  onFileSelected(event: any) {
+    const fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+      this.selectedFile = fileList[0];
+    }
+  }
+
+  clearSelection() {
+    this.selectedFile = null;
+  }
+
+  
+
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
+
+
+  firstOptions = ['Self Reporting', 'Repurchase', 'FER', 'QA Audit', 'MI FER','MI QA Audit','GOV Audit'];
+  secondOptions: string[] = [];
+
+  onFirstOptionSelected(event: Event) {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    if (selectedValue === 'Self Reporting') {
+      this.secondOptions = ['Option 1 - A', 'Option 1 - B', 'Option 1 - C'];
+    } else if (selectedValue === 'Repurchase') {
+      this.secondOptions = ['Option 2 - A', 'Option 2 - B', 'Option 2 - C'];
+    } else if (selectedValue === 'FFR') {
+      this.secondOptions = ['Option 3 - A', 'Option 3 - B', 'Option 3 - C'];
+    } 
+
+    else if (selectedValue === 'QA Audit') {
+      this.secondOptions = ['Option 4 - A', 'Option 4 - B', 'Option 4 - C'];
+    }
+    else if (selectedValue === 'MI FFR') {
+      this.secondOptions = ['Option 5 - A', 'Option 5 - B', 'Option 5 - C'];
+    }
+    else if (selectedValue === 'MI QA Audit') {
+      this.secondOptions = ['Option 6 - A', 'Option 6 - B', 'Option 6 - C'];
+    }
+    else if (selectedValue === 'GOV Audit') {
+      this.secondOptions = ['Option 7 - A', 'Option 7 - B', 'Option 7 - C'];
+    }
+    
+    else {
+      // Default options for other cases
+      this.secondOptions = [];
+    }
+  }
+
+  /////////////////////////////////////////////////////////////////////
+
+
+  assignedAnalyst: string = '';
+
+
+  openAssignDialog(): void {
+    const dialogRef = this.dialog.open(SelectAnalystUploadComponent, {
+      width: '400px',
+      panelClass: 'assign-dialog-container',
+      autoFocus: false,
+      data: { tableData: [] }
+    });
+
+    dialogRef.componentInstance.analystAssigned.subscribe((analystName: string) => {
+      this.assignedAnalyst = analystName;
+    });
+
+    this.dataService.selectAnalyst().subscribe(
+      (response: any[]) => {
+        dialogRef.componentInstance.tableData = response.map(item => ({
+          column1: item.colleague_fullname,
+          column2: item.no_of_assignment,
+          column3: item.role_name ? item.role_name : "Analyst",
+          column4: item.colleague_id,
+          selected: false
+        }));
+      },
+      error => {
+        console.error('Select Analyst API error:', error);
+        // Handle error here
+      }
+    );
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result && result.idSelected) {
+        const idSelectedValue = result.idSelected;
+        // Do something with the idSelectedValue
+        console.log('ID selected: ', idSelectedValue);
+        this.idSelectedValue = idSelectedValue;
+      }
+    });
+  }
+
+
+  // ///////////  api call //////////////////////////////////
+
+  onSubmit() {
+    const payload = {
+      "loan_number": this.loan,
+      "requester_ent_id": this.requester_ent_id,
+      "requester_loan_number": this.loan,
+      "responsible_ent_id": this.requester_ent_id,
+      "requester_ent_loan_number": this.loan,
+      "responsible_ent_loan_number": this.loan,
+      "context_id": this.context_id,
+      "channel_id": 1,
+      "review_type_id": this.review_type_id,
+      "task_name": "",
+      "document_type": "",
+      "received_date":  this.noticeReceived,
+      "loan_due_date": this.responsedue,
+      "due_date": this.responsedue,
+      "loan_status": "Pending",
+      "comments": "",
+      "colleague_id": this.idSelectedValue,
+    };
+
+    this.dataService.submitLoanData(payload).subscribe(
+      response => {
+        console.log('API response:', response);
+        // Handle success here
+      },
+      error => {
+        console.error('API error:', error);
+        // Handle error here
+      }
+    );
+    this.closeDialog();
+  }
+
+  // ////////////////////////////////////////////////////////////////
+  receiveDate: Date | null = null;
+  responseDueDate: Date | null = null;
+
+  // openDatePicker(section: string, datepicker: MatDatepicker<Date>) {
+  //   datepicker.open();
+  // }
+
+  @ViewChild('receiveDatePicker') receiveDatePicker!: MatDatepicker<Date>;
+  @ViewChild('responseDatePicker') responseDatePicker!: MatDatepicker<Date>;
+
+
+  openDatePicker(section: string) {
+    const datepicker = section === 'receive' ? this.receiveDatePicker : this.responseDatePicker;
+    datepicker.open();
+  }
+
+
+
+  // //// api call on Select Analyst button /////////////////
+
+  // callSelectAnalystApi(analystName: string) {
+  //   const payload = {};
+  //   const payload = [
+  //     {
+  //       "colleague_id": 1,
+  //       "colleague_fullname": analystName,
+  //       "email": "rajatkesarwani2011@gmail.com",
+  //       "phone": "+91-1234567889",
+  //       "manager_id": 0,
+  //       "active": 1,
+  //       "no_of_assignment": 1,
+  //       "role_name": "Analyst",
+  //       "role_id": "2"
+  //     }
+  //   ];
+
+  //   this.dataService.selectAnalyst(payload).subscribe(
+  //     response => {
+  //       console.log('Select Analyst API response:', response);
+  //       // Handle success here
+  //     },
+  //     error => {
+  //       console.error('Select Analyst API error:', error);
+  //       // Handle error here
+  //     }
+  //   );
+  // }
+  
+
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<div class="dialog-container">
+    <div class="dialog-header">
+      <h2 class="dialog-header-text">Manual Upload</h2>
+    </div>
+    <div class="dialog-content">
+  
+        <div class="row">
+            <div class="element">
+              <label for="agency">Agency</label>
+            </div>
+            <div class="element">
+                <div class="custom-select">
+                  <select id="agency" (change)="onAgencySelected($event)">
+                    <option *ngFor="let enterprise of enterprises" >{{getEnterpriseDisplayName(enterprise)}}</option>
+                    <!-- <option value="">Select</option>
+                    <option value="agency1">GSE - FHLMC</option>
+                    <option value="agency2">GSE - FNMA</option>
+                    <option value="agency3">GA - FHA/HUD</option>
+                    <option value="agency3">MI - Arch</option>
+                    <option value="agency3">MI - Enact</option> -->
+                  </select>
+                  <span class="arrow"></span>
+                </div>
+              </div>
+        </div>
+  
+        <div class="row">
+            <div class="element">
+              <label for="agency">Context</label>
+            </div>
+            <div class="element">
+                <div class="custom-select">
+                  <!-- <select id="agency" [(ngModel)]="selectedAgency" (change)="onAgencySelected($event)">
+                    <option value="">Select</option>
+                    <option value="agency1">Self Reporting</option>
+                    <option value="agency2">Repurchase</option>
+                    <option value="agency3">FER</option>
+                    <option value="agency3">QA Audit</option>
+                    <option value="agency3">MI FER</option>
+                    <option value="agency3">MI QA Audit</option>
+                    <option value="agency3">GOV Audit</option>
+                  </select> -->
+                  <select id="firstDropdown" (change)="onContextSelected($event.target.value)" [(ngModel)]="selectedContextName">
+                    <!-- <option *ngFor="let option of firstOptions" [value]="option">{{ option }}</option> -->
+                    <!-- <option *ngFor="let context of contexts" >{{context.context_name}}</option> -->
+                    <option *ngFor="let context of contexts" [value]="context.context_name">{{ context.context_name }}</option>
+                  </select>
+                  <span class="arrow"></span>
+                </div>
+              </div>
+        </div>
+  
+        <div class="row">
+            <div class="element">
+                <label>Review Type</label>
+            </div>
+            <div class="element">
+                <div class="custom-select" *ngIf="selectedContext">
+                    <select id="secondDropdown"  (change)="onReviewTypeSelected($event.target.value)" [(ngModel)]="selectedReviewTypeName">
+                        <!-- <option *ngFor="let option of secondOptions" [value]="option">{{ option }}</option> -->
+                        <option *ngFor="let reviewType of selectedContext.reviewTypeResponseDtos" [value]="reviewType.review_type_name">{{ reviewType.review_type_name }}</option>
+                    </select>
+                    <span class="arrow"></span>
+                  </div>
+            </div>
+        </div>
+  
+        <!-- ////////////////////////////////////////////////// -->
+  
+        <div class="notice-received">
+          <div class="row">
+            <div class="element">
+              <label for="Assigned">Assigned</label>
+            </div>
+            <div class="element">
+              <!-- <button class="dialog-upload-button" (click)="openAssignDialog()"> Select Analyst </button> -->
+              <!-- <button class="dialog-upload-button" (click)="openAssignDialog()">
+                {{ assignedAnalyst ? assignedAnalyst : 'Select Analyst' }}
+              </button> -->
+              <button class="dialog-upload-button"
+                [ngClass]="{'assigned-button': assignedAnalyst}"
+                [disabled]="assignedAnalyst"
+                (click)="openAssignDialog()">
+                {{ assignedAnalyst ? assignedAnalyst : 'Select Analyst' }}
+              </button>
+            </div>
+            
+  
+          </div>
+        </div>
+
+        <div class="notice-received">
+          <div class="row">
+            <div class="element">
+              <label for="loan">Loan #</label>
+            </div>
+            <div class="element">
+              <input type="text" id="loan" [(ngModel)]="loan" />
+            </div>
+          </div>
+        </div>
+  
+        <div class="notice-received">
+          <div class="row">
+            <div class="element">
+              <label for="notice-received">Notice Received</label>
+            </div>
+            <div class="element" (click)="openDatePicker('receive')">
+              <input type="text" id="notice-received" [(ngModel)]="noticeReceived" matInput [matDatepicker]="receiveDatePicker" />
+              <mat-datepicker #receiveDatePicker></mat-datepicker>
+              <!-- <fa-icon class="datepicker-icon" [icon]="['fas', 'calendar-alt']"></fa-icon> -->
+            </div>
+          </div>
+        </div>
+
+
+        <div class="notice-received">
+          <div class="row">
+            <div class="element">
+              <label for="responsedue">Response Due</label>
+            </div>
+            <div class="element" (click)="openDatePicker('response')">
+              <input type="text" id="notice-received" [(ngModel)]="responsedue" matInput [matDatepicker]="responseDatePicker" />
+              <mat-datepicker #responseDatePicker></mat-datepicker>
+              <!-- <fa-icon class="datepicker-icon" [icon]="['fas', 'calendar-alt']"></fa-icon> -->
+            </div>
+          </div>
+        </div>
+  
+        
+  
+        
+
+        
+  
+  
+        
+  
+        
+  
+        <div class="dialog-buttons">
+          <button class="dialog-cancel-button" (click)="closeDialog()">Cancel</button>
+          <button class="dialog-upload-button" (click)="onSubmit()">Submit</button>
+      </div>
+        
+    </div>
+  
+  
+  </div>
+  
+
+
+
+
+
+
+
 
  
 
-Post method
-
-*/
-
-
-// chrome.exe --user-data-dir="C:\Users\N119807\\chrome-dev-disabled-security" --disable-web-security --disable-site-isolation-trials
 
 
 
-
-// Sample Response [
-//     {
-//         "colleague_id": 1,
-//         "colleague_fullname": "Rajat K",
-//         "email": "rajatkesarwani2011@gmail.com",
-//         "phone": "+91-1234567889",
-//         "manager_id": 0,
-//         "active": 1,
-//         "no_of_assignment": 1,
-//         "role_name": "Analyst",
-//         "role_id": "2"
-//     }
-// ]
-
-// API URL: https://r3p.p2.ocp.citizensbank.com/r3p-pipeline/colleague
-
-// Method: GET
-
-// Colleague API for the Select Analyst 
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 [
     {
