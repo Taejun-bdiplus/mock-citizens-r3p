@@ -20,6 +20,7 @@ export class AddManuallyDialogComponent {
   noticeReceived: string = '';
   responsedue: string = '';
   loan: string = '';
+  selectedOption = 'default';
 
   onAgencySelected(event: Event) {
     const target = event.target as HTMLSelectElement;

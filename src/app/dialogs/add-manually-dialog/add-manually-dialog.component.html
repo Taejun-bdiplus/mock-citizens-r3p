@@ -29,17 +29,8 @@
           </div>
           <div class="element">
               <div class="custom-select">
-                <!-- <select id="agency" [(ngModel)]="selectedAgency" (change)="onAgencySelected($event)">
-                  <option value="">Select</option>
-                  <option value="agency1">Self Reporting</option>
-                  <option value="agency2">Repurchase</option>
-                  <option value="agency3">FER</option>
-                  <option value="agency3">QA Audit</option>
-                  <option value="agency3">MI FER</option>
-                  <option value="agency3">MI QA Audit</option>
-                  <option value="agency3">GOV Audit</option>
-                </select> -->
-                <select id="firstDropdown" (change)="onFirstOptionSelected($event)">
+                <select id="firstDropdown" (change)="onFirstOptionSelected($event)" [(ngModel)]="selectedOption">
+                  <option disabled selected value="default">Select</option>
                   <option *ngFor="let option of firstOptions" [value]="option">{{ option }}</option>
                 </select>
                 <span class="arrow"></span>

@@ -30,10 +30,6 @@ export class AddManuallyDialogComponent {
 
   constructor(public dialogRef: MatDialogRef<AddManuallyDialogComponent>, private dataService: DataService, private dialog: MatDialog) {
     this.responseDataSubscription = this.dataService.responseData$.subscribe(response => {
-      // this.responseData = response;
-      // console.log("Response: ", this.responseData); // Update responseData whenever there's a new response from the service
-      // this.enterprises = response[0].enterprise;
-      // console.log("Enterprises: ", this.enterprises);
       this.contexts = response.flatMap((item:any) => item.contextResponse);
       this.enterprises = response.flatMap((item: any) => item.enterprise);
       this.responseEnterpriseType = response;
@@ -324,12 +320,6 @@ onContextSelected(selectedValue: string) {
                 <div class="custom-select">
                   <select id="agency" (change)="onAgencySelected($event)">
                     <option *ngFor="let enterprise of enterprises" >{{getEnterpriseDisplayName(enterprise)}}</option>
-                    <!-- <option value="">Select</option>
-                    <option value="agency1">GSE - FHLMC</option>
-                    <option value="agency2">GSE - FNMA</option>
-                    <option value="agency3">GA - FHA/HUD</option>
-                    <option value="agency3">MI - Arch</option>
-                    <option value="agency3">MI - Enact</option> -->
                   </select>
                   <span class="arrow"></span>
                 </div>
@@ -342,19 +332,7 @@ onContextSelected(selectedValue: string) {
             </div>
             <div class="element">
                 <div class="custom-select">
-                  <!-- <select id="agency" [(ngModel)]="selectedAgency" (change)="onAgencySelected($event)">
-                    <option value="">Select</option>
-                    <option value="agency1">Self Reporting</option>
-                    <option value="agency2">Repurchase</option>
-                    <option value="agency3">FER</option>
-                    <option value="agency3">QA Audit</option>
-                    <option value="agency3">MI FER</option>
-                    <option value="agency3">MI QA Audit</option>
-                    <option value="agency3">GOV Audit</option>
-                  </select> -->
                   <select id="firstDropdown" (change)="onContextSelected($event.target.value)" [(ngModel)]="selectedContextName">
-                    <!-- <option *ngFor="let option of firstOptions" [value]="option">{{ option }}</option> -->
-                    <!-- <option *ngFor="let context of contexts" >{{context.context_name}}</option> -->
                     <option *ngFor="let context of contexts" [value]="context.context_name">{{ context.context_name }}</option>
                   </select>
                   <span class="arrow"></span>
@@ -474,75 +452,6 @@ onContextSelected(selectedValue: string) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-[
-    {
-        "colleague_id": 1,
-        "colleague_fullname": "Hrishikesh Trivedi",
-        "email": "hrishikesh.trivedi@citizensbank.com",
-        "phone": "+919825949629",
-        "manager_id": 0,
-        "active": 1,
-        "no_of_assignment": 0,
-        "role_name": null,
-        "role_id": 0
-    },
-    {
-        "colleague_id": 2,
-        "colleague_fullname": "Sandra H Butler",
-        "email": "sandra.h.butler@citizensbank.com",
-        "phone": "+19046143439",
-        "manager_id": 1,
-        "active": 1,
-        "no_of_assignment": 0,
-        "role_name": null,
-        "role_id": 0
-    },
-    {
-        "colleague_id": 3,
-        "colleague_fullname": "Satish U",
-        "email": "satish.u@citizensbank.com",
-        "phone": "+918618679950",
-        "manager_id": 0,
-        "active": 1,
-        "no_of_assignment": 0,
-        "role_name": null,
-        "role_id": 0
-    },
-    {
-        "colleague_id": 4,
-        "colleague_fullname": "Rajat Kesarvani",
-        "email": "rajat.kesarwani@citizensbank.com",
-        "phone": "+919310145625",
-        "manager_id": 0,
-        "active": 1,
-        "no_of_assignment": 0,
-        "role_name": null,
-        "role_id": 0
-    },
-    {
-        "colleague_id": 5,
-        "colleague_fullname": "Pushpa Latha B",
-        "email": "pushpalatha.b@citizensbank.com",
-        "phone": "+919901273776",
-        "manager_id": 0,
-        "active": 0,
-        "no_of_assignment": 0,
-        "role_name": null,
-        "role_id": 0
-    }
-]
-
-
-
-
-
-
-
-
-
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
