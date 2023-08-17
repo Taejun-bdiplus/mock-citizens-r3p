@@ -4,6 +4,7 @@ import { AssignDialogComponent } from '../../../../dialogs/assign-dialog/assign-
 import { HocReportDialogComponent } from 'src/app/dialogs/hoc-report-dialog/hoc-report-dialog.component';
 import { CannedReportDialogComponent } from 'src/app/dialogs/canned-report-dialog/canned-report-dialog.component';
 import { ExportReportDialogComponent } from 'src/app/dialogs/export-report-dialog/export-report-dialog.component';
+import { LrstemplateComponent } from 'src/app/templates/lrstemplate/lrstemplate.component';
 
 
 @Component({
@@ -31,6 +32,17 @@ export class ReportsComponent {
 
     if (item === this.items[1]) { // Check if it is the first row
       const dialogRef = this.dialog.open(CannedReportDialogComponent, {
+        // Configure dialog options here
+      });
+  
+      // Subscribe to dialog close event if needed
+      dialogRef.afterClosed().subscribe(result => {
+        // Handle dialog close event if needed
+      });
+    }
+
+    if (item === this.items[4]) { // Check if it is the first row
+      const dialogRef = this.dialog.open(LrstemplateComponent, {
         // Configure dialog options here
       });
   
