@@ -64,6 +64,7 @@ import { DragDropDirective } from './dialogs/drag-drop.directive';
 import { SelectAnalystUploadComponent } from './dialogs/select-analyst-upload/select-analyst-upload.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LrstemplateComponent } from './templates/lrstemplate/lrstemplate.component';
+import { PlsFinalTemplateComponent } from './templates/pls-final-template/pls-final-template.component';
 @NgModule({
   declarations: [
     DragDropDirective,
@@ -94,6 +95,7 @@ import { LrstemplateComponent } from './templates/lrstemplate/lrstemplate.compon
     FilterAgentDialogComponent,
     SelectAnalystUploadComponent,
     LrstemplateComponent,
+    PlsFinalTemplateComponent,
   ],
   imports: [
     HttpClientModule,

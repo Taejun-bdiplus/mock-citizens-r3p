@@ -5,6 +5,7 @@ import { HocReportDialogComponent } from 'src/app/dialogs/hoc-report-dialog/hoc-
 import { CannedReportDialogComponent } from 'src/app/dialogs/canned-report-dialog/canned-report-dialog.component';
 import { ExportReportDialogComponent } from 'src/app/dialogs/export-report-dialog/export-report-dialog.component';
 import { LrstemplateComponent } from 'src/app/templates/lrstemplate/lrstemplate.component';
+import { PlsFinalTemplateComponent } from 'src/app/templates/pls-final-template/pls-final-template.component';
 
 
 @Component({
@@ -42,7 +43,7 @@ export class ReportsComponent {
     }
 
     if (item === this.items[4]) { // Check if it is the first row
-      const dialogRef = this.dialog.open(LrstemplateComponent, {
+      const dialogRef = this.dialog.open(PlsFinalTemplateComponent, {
         // Configure dialog options here
       });
   
