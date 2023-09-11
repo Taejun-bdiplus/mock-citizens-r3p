@@ -6,6 +6,7 @@ import { CannedReportDialogComponent } from 'src/app/dialogs/canned-report-dialo
 import { ExportReportDialogComponent } from 'src/app/dialogs/export-report-dialog/export-report-dialog.component';
 import { LrstemplateComponent } from 'src/app/templates/lrstemplate/lrstemplate.component';
 import { PlsFinalTemplateComponent } from 'src/app/templates/pls-final-template/pls-final-template.component';
+import { RepurRemitTemplateComponent } from 'src/app/templates/repur-remit-template/repur-remit-template.component';
 
 
 @Component({
@@ -43,7 +44,7 @@ export class ReportsComponent {
     }
 
     if (item === this.items[4]) { // Check if it is the first row
-      const dialogRef = this.dialog.open(PlsFinalTemplateComponent, {
+      const dialogRef = this.dialog.open(RepurRemitTemplateComponent, {
         // Configure dialog options here
       });
   

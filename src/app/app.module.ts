@@ -65,6 +65,7 @@ import { SelectAnalystUploadComponent } from './dialogs/select-analyst-upload/se
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LrstemplateComponent } from './templates/lrstemplate/lrstemplate.component';
 import { PlsFinalTemplateComponent } from './templates/pls-final-template/pls-final-template.component';
+import { RepurRemitTemplateComponent } from './templates/repur-remit-template/repur-remit-template.component';
 @NgModule({
   declarations: [
     DragDropDirective,
@@ -96,6 +97,7 @@ import { PlsFinalTemplateComponent } from './templates/pls-final-template/pls-fi
     SelectAnalystUploadComponent,
     LrstemplateComponent,
     PlsFinalTemplateComponent,
+    RepurRemitTemplateComponent,
   ],
   imports: [
     HttpClientModule,
