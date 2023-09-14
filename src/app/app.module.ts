@@ -66,6 +66,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LrstemplateComponent } from './templates/lrstemplate/lrstemplate.component';
 import { PlsFinalTemplateComponent } from './templates/pls-final-template/pls-final-template.component';
 import { RepurRemitTemplateComponent } from './templates/repur-remit-template/repur-remit-template.component';
+import { LenderAppraisalComponent } from './templates/lender-appraisal/lender-appraisal.component';
 @NgModule({
   declarations: [
     DragDropDirective,
@@ -98,6 +99,7 @@ import { RepurRemitTemplateComponent } from './templates/repur-remit-template/re
     LrstemplateComponent,
     PlsFinalTemplateComponent,
     RepurRemitTemplateComponent,
+    LenderAppraisalComponent,
   ],
   imports: [
     HttpClientModule,

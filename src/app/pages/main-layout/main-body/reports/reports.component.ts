@@ -7,6 +7,7 @@ import { ExportReportDialogComponent } from 'src/app/dialogs/export-report-dialo
 import { LrstemplateComponent } from 'src/app/templates/lrstemplate/lrstemplate.component';
 import { PlsFinalTemplateComponent } from 'src/app/templates/pls-final-template/pls-final-template.component';
 import { RepurRemitTemplateComponent } from 'src/app/templates/repur-remit-template/repur-remit-template.component';
+import { LenderAppraisalComponent } from 'src/app/templates/lender-appraisal/lender-appraisal.component';
 
 
 @Component({
@@ -44,7 +45,7 @@ export class ReportsComponent {
     }
 
     if (item === this.items[4]) { // Check if it is the first row
-      const dialogRef = this.dialog.open(RepurRemitTemplateComponent, {
+      const dialogRef = this.dialog.open(LenderAppraisalComponent, {
         // Configure dialog options here
       });
   
