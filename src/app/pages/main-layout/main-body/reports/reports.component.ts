@@ -8,6 +8,11 @@ import { LrstemplateComponent } from 'src/app/templates/lrstemplate/lrstemplate.
 import { PlsFinalTemplateComponent } from 'src/app/templates/pls-final-template/pls-final-template.component';
 import { RepurRemitTemplateComponent } from 'src/app/templates/repur-remit-template/repur-remit-template.component';
 import { LenderAppraisalComponent } from 'src/app/templates/lender-appraisal/lender-appraisal.component';
+import { LenderMiRescissionComponent } from 'src/app/templates/lender-mi-rescission/lender-mi-rescission.component';
+import { LenderQcFfrMissingComponent } from 'src/app/templates/lender-qc-ffr-missing/lender-qc-ffr-missing.component';
+import { LenderRepurchaseDemandNoticeComponent } from 'src/app/templates/lender-repurchase-demand-notice/lender-repurchase-demand-notice.component';
+import { LenderRiskAlternativeComponent } from 'src/app/templates/lender-risk-alternative/lender-risk-alternative.component';
+import { OperationsQcFfrMissingComponent } from 'src/app/templates/operations-qc-ffr-missing/operations-qc-ffr-missing.component';
 
 
 @Component({
@@ -45,7 +50,7 @@ export class ReportsComponent {
     }
 
     if (item === this.items[4]) { // Check if it is the first row
-      const dialogRef = this.dialog.open(LenderAppraisalComponent, {
+      const dialogRef = this.dialog.open(OperationsQcFfrMissingComponent, {
         // Configure dialog options here
       });
   

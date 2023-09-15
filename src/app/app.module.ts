@@ -67,6 +67,11 @@ import { LrstemplateComponent } from './templates/lrstemplate/lrstemplate.compon
 import { PlsFinalTemplateComponent } from './templates/pls-final-template/pls-final-template.component';
 import { RepurRemitTemplateComponent } from './templates/repur-remit-template/repur-remit-template.component';
 import { LenderAppraisalComponent } from './templates/lender-appraisal/lender-appraisal.component';
+import { LenderMiRescissionComponent } from './templates/lender-mi-rescission/lender-mi-rescission.component';
+import { LenderQcFfrMissingComponent } from './templates/lender-qc-ffr-missing/lender-qc-ffr-missing.component';
+import { LenderRepurchaseDemandNoticeComponent } from './templates/lender-repurchase-demand-notice/lender-repurchase-demand-notice.component';
+import { LenderRiskAlternativeComponent } from './templates/lender-risk-alternative/lender-risk-alternative.component';
+import { OperationsQcFfrMissingComponent } from './templates/operations-qc-ffr-missing/operations-qc-ffr-missing.component';
 @NgModule({
   declarations: [
     DragDropDirective,
@@ -100,6 +105,11 @@ import { LenderAppraisalComponent } from './templates/lender-appraisal/lender-ap
     PlsFinalTemplateComponent,
     RepurRemitTemplateComponent,
     LenderAppraisalComponent,
+    LenderMiRescissionComponent,
+    LenderQcFfrMissingComponent,
+    LenderRepurchaseDemandNoticeComponent,
+    LenderRiskAlternativeComponent,
+    OperationsQcFfrMissingComponent,
   ],
   imports: [
     HttpClientModule,
