@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLS Final Template</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column; /* Add this to stack elements vertically */
+      }
+      .dialog-container {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        /* max-width: 100%; */
+        width: 80%;
+        max-height: 100%;
+
+        max-width: 80%;
+        overflow: hidden;
+      }
+
+      .dialog-content {
+        height: 600px; /* Adjust this value as needed */
+        overflow-y: auto;
+      }
+
+      .dialog-button {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 30px;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: green;
+        border-radius: 5px;
+        margin-left: 30px;
+        color: #fff;
+        border: none;
+        font-size: 15px;
+        margin-bottom: 15px;
+      }
+
+      .center-heading {
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .review-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 20px;
+        margin-right: 10px;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 5px;
+      }
+
+      .info-label {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      .info-value {
+        font-style: italic;
+      }
+
+      .borrower-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+        margin-left: 10px;
+      }
+
+      .borrower-info .info-row {
+        display: flex;
+        margin-bottom: 5px;
+      }
+
+      .borrower-info .info-label {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      .info-label-margin-left {
+        margin-left: 20px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+
+      .borrower-information-heading {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+
+      .review-table {
+        border-collapse: collapse;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .review-table td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+
+      .review-table td:first-child {
+        font-weight: bold;
+      }
+
+      .review-table td:nth-child(3) {
+        font-weight: bold;
+      }
+      .review-table td:nth-child(5) {
+        font-weight: bold;
+      }
+
+      .table-container {
+        margin: 20px auto;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .dynamic-content {
+        margin-top: 20px;
+      }
+
+      .content-block {
+        width: 100%;
+        /* border: 1px solid black; */
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .dynamic-text {
+        font-style: italic;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .loan-information-heading {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+
+      /* repurchase defects table */
+
+      .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .custom-table th,
+      .custom-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      .custom-table th {
+        background-color: #f0f0f0;
+      }
+
+      .custom-table td:nth-child(1),
+      .custom-table th:nth-child(1),
+      .custom-table td:nth-child(2),
+      .custom-table th:nth-child(2) {
+        width: 25%;
+      }
+
+      .custom-table td:nth-child(3),
+      .custom-table th:nth-child(3) {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- html body -->
+    <div class="dialog-container">
+      <div class="dialog-content">
+        <div><h1 class="center-heading">Problem Loan Summary</h1></div>
+
+        <div><h1 class="loan-information-heading">Loan Information</h1></div>
+
+        <h1 class="borrower-information-heading">Borrower Information</h1>
+
+        <div class="borrower-info">
+          <div class="info-row">
+            <span class="info-label">Borrower:</span>
+            <span class="info-value">Eric Johnson</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Co-Borrower:</span>
+            <span class="info-value">Sarah Snook</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Address:</span>
+            <span class="info-value">2nd Road, Phoenix Arena</span>
+            <span class="info-label info-label-margin-left">City:</span>
+            <span class="info-value">Boston</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">State:</span>
+            <span class="info-value">Massachussets</span>
+            <span class="info-label info-label-margin-left">Zip:</span>
+            <span class="info-value">12345</span>
+          </div>
+        </div>
+
+        <h1 class="borrower-information-heading">Loan Details</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>CFG Loan:</td>
+              <td>(Borrower’s Name)</td>
+              <td>Office:</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Loan Amount:</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+          </table>
+        </div>
+
+        <h1 class="borrower-information-heading">Appraisal Information</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>Appraisal Company</td>
+              <td>(Borrower’s Name)</td>
+              <td>Appraiser Name</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Appraised Value</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>Appraisal Company</td>
+              <td>(Borrower’s Name)</td>
+              <td>Appraiser Name</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Appraised Value</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>Appraisal Company</td>
+              <td>(Borrower’s Name)</td>
+              <td>Appraiser Name</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Appraised Value</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>Appraisal Company</td>
+              <td>(Borrower’s Name)</td>
+              <td>Appraiser Name</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Appraised Value</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>Appraisal Company</td>
+              <td>(Borrower’s Name)</td>
+              <td>Appraiser Name</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Appraised Value</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>Appraisal Company</td>
+              <td>(Borrower’s Name)</td>
+              <td>Appraiser Name</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Appraised Value</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+          </table>
+        </div>
+
+        <h1 class="borrower-information-heading">MI Status</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>MI Company</td>
+              <td>(Borrower’s Name)</td>
+              <td>MI %</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>MI Status</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+          </table>
+        </div>
+
+        <h1 class="borrower-information-heading">Loan Status</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>Property Status</td>
+              <td>(Borrower’s Name)</td>
+              <td>Last Paid in (LPI)</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Next Payment Due</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+          </table>
+        </div>
+
+        <h1 class="borrower-information-heading">Rep & Warrant</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>Income Relief</td>
+              <td>(Borrower’s Name)</td>
+              <td>Employment Relief</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>QC R/W Relief Achived</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+            <tr>
+              <td>Asset Relief</td>
+              <td>(Borrower’s Name)</td>
+              <td>Value Relief</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>QC R/W Relief Date</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+          </table>
+        </div>
+
+        <h1 class="borrower-information-heading">Corr/Broker Information</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>Broker Name</td>
+              <td>(Borrower’s Name)</td>
+              <td>Broker ID</td>
+              <td>(Borrower Self-Employed?)</td>
+              <td>Broker Status</td>
+              <td>(Borrower Self-Employed?)</td>
+            </tr>
+          </table>
+        </div>
+
+        <h1 class="loan-information-heading">REPURCHASE DEFECT</h1>
+
+        <h1 class="loan-information-heading">REPURCHASE INVOICE</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>UPB</td>
+              <td>1/1/2022</td>
+              <td>Employment Relief</td>
+              <td colspan="2"></td>
+              <td>-9900,00</td>
+            </tr>
+            <tr>
+              <td>Accrued Interest</td>
+              <td>1/1/2023</td>
+              <td>to</td>
+              <td>5/2/2023</td>
+              <td>@ 6%</td>
+              <td>-80000,00</td>
+            </tr>
+            <tr>
+              <td>Other Fees</td>
+              <td>Details</td>
+              <td colspan="3">(intemized attached)</td>
+              <td>-21990,00</td>
+            </tr>
+            <tr style="background-color: greenyellow; text-align: end">
+              <td colspan="5" style="align-items: end">Sub-Total</td>
+              <td>-2199000,00</td>
+            </tr>
+            <tr>
+              <td>Property Sale Proceeds</td>
+              <td colspan="4">Details</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>MI Proceeds</td>
+              <td colspan="4">Details</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Misc Proceeds</td>
+              <td colspan="4">Details</td>
+              <td></td>
+            </tr>
+            <tr
+              style="
+                background-color: greenyellow;
+                font-weight: 500;
+                text-align: end;
+              "
+            >
+              <td colspan="5" style="align-items: end">Total Billed to CFG</td>
+              <td>-2199000,00</td>
+            </tr>
+          </table>
+        </div>
+
+        <h1 class="borrower-information-heading">RECOVERY</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>Loan Sale Proceeds</td>
+              <td>Details</td>
+              <td></td>
+              <td style="min-width: 20%"></td>
+            </tr>
+            <tr>
+              <td>Property Sale Proceeds</td>
+              <td>MI</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>MI Proceeds</td>
+              <td>Details</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Remedy Proceeds</td>
+              <td>Details</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Misc Proceeds</td>
+              <td>Details</td>
+              <td>(Itemization Attached)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>R3P Recovery Proceeds</td>
+              <td>Details</td>
+              <td>(Correspondant Repurchase)</td>
+              <td></td>
+            </tr>
+            <tr style="background-color: greenyellow">
+              <td colspan="3" style="text-align: end">
+                Total Recover or Estimated Recovery by CFG
+              </td>
+              <td>123000.00</td>
+            </tr>
+            <tr style="background-color: greenyellow">
+              <td colspan="3" style="text-align: end">
+                Total Loss/Gain to CFG
+              </td>
+              <td>123000.00</td>
+            </tr>
+          </table>
+        </div>
+
+        <h1 class="borrower-information-heading">Repurchase Approval</h1>
+
+        <div class="table-container">
+          <table class="review-table">
+            <tr>
+              <td>Authorized By</td>
+              <td style="width: 40%"></td>
+              <td>Date Approved</td>
+              <td style="width: 20%"></td>
+            </tr>
+            <tr>
+              <td>Name and title of Authorized Signer</td>
+              <td style="width: 40%">
+                Repurchase Risk AVP, Investor Relations VP, Director/SVP-Capital
+                Markets
+              </td>
+              <td>Date Wired</td>
+              <td style="width: 20%"></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- <div class="dialog-content">
+          <button class="dialog-button">Export</button>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- html body -->
+  </body>
+</html>

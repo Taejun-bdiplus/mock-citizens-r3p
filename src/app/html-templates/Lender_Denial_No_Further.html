@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lender Denial No Further Appeal</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column; /* Add this to stack elements vertically */
+      }
+      .dialog-container {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        /* max-width: 100%; */
+        width: 50%;
+        max-height: 100%;
+        max-width: 80%;
+        overflow: hidden;
+      }
+      .dialog-content {
+        height: 600px; /* Adjust this value as needed */
+        overflow-y: auto;
+      }
+      .value {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .flex-container-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dialog-container">
+      <div class="dialog-content">
+        <div class="value" style="margin-top: 20px;">
+            Thank you for your 2nd Appeal response however, the documentation/explanation provided is not sufficient 
+            to satisfy the issues cited with this loan file. The agency has reviewed the appeal and determined that 
+            the documentation and explanation provided is not sufficient to resolve the cited concerns. 
+            The deficiencies and or missing documentation noted below remain uncured.
+        </div>
+
+        <div class="flex-container-center" style="margin-top: 20px; color: rgb(8, 106, 8);">--- Paste Agency Denial here---</div>
+
+        <div class="value" style="margin-top: 20px;">
+          Based on the deficiencies noted above, an appeal is not viable, and
+          Repurchase Process has begun. <br />
+          <span style="font-weight: 600;">Please confirm receipt of this email by date (3-5 business days).</span>
+          Additional information with <br />
+          billing will be provided from our Correspondent Division Team.
+        </div>
+
+        <div class="value" style="margin-top: 20px;">
+            Thank you for your assistance in this matter.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

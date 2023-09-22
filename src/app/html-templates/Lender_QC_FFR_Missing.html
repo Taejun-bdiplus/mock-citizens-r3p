@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lender QC FFR Missing Template</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column; /* Add this to stack elements vertically */
+      }
+
+      .dialog-container {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        /* max-width: 100%; */
+        width: 50%;
+        max-height: 100%;
+
+        max-width: 80%;
+        overflow: hidden;
+      }
+
+      .dialog-content {
+        height: 600px; /* Adjust this value as needed */
+        overflow-y: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .flex-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+
+      .label {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      .address {
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+
+      .flex-container-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .label-center {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dialog-container">
+      <div class="dialog-content">
+        <div class="flex-container">
+          <div class="label">Date:</div>
+          <div class="value">22/07/2022</div>
+        </div>
+
+        <div class="value">Correspondent Lender</div>
+
+        <div class="flex-container">
+          <div class="label">Attention:</div>
+          <div class="value">Correspondent Lender Contact Name</div>
+        </div>
+
+        <div class="address">
+          <span class="label">Re:</span>Borrower<br />
+          <div class="value" style="margin-left: 30px">
+            122 Main Street<br />
+            <div>Anywhere TN 00000</div>
+          </div>
+        </div>
+
+        <div class="label">Notice of Agency Demand</div>
+
+        <div class="flex-container">
+          <div class="label">Loan#</div>
+          <div class="value">989898989898</div>
+        </div>
+
+        <div class="flex-container-center">
+          <div class="label-center">Response Due:</div>
+          <div class="value-center">22/11/2023</div>
+        </div>
+
+        <div class="flex-container" style="margin-top: 20px">
+          <div class="value" style="margin-right: 5px">Dear</div>
+          <div class="value">Correspondent Lender,</div>
+        </div>
+
+        <div class="value">
+          Citizens Bank, N.A, (CBNA) received notification that this loan has
+          been selected for QC audit <br />
+          by the Agency which resulted in the discovery of certain deficiencies.
+        </div>
+
+        <!-- <div class="value" style="margin-top: 20px;">
+                Because these deficiencies could lead to an AGENCY DEMAND FOR REMEDY, we feel that it is only <br>
+                appropriate to give <span style="color: red;">Correspondent Lender</span> the opportunity to respond to the concerns below.
+            </div> -->
+
+        <!-- <div class="value" style="margin-top: 20px;">
+                If <span style="color: red;">Correspondent Lender </span>is unable to satisfy the concerns noted, it may become necessary for <br>
+                CBNA to ask <span style="color: red;">Correspondent Lender</span> to fulfill its obligations pursuant to the terms of the <br>
+                Correspondent Loan Purchase Agreement (CLPA). This letter does not constitute a demand at this time.
+            </div> -->
+
+        <div class="label" style="margin-top: 20px">Investor Findings:</div>
+        <div class="label" style="margin-left: 20px; margin-top: 20px">
+          Defect Name:
+        </div>
+        <div class="label" style="margin-left: 20px; margin-top: 20px">
+          Investor Issue:
+        </div>
+
+        <br />
+        <br />
+
+        <div style="margin-top: 20px">
+          Because these deficiencies could lead to an AGENCY DEMAND FOR REMEDY,
+          we feel that it is only <br />
+          appropriate to give
+          <span style="color: red">Correspondent Lender</span> the opportunity
+          to respond to the concerns above.
+        </div>
+
+        <div style="margin-top: 20px">
+          Please forward your written explanation of the findings and/or
+          requested documentation noted above by response due date.
+          <span
+            style="
+              text-decoration: underline;
+              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                sans-serif;
+            "
+            >When responding via email, please include all parties above.</span
+          >
+          Failure to respond by <span style="color: red">00/00/0000</span>, will
+          be interpreted as your agreement with the findings listed above.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
