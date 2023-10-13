@@ -74,6 +74,7 @@ import { LenderRiskAlternativeComponent } from './templates/lender-risk-alternat
 import { OperationsQcFfrMissingComponent } from './templates/operations-qc-ffr-missing/operations-qc-ffr-missing.component';
 import { OperationsRepurchaseDemandComponent } from './templates/operations-repurchase-demand/operations-repurchase-demand.component';
 import { MiQaUtrRescissionComponent } from './templates/mi-qa-utr-rescission/mi-qa-utr-rescission.component';
+import { HistoryDialogComponent } from './dialogs/history-dialog/history-dialog.component';
 @NgModule({
   declarations: [
     DragDropDirective,
@@ -114,6 +115,7 @@ import { MiQaUtrRescissionComponent } from './templates/mi-qa-utr-rescission/mi-
     OperationsQcFfrMissingComponent,
     OperationsRepurchaseDemandComponent,
     MiQaUtrRescissionComponent,
+    HistoryDialogComponent,
   ],
   imports: [
     HttpClientModule,

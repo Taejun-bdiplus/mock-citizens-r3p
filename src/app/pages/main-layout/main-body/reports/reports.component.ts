@@ -15,6 +15,7 @@ import { LenderRiskAlternativeComponent } from 'src/app/templates/lender-risk-al
 import { OperationsQcFfrMissingComponent } from 'src/app/templates/operations-qc-ffr-missing/operations-qc-ffr-missing.component';
 import { OperationsRepurchaseDemandComponent } from 'src/app/templates/operations-repurchase-demand/operations-repurchase-demand.component';
 import { MiQaUtrRescissionComponent } from 'src/app/templates/mi-qa-utr-rescission/mi-qa-utr-rescission.component';
+import { HistoryDialogComponent } from 'src/app/dialogs/history-dialog/history-dialog.component';
 
 
 @Component({
@@ -52,8 +53,8 @@ export class ReportsComponent {
     }
 
     if (item === this.items[4]) { // Check if it is the first row
-      const dialogRef = this.dialog.open(MiQaUtrRescissionComponent, {
-        // Configure dialog options here
+      const dialogRef = this.dialog.open(HistoryDialogComponent, {
+          width: '600px'
       });
   
       // Subscribe to dialog close event if needed
