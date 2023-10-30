@@ -84,7 +84,7 @@
             flex-direction: column;
             align-items: flex-start;
             margin-top: 20px;
-            margin-left: 10px;
+            margin-left: 20px;
         }
 
         .borrower-info .info-row {
@@ -206,7 +206,8 @@
             flex: 1;
             border: 1px solid #ccc;
             padding: 10px;
-            height: 300px; /* Adjust the height as needed */
+            height: 300px;
+            /* Adjust the height as needed */
             box-sizing: border-box;
         }
 
@@ -229,9 +230,9 @@
             padding: 5px;
             /* border-bottom: 1px solid #ccc; */
             border: 1px solid #ccc;
-            text-align: center; /* Align headings in the center */
+            text-align: center;
+            /* Align headings in the center */
         }
-        
     </style>
 </head>
 
@@ -272,12 +273,14 @@
                 </div>
             </div>
 
-            <h1 class="borrower-information-heading">Loan Details</h1>
+            <!-- <h1 class="borrower-information-heading">Loan Details</h1> -->
 
             <div class="table-container">
+                <div style="border: 1px solid black; text-align: center; padding: 3px; background-color: rgb(154, 236, 31); border-bottom: none;">Loan Details</div>
                 <table class="review-table">
+
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>CFG Loan #</td>
                         <td>(Borrower’s Name)</td>
                         <td>Office:</td>
                         <td>(Borrower Self-Employed?)</td>
@@ -285,83 +288,84 @@
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>FAMC Loan #</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Loan Type</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>PITI</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>Servicer</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Loan Program</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>Interest Rate</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>Servicer Loan #</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Loan Program Type</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>LTV/CLTV</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>Investor</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Loan Purpose</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>Account Executive</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>Investor Loan #</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Property Type</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>Loan Officer</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>FHA/VA Case #</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Note Date</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>Underwriter</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>GNMA Pool #</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Closing Date</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>Closer</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>MSP Incestor</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Funded Date</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>Funder</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>CFG Loan:</td>
+                        <td>DTI</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Office:</td>
+                        <td>Acquisition Date</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Loan Amount:</td>
+                        <td>Processor</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                 </table>
             </div>
 
-            <h1 class="borrower-information-heading">Appraisal Information</h1>
+            <!-- <h1 class="borrower-information-heading">Appraisal Information</h1> -->
 
             <div class="table-container">
+                <div style="border: 1px solid black; text-align: center; padding: 3px; background-color: rgb(154, 236, 31); border-bottom: none;">Appraisal Information</div>
                 <table class="review-table">
                     <tr>
                         <td>Appraisal Company</td>
@@ -372,7 +376,7 @@
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>Appraisal Company</td>
+                        <td>Appraisal Type</td>
                         <td>(Borrower’s Name)</td>
                         <td>Appraiser Name</td>
                         <td>(Borrower Self-Employed?)</td>
@@ -380,43 +384,44 @@
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>Appraisal Company</td>
+                        <td>Appraisal Field Review Value</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Appraiser Name</td>
+                        <td>CFG Field Review Value</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Appraised Value</td>
+                        <td>Corr/Broker Field Review Value</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>Appraisal Company</td>
+                        <td>Investor Current Value</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Appraiser Name</td>
+                        <td>CFG Current Value</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Appraised Value</td>
+                        <td>Corr/Broker Current Value</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>Appraisal Company</td>
+                        <td>Investor Review Date</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Appraiser Name</td>
+                        <td>CFG Review Date</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Appraised Value</td>
+                        <td>Corr/Broker Review Date</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                     <tr>
-                        <td>Appraisal Company</td>
+                        <td>Investor Review Method</td>
                         <td>(Borrower’s Name)</td>
-                        <td>Appraiser Name</td>
+                        <td>CFG Review Method</td>
                         <td>(Borrower Self-Employed?)</td>
-                        <td>Appraised Value</td>
+                        <td>Corr/Broker Review Method</td>
                         <td>(Borrower Self-Employed?)</td>
                     </tr>
                 </table>
             </div>
 
-            <h1 class="borrower-information-heading">MI Status</h1>
+            <!-- <h1 class="borrower-information-heading">MI Status</h1> -->
 
             <div class="table-container">
+                <div style="border: 1px solid black; text-align: center; padding: 3px; background-color: rgb(154, 236, 31); border-bottom: none;">MI Status</div>
                 <table class="review-table">
                     <tr>
                         <td>MI Company</td>
@@ -429,9 +434,10 @@
                 </table>
             </div>
 
-            <h1 class="borrower-information-heading">Loan Status</h1>
+            <!-- <h1 class="borrower-information-heading">Loan Status</h1> -->
 
             <div class="table-container">
+                <div style="border: 1px solid black; text-align: center; padding: 3px; background-color: rgb(154, 236, 31); border-bottom: none;">Loan Status</div>
                 <table class="review-table">
                     <tr>
                         <td>Property Status</td>
@@ -444,9 +450,10 @@
                 </table>
             </div>
 
-            <h1 class="borrower-information-heading">Rep & Warrant</h1>
+            <!-- <h1 class="borrower-information-heading">Rep & Warrant</h1> -->
 
             <div class="table-container">
+                <div style="border: 1px solid black; text-align: center; padding: 3px; background-color: rgb(154, 236, 31); border-bottom: none;">Rep & Warrant</div>
                 <table class="review-table">
                     <tr>
                         <td>Income Relief</td>
@@ -467,9 +474,10 @@
                 </table>
             </div>
 
-            <h1 class="borrower-information-heading">Corr/Broker Information</h1>
+            <!-- <h1 class="borrower-information-heading">Corr/Broker Information</h1> -->
 
             <div class="table-container">
+                <div style="border: 1px solid black; text-align: center; padding: 3px; background-color: rgb(154, 236, 31); border-bottom: none;">Corr/Broker Information</div>
                 <table class="review-table">
                     <tr>
                         <td>Broker Name</td>
@@ -482,56 +490,60 @@
                 </table>
             </div>
 
-            <h1 class="loan-information-heading">REPURCHASE DEFECT</h1>
+            <!-- <h1 class="loan-information-heading">REPURCHASE DEFECT</h1> -->
             <!-- ///////////////////////////////////////////////////////////////// -->
-            <div class="container">
-                <!-- First Component - Table with two columns -->
-                <div class="component">
-                    <table>
-                        <tr>
-                            <td style="font-weight: 600;">Defect Code</td>
-                            <td>Value 1 value 1 value 1 value 1</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">Defect Name</td>
-                            <td>Value 1</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">Defect Category</td>
-                            <td>Value 1</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">Defect Sub-Category</td>
-                            <td>Value 1</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">Root Cause</td>
-                            <td>Value 2</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">Charge Back</td>
-                            <td>Value 2</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">Responsible Party</td>
-                            <td>Value 2</td>
-                        </tr>
-                        <!-- Add more rows as needed -->
-                    </table>
-                </div>
+            <div>
+                <div
+                    style="border: 1px solid black; text-align: center; padding: 5px; margin-left: 20px; margin-right: 20px; background-color: rgb(2, 165, 157); border-bottom: none;">
+                    REPURCHASE DEFECT</div>
+                <div class="container">
+                    <div class="component">
+                        <table>
+                            <tr>
+                                <td style="font-weight: 600;">Defect Code</td>
+                                <td>Value 1 value 1 value 1 value 1</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Defect Name</td>
+                                <td>Value 1</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Defect Category</td>
+                                <td>Value 1</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Defect Sub-Category</td>
+                                <td>Value 1</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Root Cause</td>
+                                <td>Value 2</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Charge Back</td>
+                                <td>Value 2</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Responsible Party</td>
+                                <td>Value 2</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </table>
+                    </div>
 
-                <!-- Second Component - Four headings -->
-                <div class="component">
-                    <h2>RP Issue Details</h2>
-                    <h2 style="font-weight: 300; font-size: 18px;">
-                        information information information information information information information
-                        information information information information
-                    </h2>
-                    <h2>RP Issue Response</h2>
-                    <h2 style="font-weight: 500; font-size: 18px;">
-                        information information information information information information information
-                        information information information information
-                    </h2>
+                    <!-- Second Component - Four headings -->
+                    <div class="component">
+                        <h2>RP Issue Details</h2>
+                        <h2 style="font-weight: 300; font-size: 18px;">
+                            information information information information information information information
+                            information information information information
+                        </h2>
+                        <h2>RP Issue Response</h2>
+                        <h2 style="font-weight: 500; font-size: 18px;">
+                            information information information information information information information
+                            information information information information
+                        </h2>
+                    </div>
                 </div>
             </div>
 </body>
@@ -540,9 +552,10 @@
 
 <!-- //////////////////////////////////////////////////////////////// -->
 
-<h1 class="loan-information-heading">REPURCHASE INVOICE</h1>
+<!-- <h1 class="loan-information-heading">REPURCHASE INVOICE</h1> -->
 
 <div class="table-container">
+    <div style="border: 1px solid black; text-align: center; padding: 6px; background-color: rgb(2, 165, 157); border-bottom: none;">REPURCHASE INVOICE</div>
     <table class="review-table">
         <tr>
             <td>UPB</td>
@@ -595,9 +608,10 @@
     </table>
 </div>
 
-<h1 class="borrower-information-heading">RECOVERY</h1>
+<!-- <h1 class="borrower-information-heading">RECOVERY</h1> -->
 
 <div class="table-container">
+    <div style="border: 1px solid black; text-align: center; padding: 6px; background-color: rgb(2, 165, 157); border-bottom: none;">RECOVERY</div>
     <table class="review-table">
         <tr>
             <td>Loan Sale Proceeds</td>
@@ -650,9 +664,10 @@
     </table>
 </div>
 
-<h1 class="borrower-information-heading">Repurchase Approval</h1>
+<!-- <h1 class="borrower-information-heading">Repurchase Approval</h1> -->
 
 <div class="table-container">
+    <div style="border: 1px solid black; text-align: center; padding: 3px; background-color: rgb(2, 165, 157); border-bottom: none;">Repurchase Approval</div>
     <table class="review-table">
         <tr>
             <td>Authorized By</td>
